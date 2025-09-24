@@ -313,10 +313,10 @@ export default function Home() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { name: "Linkedin", handle: "AIbyKhai", url: "#" },
-                  { name: "X.com", handle: "@KhaiGPT", url: "#" },
                   { name: "Substack.com", handle: "@KhaiGPT", url: "#" },
-                  { name: "Superme.ai", handle: "kduong", url: "#" },
+                  { name: "X.com", handle: "@KhaiGPT", url: "#" },
+                  { name: "Linkedin", handle: "KhaiGPT", url: "#" },
+                  { name: "Superme.ai", handle: "Khai", url: "#" },
                 ].map((social) => (
                   <Link
                     key={social.name}
