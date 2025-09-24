@@ -72,10 +72,10 @@ export default function Home() {
 
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Growth Marketer taking consumer products from 0 to 1 and scaling them to million users across SEA
-                  <span className="text-foreground"> design</span>,<span className="text-foreground"> technology</span>,
+                  Product & Growth Marketer taking consumer products from 0 to 1 and scaling them to million users across SEA. Obssesed with 
+                  <span className="text-foreground"> startup</span>,<span className="text-foreground"> technology</span>,
                   and
-                  <span className="text-foreground"> user experience</span>.
+                  <span className="text-foreground"> growth</span>.
                 </p>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
