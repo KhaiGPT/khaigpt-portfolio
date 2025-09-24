@@ -72,8 +72,8 @@ export default function Home() {
 
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Product & Growth Marketer taking consumer products from 0 to 1 and scaling them to million users across SEA. Obssesed with 
-                  <span className="text-foreground"> startup</span>,<span className="text-foreground"> technology</span>,
+                  Product & Growth Marketer taking consumer products from 0 to 1 and scaling them to million users across SEA. Currently at the intersections of 
+                  <span className="text-foreground"> startup</span>,<span className="text-foreground"> AI technology</span>,
                   and
                   <span className="text-foreground"> growth</span>.
                 </p>
