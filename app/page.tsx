@@ -78,12 +78,29 @@ export default function Home() {
                   <span className="text-foreground"> growth</span>.
                 </p>
 
+                <div className="space-y-4">
+                  <Link
+                    href="linkto:cal.com/khaih"
+                    className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
+                  >
+                    <span className="text-base sm:text-lg">Book a meet with me</span>
+                    <svg
+                      className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
+                </div>
+
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
                     Available for work
                   </div>
-                  <div>Vietnam</div>
+                  <div>Remote</div>
                 </div>
               </div>
             </div>
@@ -101,7 +118,7 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground font-mono">KEY COMPETENCIES</div>
                 <div className="flex flex-wrap gap-2">
-                  {["GTM strategy", "Growth channels", "SEA market expertise", "Product & UX literacy", "Startup", "Cross-functional", "AI automation"].map((skill) => (
+                  {["GTM strategy", "Growth channels", "SEA market expertise", "Product & UX literacy", "Startup", "Cross-functional", "AI automation", "Business scalability"].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
@@ -131,9 +148,9 @@ export default function Home() {
                 {
                   year: "2025-Present",
                   role: "Indie Builder",
-                  company: "khaigpt.substack.com",
-                  description: "hunts for invisible shifts in startup, culture, and tech. occasionally ships rough stuff with AI. Find out more: https://khaigpt.substack.com",
-                  tech: ["Writing", "AI automation", "Next.js", "React Native", "Supabase"],
+                  company: "KhaiGPT.substack.com",
+                  description: "I hunt for invisible shifts in startup, culture, and tech. occasionally ship rough stuff with AI. Find out more: https://khaigpt.substack.com",
+                  tech: ["Writing", "Grow hacking", "AI automation", "Next.js", "React Native", "Supabase"],
                 },
                 {
                   year: "2024-2025",
@@ -161,14 +178,14 @@ export default function Home() {
                   role: "Associate Consultant",
                   company: "McKinsey & Company",
                   description: "Offered strategic consulting with a focus on the technology sector, particularly in e-commerce.",
-                  tech: ["GTM strategy", "Analytical & quantitative abilities", "Client relationship management", "Cross-functional"],
+                  tech: ["GTM strategy", "Analytical & quantitative abilities", "Client relationship management", "Cross-functional", "E-commerce"],
                 },
                 {
                   year: "2016-2020",
                   role: "Founder",
                   company: "BetterU Health & Wellness",
                   description: "Bootstrapped a new F&B concept with a 30% monthly growth rate, grew 5 outlets in Vietnam & Cambodia within 14 months.",
-                  tech: ["Partner & investor relationship management", "Growth hacking", "GTM strategy"],
+                  tech: ["Growth hacking", "GTM strategy", "Startup leadership", "FnB business scalability", "Partner & investor management"],
                 },
               ].map((job, index) => (
                 <div
@@ -291,10 +308,10 @@ export default function Home() {
 
                 <div className="space-y-4">
                   <Link
-                    href="mailto:huynhduongkhai@gmail.com"
+                    href="linkto:cal.com/khaih"
                     className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
                   >
-                    <span className="text-base sm:text-lg">huynhduongkhai@gmail.com</span>
+                    <span className="text-base sm:text-lg">Book a meet with me</span>
                     <svg
                       className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
