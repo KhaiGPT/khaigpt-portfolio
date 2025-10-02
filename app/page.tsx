@@ -80,10 +80,12 @@ export default function Home() {
 
                 <div className="space-y-4">
                   <Link
-                    href="linkto:cal.com/khaih"
-                    className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
+                      href="https://cal.com/khaih"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                     className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
                   >
-                    <span className="text-base sm:text-lg">Book a meet with me</span>
+                    <span className="text-base sm:text-lg">Book a free consultation</span>
                     <svg
                       className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
@@ -149,7 +151,7 @@ export default function Home() {
                   year: "2025-Present",
                   role: "Indie Builder",
                   company: "KhaiGPT.substack.com",
-                  description: "I hunt for invisible shifts in startup, culture, and tech. occasionally ship rough stuff with AI. Find out more: https://khaigpt.substack.com",
+                  description: "I hunt for invisible shifts in startup, culture, and tech. occasionally ship rough stuff with AI.",
                   tech: ["Writing", "Grow hacking", "AI automation", "Next.js", "React Native", "Supabase"],
                 },
                 {
@@ -163,14 +165,14 @@ export default function Home() {
                   year: "2022-Present",
                   role: "Product Marketing & Growth Consultant",
                   company: "Upwork.com",
-                  description: "Define product-market fit, then execute at scale. Built go-to-market frameworks for consumer blockchain & gaming projects that consistently punch above their weight. Find out more: https://www.upwork.com/freelancers/~01f5d29bca2f46bef2.",
+                  description: "Define product-market fit, then execute at scale. Built go-to-market frameworks for consumer & gaming projects that consistently punch above their weight. Find out more: https://www.upwork.com/freelancers/~01f5d29bca2f46bef2.",
                   tech: ["GTM strategy", "Growth & distribution channels", "AI automation", "Client relationship management"],
                 },
                 {
                   year: "2021-2023",
                   role: "Marketing & Growth",
                   company: "PlaySipher.com",
-                  description: "Founding member of Ather Labs, where I owned GTM, campaign P&L, and attribution.",
+                  description: "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
                   tech: ["GTM strategy", "Viral marketing", "Startup leadership", "Product marketing", "Marketing automation", "Growth channels"],
                 },
                 {
@@ -223,78 +225,97 @@ export default function Home() {
         </section>
 
         <section
-          id="thoughts"
-          ref={(el) => (sectionsRef.current[2] = el)}
-          className="min-h-screen py-20 sm:py-32 opacity-0"
+  id="thoughts"
+  ref={(el) => (sectionsRef.current[2] = el)}
+  className="min-h-screen py-20 sm:py-32 opacity-0"
+>
+  <div className="space-y-12 sm:space-y-16">
+    <h2 className="text-3xl sm:text-4xl font-light">Recent Thoughts</h2>
+
+    <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
+      {[
+        {
+          title: "how to build your own AI assistant (the one that's actually useful).",
+          excerpt: "it's not about magic prompts. it's about giving your chatbot a job and a memory.",
+          date: "2025",
+          readTime: "7 min",
+          url: "https://khaigpt.substack.com/p/how-to-build-your-own-ai-assistant",
+        },
+        {
+          title: "congratulations, the code is now the easiest part.",
+          excerpt: "so why does everything still feel so hard even with AI?",
+          date: "2025",
+          readTime: "5 min",
+          url: "https://khaigpt.substack.com/p/congratulations-the-code-is-now-the",
+        },
+        {
+          title: "so, we all have to learn to code now?",
+          excerpt: "a realistic guide to 'vibe coding' that won't make you a bad developer and a distracted marketer.",
+          date: "2025",
+          readTime: "4 min",
+          url: "https://khaigpt.substack.com/p/so-we-all-have-to-learn-to-code-now",
+        },
+        {
+          // fixed the inner quotes by using single quotes for the outer string
+          title: 'optimize for "fun".',
+          excerpt: "why it beats every dashboard you're staring at.",
+          date: "2025",
+          readTime: "4 min",
+          url: "https://khaigpt.substack.com/p/optimize-for-fun",
+        },
+      ].map((post, index) => (
+        <article
+          key={index}
+          className="group p-6 sm:p-8 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-500 hover:shadow-lg cursor-pointer"
         >
-          <div className="space-y-12 sm:space-y-16">
-            <h2 className="text-3xl sm:text-4xl font-light">Recent Thoughts</h2>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
+              <span>{post.date}</span>
+              <span>{post.readTime}</span>
+            </div>
 
-            <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
-              {[
-                {
-                  title: "how to build your own AI assistant (the one that's actually useful).",
-                  excerpt: "it's not about magic prompts. it's about giving your chatbot a job and a memory.",
-                  date: "2025",
-                  readTime: "7 min",
-                },
-                {
-                  title: "congratulations, the code is now the easiest part.",
-                  excerpt: "so why does everything still feel so hard even with AI?",
-                  date: "2025",
-                  readTime: "5 min",
-                },
-                {
-                  title: "so, we all have to learn to code now?",
-                  excerpt: "a realistic guide to 'vibe coding' that won't make you a bad developer and a distracted marketer.",
-                  date: "2025",
-                  readTime: "4 min",
-                },
-                {
-                  title: "i regret to inform you the latest AI trend is a lie.",
-                  excerpt: "on the painful rise of 'JSON prompting', and how a good prompt is more simple than you think.",
-                  date: "2025",
-                  readTime: "2 min",
-                },
-              ].map((post, index) => (
-                <article
-                  key={index}
-                  className="group p-6 sm:p-8 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-500 hover:shadow-lg cursor-pointer"
+            <h3 className="text-lg sm:text-xl font-medium group-hover:text-muted-foreground transition-colors duration-300">
+              <a
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {post.title}
+              </a>
+            </h3>
+
+            <p className="text-muted-foreground leading-relaxed">{post.excerpt}</p>
+
+            <div>
+              <a
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+              >
+                <span>khaigpt.substack.com</span>
+                <svg
+                  className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
-                      <span>{post.date}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-
-                    <h3 className="text-lg sm:text-xl font-medium group-hover:text-muted-foreground transition-colors duration-300">
-                      {post.title}
-                    </h3>
-
-                    <p className="text-muted-foreground leading-relaxed">{post.excerpt}</p>
-
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                      <span>khaigpt.substack.com</span>
-                      <svg
-                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </article>
-              ))}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
-        </section>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
         <section id="connect" ref={(el) => (sectionsRef.current[3] = el)} className="py-20 sm:py-32 opacity-0">
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
@@ -308,10 +329,12 @@ export default function Home() {
 
                 <div className="space-y-4">
                   <Link
-                    href="linkto:cal.com/khaih"
+                    href="https://cal.com/khaih"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
                   >
-                    <span className="text-base sm:text-lg">Book a meet with me</span>
+                    <span className="text-base sm:text-lg">Book a free consultation</span>
                     <svg
                       className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
@@ -330,15 +353,17 @@ export default function Home() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { name: "Substack.com", handle: "@KhaiGPT", url: "#" },
-                  { name: "X.com", handle: "@KhaiGPT", url: "#" },
-                  { name: "Linkedin", handle: "KhaiGPT", url: "#" },
-                  { name: "Superme.ai", handle: "Khai", url: "#" },
+                  { name: "Substack", handle: "@KhaiGPT", url: "https://khaigpt.substack.com" },
+                  { name: "X", handle: "@KhaiGPT", url: "https://x.com/khaiGPT" },
+                  { name: "Linkedin", handle: "KhaiGPT", url: "https://www.linkedin.com/in/khaigpt/" },
+                  { name: "Superme agent", handle: "Khai", url: "https://www.superme.ai/khai" },
                 ].map((social) => (
-                  <Link
+                  <a
                     key={social.name}
                     href={social.url}
-                    className="group p-4 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group p-4 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-sm block"
                   >
                     <div className="space-y-2">
                       <div className="text-foreground group-hover:text-muted-foreground transition-colors duration-300">
@@ -346,7 +371,7 @@ export default function Home() {
                       </div>
                       <div className="text-sm text-muted-foreground">{social.handle}</div>
                     </div>
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
