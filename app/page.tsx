@@ -111,8 +111,8 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground font-mono">CURRENTLY</div>
                 <div className="space-y-2">
-                  <div className="text-foreground">Builder</div>
-                  <div className="text-muted-foreground">@ khaigpt.substack.com</div>
+                  <div className="text-foreground">Growth</div>
+                  <div className="text-muted-foreground">@ Promer.ai</div>
                   <div className="text-xs text-muted-foreground">2025 — Present</div>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function Home() {
                   role: "Growth",
                   company: "Promer.ai",
                   description: "From a $150k-revenue dropshipping store to wanting to help Shopify stores scale more with less, we're building Promer AI to help merchants stay ahead of the curves.",
-                  tech: ["Growth strategy", "GTM Strategy", "Growth & distribution channels", "AI automation", "AI Product Development"],
+                  tech: ["Growth strategy", "GTM Strategy", "Growth & distribution channels", "AI automation", "B2B AI Product Development"],
                 },
                 {
                   year: "2025-Present",
@@ -180,7 +180,7 @@ export default function Home() {
                   role: "Marketing & Growth",
                   company: "PlaySipher.com",
                   description: "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
-                  tech: ["GTM strategy", "Viral marketing", "Startup leadership", "Product marketing", "Marketing automation", "Growth channels"],
+                  tech: ["GTM strategy", "Growth hacking", "Startup leadership", "Product marketing", "Marketing automation", "Growth channels"],
                 },
                 {
                   year: "2018-2019",
