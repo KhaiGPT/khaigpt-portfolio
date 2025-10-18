@@ -149,17 +149,24 @@ export default function Home() {
               {[
                 {
                   year: "2025-Present",
+                  role: "Growth",
+                  company: "Promer.ai",
+                  description: "From a $150k-revenue dropshipping store to wanting to help Shopify stores scale more with less, we're building Promer AI to help merchants stay ahead of the curves.",
+                  tech: ["Growth strategy", "GTM Strategy", "Growth & distribution channels", "AI automation", "AI Product Development"],
+                },
+                {
+                  year: "2025-Present",
                   role: "Indie Builder",
                   company: "KhaiGPT.substack.com",
                   description: "I hunt for invisible shifts in startup, culture, and tech. occasionally ship rough stuff with AI.",
-                  tech: ["Writing", "Grow hacking", "AI automation", "Next.js", "React Native", "Supabase"],
+                  tech: ["Writing", "Grow hacking", "AI automation", "Next.js", "React native", "Supabase"],
                 },
                 {
                   year: "2024-2025",
                   role: "Product & Growth",
                   company: "Nakame.social",
                   description: "Founding member of Nakame.social, where we built a wholesome hybrid of AI companion and Mario Party with feel-good games.",
-                  tech: ["GTM Strategy", "Game Product Development", "AI agent", "AI automation", "Startup", "Virla growth channels"],
+                  tech: ["GTM Strategy", "Game product development", "AI agent", "AI automation", "Startup", "Viral growth channels"],
                 },
                 {
                   year: "2022-Present",
