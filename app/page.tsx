@@ -72,7 +72,7 @@ export default function Home() {
 
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Product & Growth Marketer taking consumer products from 0 to 1 and scaling them to million users across SEA. Currently at the intersections of 
+                  Marketing & Growth leader taking consumer products from 0 to 1 and scaling them to million users across SEA. Currently at the intersections of 
                   <span className="text-foreground"> startup</span>,<span className="text-foreground"> AI technology</span>,
                   and
                   <span className="text-foreground"> growth</span>.
@@ -165,19 +165,19 @@ export default function Home() {
                   year: "2024-2025",
                   role: "Product & Growth",
                   company: "Nakame.social",
-                  description: "Founding member of Nakame.social, where we built a wholesome hybrid of AI companion and Mario Party with feel-good games.",
+                  description: "Founder of Nakame.social, where we built a wholesome hybrid of AI companion and Mario Party with feel-good games.",
                   tech: ["GTM Strategy", "Game product development", "AI agent", "AI automation", "Startup", "Viral growth channels"],
                 },
                 {
                   year: "2022-Present",
-                  role: "Product Marketing & Growth Consultant",
-                  company: "Upwork.com",
+                  role: "GTM & Growth",
+                  company: "Freelance Advisor/Fractional Head",
                   description: "Define product-market fit, then execute at scale. Built go-to-market frameworks for consumer & gaming projects that consistently punch above their weight. Find out more: https://www.upwork.com/freelancers/~01f5d29bca2f46bef2.",
                   tech: ["GTM strategy", "Growth & distribution channels", "AI automation", "Client relationship management"],
                 },
                 {
                   year: "2021-2023",
-                  role: "Marketing & Growth",
+                  role: "GTM & Growth",
                   company: "PlaySipher.com",
                   description: "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
                   tech: ["GTM strategy", "Growth hacking", "Startup leadership", "Product marketing", "Marketing automation", "Growth channels"],
