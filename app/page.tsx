@@ -120,7 +120,7 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground font-mono">KEY COMPETENCIES</div>
                 <div className="flex flex-wrap gap-2">
-                  {["GTM strategy", "Growth channels", "SEA market expertise", "Product & UX literacy", "Startup", "Cross-functional", "AI automation", "Business scalability"].map((skill) => (
+                  {["GTM & growth strategy", "Growth & distribution channels", "SEA market expertise", "Product & UX literacy", "Startup", "Cross-functional", "AI automation", "Business scalability"].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
@@ -151,19 +151,19 @@ export default function Home() {
                   year: "2025-Present",
                   role: "Growth",
                   company: "Promer.ai",
-                  description: "From a $150k-revenue dropshipping store to wanting to help Shopify stores scale more with less, we're building Promer AI to help merchants stay ahead of the curves.",
-                  tech: ["Growth strategy", "GTM Strategy", "Growth & distribution channels", "AI automation", "B2B AI Product Development"],
+                  description: "Core team of Promer AI where we’re building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
+                  tech: ["GTM & growth strategy", "Cross-functional", "Growth & distribution channels", "AI automation", "B2B AI Product Development"],
                 },
                 {
                   year: "2025-Present",
                   role: "Indie Builder",
                   company: "KhaiGPT.substack.com",
                   description: "I hunt for invisible shifts in startup, culture, and tech. occasionally ship rough stuff with AI.",
-                  tech: ["Writing", "Grow hacking", "AI automation", "Next.js", "React native", "Supabase"],
+                  tech: ["Content creation", "Growth hacking", "AI automation", "context engineering", "AI coding"],
                 },
                 {
                   year: "2024-2025",
-                  role: "Product & Growth",
+                  role: "Product & GTM",
                   company: "Nakame.social",
                   description: "Founder of Nakame.social, where we built a wholesome hybrid of AI companion and Mario Party with feel-good games.",
                   tech: ["GTM Strategy", "Game product development", "AI agent", "AI automation", "Startup", "Viral growth channels"],
@@ -177,7 +177,7 @@ export default function Home() {
                 },
                 {
                   year: "2021-2023",
-                  role: "GTM & Growth",
+                  role: "Marketing & Growth",
                   company: "PlaySipher.com",
                   description: "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
                   tech: ["GTM strategy", "Growth hacking", "Startup leadership", "Product marketing", "Marketing automation", "Growth channels"],
