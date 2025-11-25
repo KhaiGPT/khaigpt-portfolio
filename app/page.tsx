@@ -120,7 +120,7 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground font-mono">KEY COMPETENCIES</div>
                 <div className="flex flex-wrap gap-2">
-                  {["GTM & growth strategy", "Growth & distribution channels", "SEA market expertise", "Product & UX literacy", "Startup", "Cross-functional", "AI automation", "Business scalability"].map((skill) => (
+                  {["GTM & growth strategy", "Growth & distribution channels", "SEA market expertise", "Product & UX literacy", "Start-up", "Cross-functional", "AI automation", "Business scalability"].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
@@ -151,7 +151,7 @@ export default function Home() {
                   year: "2025-Present",
                   role: "Growth",
                   company: "Promer.ai",
-                  description: "Core team of Promer AI where we’re building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
+                  description: "Core team of Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
                   tech: ["GTM & growth strategy", "Cross-functional", "Growth & distribution channels", "AI automation", "B2B AI Product Development"],
                 },
                 {
@@ -159,14 +159,14 @@ export default function Home() {
                   role: "Indie Builder",
                   company: "KhaiGPT.substack.com",
                   description: "I hunt for invisible shifts in startup, culture, and tech. occasionally ship rough stuff with AI.",
-                  tech: ["Content creation", "Growth hacking", "AI automation", "context engineering", "AI coding"],
+                  tech: ["Content creation", "Growth hacking", "AI automation", "Context engineering", "AI coding"],
                 },
                 {
                   year: "2024-2025",
                   role: "Product & GTM",
                   company: "Nakame.social",
                   description: "Founder of Nakame.social, where we built a wholesome hybrid of AI companion and Mario Party with feel-good games.",
-                  tech: ["GTM Strategy", "Game product development", "AI agent", "AI automation", "Startup", "Viral growth channels"],
+                  tech: ["GTM Strategy", "Game product development", "AI automation", "Start-up", "Viral growth channels"],
                 },
                 {
                   year: "2022-Present",
@@ -180,7 +180,7 @@ export default function Home() {
                   role: "Marketing & Growth",
                   company: "PlaySipher.com",
                   description: "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
-                  tech: ["GTM strategy", "Growth hacking", "Startup leadership", "Product marketing", "Marketing automation", "Growth channels"],
+                  tech: ["GTM strategy", "Cross-functional", "Start-up", "Product marketing", "Marketing automation", "Growth & distribution channels"],
                 },
                 {
                   year: "2018-2019",
@@ -194,7 +194,7 @@ export default function Home() {
                   role: "Founder",
                   company: "BetterU Health & Wellness",
                   description: "Bootstrapped a new F&B concept with a 30% monthly growth rate, grew 5 outlets in Vietnam & Cambodia within 14 months.",
-                  tech: ["Growth hacking", "GTM strategy", "Startup leadership", "FnB business scalability", "Partner & investor management"],
+                  tech: ["Growth hacking", "GTM strategy", "Start-up", "FnB business scalability", "Partner & investor management"],
                 },
               ].map((job, index) => (
                 <div
