@@ -151,7 +151,7 @@ export default function Home() {
                   year: "2025-Present",
                   role: "Growth",
                   company: "Promer.ai",
-                  description: "Core team of Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
+                  description: "Joining Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
                   tech: ["GTM & growth strategy", "Cross-functional", "Growth & distribution channels", "AI automation", "B2B AI Product Development"],
                 },
                 {
