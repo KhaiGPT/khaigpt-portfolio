@@ -57,7 +57,7 @@ export default function Home() {
         <header
           id="intro"
           ref={(el) => (sectionsRef.current[0] = el)}
-          className="min-h-screen flex items-center opacity-0"
+          className="min-h-screen flex items-center section-hidden"
         >
           <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
             <div className="lg:col-span-3 space-y-6 sm:space-y-8">
@@ -72,18 +72,19 @@ export default function Home() {
 
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Marketing & Growth leader taking consumer products from 0 to 1 and scaling them to million users across SEA. Currently at the intersections of 
-                  <span className="text-foreground"> startup</span>,<span className="text-foreground"> AI technology</span>,
-                  and
+                  Marketing & Growth leader taking consumer products from 0 to 1 and scaling them to million users
+                  across SEA. Currently at the intersections of
+                  <span className="text-foreground"> startup</span>,
+                  <span className="text-foreground"> AI technology</span>, and
                   <span className="text-foreground"> growth</span>.
                 </p>
 
                 <div className="space-y-4">
                   <Link
-                      href="https://cal.com/khaih"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                     className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
+                    href="https://cal.com/khaih"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
                   >
                     <span className="text-base sm:text-lg">Book a free consultation</span>
                     <svg
@@ -120,7 +121,16 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground font-mono">KEY COMPETENCIES</div>
                 <div className="flex flex-wrap gap-2">
-                  {["GTM & growth strategy", "Growth & distribution channels", "SEA market expertise", "Product & UX literacy", "Start-up", "Cross-functional", "AI automation", "Business scalability"].map((skill) => (
+                  {[
+                    "GTM & growth strategy",
+                    "Growth & distribution channels",
+                    "SEA market expertise",
+                    "Product & UX literacy",
+                    "Start-up",
+                    "Cross-functional",
+                    "AI automation",
+                    "Business scalability",
+                  ].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
@@ -137,7 +147,7 @@ export default function Home() {
         <section
           id="work"
           ref={(el) => (sectionsRef.current[1] = el)}
-          className="min-h-screen py-20 sm:py-32 opacity-0"
+          className="min-h-screen py-20 sm:py-32 section-hidden"
         >
           <div className="space-y-12 sm:space-y-16">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
@@ -151,50 +161,93 @@ export default function Home() {
                   year: "2025-Present",
                   role: "Growth",
                   company: "Promer.ai",
-                  description: "Joining Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
-                  tech: ["GTM & growth strategy", "Cross-functional", "Growth & distribution channels", "AI automation", "B2B AI Product Development"],
+                  description:
+                    "Joining Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
+                  tech: [
+                    "GTM & growth strategy",
+                    "Cross-functional",
+                    "Growth & distribution channels",
+                    "AI automation",
+                    "B2B AI Product Development",
+                  ],
                 },
                 {
                   year: "2025-Present",
                   role: "Indie Builder",
                   company: "KhaiGPT.substack.com",
-                  description: "I hunt for invisible shifts in startup, culture, and tech. occasionally ship rough stuff with AI.",
+                  description:
+                    "I hunt for invisible shifts in startup, culture, and tech. occasionally ship rough stuff with AI.",
                   tech: ["Content creation", "Growth hacking", "AI automation", "Context engineering", "AI coding"],
                 },
                 {
                   year: "2024-2025",
                   role: "Product & GTM",
                   company: "Nakame.social",
-                  description: "Founder of Nakame.social, where we built a wholesome hybrid of AI companion and Mario Party with feel-good games.",
-                  tech: ["GTM Strategy", "Game product development", "AI automation", "Start-up", "Viral growth channels"],
+                  description:
+                    "Founder of Nakame.social, where we built a wholesome hybrid of AI companion and Mario Party with feel-good games.",
+                  tech: [
+                    "GTM Strategy",
+                    "Game product development",
+                    "AI automation",
+                    "Start-up",
+                    "Viral growth channels",
+                  ],
                 },
                 {
                   year: "2022-Present",
                   role: "GTM & Growth",
                   company: "Freelance Advisor/Fractional Head",
-                  description: "Define product-market fit, then execute at scale. Built go-to-market frameworks for consumer & gaming projects that consistently punch above their weight. Find out more: https://www.upwork.com/freelancers/~01f5d29bca2f46bef2.",
-                  tech: ["GTM strategy", "Growth & distribution channels", "AI automation", "Client relationship management"],
+                  description:
+                    "Define product-market fit, then execute at scale. Built go-to-market frameworks for consumer & gaming projects that consistently punch above their weight. Find out more: https://www.upwork.com/freelancers/~01f5d29bca2f46bef2.",
+                  tech: [
+                    "GTM strategy",
+                    "Growth & distribution channels",
+                    "AI automation",
+                    "Client relationship management",
+                  ],
                 },
                 {
                   year: "2021-2023",
                   role: "Marketing & Growth",
                   company: "PlaySipher.com",
-                  description: "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
-                  tech: ["GTM strategy", "Cross-functional", "Start-up", "Product marketing", "Marketing automation", "Growth & distribution channels"],
+                  description:
+                    "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
+                  tech: [
+                    "GTM strategy",
+                    "Cross-functional",
+                    "Start-up",
+                    "Product marketing",
+                    "Marketing automation",
+                    "Growth & distribution channels",
+                  ],
                 },
                 {
                   year: "2018-2019",
                   role: "Associate Consultant",
                   company: "McKinsey & Company",
-                  description: "Offered strategic consulting with a focus on the technology sector, particularly in e-commerce.",
-                  tech: ["GTM strategy", "Analytical & quantitative abilities", "Client relationship management", "Cross-functional", "E-commerce"],
+                  description:
+                    "Offered strategic consulting with a focus on the technology sector, particularly in e-commerce.",
+                  tech: [
+                    "GTM strategy",
+                    "Analytical & quantitative abilities",
+                    "Client relationship management",
+                    "Cross-functional",
+                    "E-commerce",
+                  ],
                 },
                 {
                   year: "2016-2020",
                   role: "Founder",
                   company: "BetterU Health & Wellness",
-                  description: "Bootstrapped a new F&B concept with a 30% monthly growth rate, grew 5 outlets in Vietnam & Cambodia within 14 months.",
-                  tech: ["Growth hacking", "GTM strategy", "Start-up", "FnB business scalability", "Partner & investor management"],
+                  description:
+                    "Bootstrapped a new F&B concept with a 30% monthly growth rate, grew 5 outlets in Vietnam & Cambodia within 14 months.",
+                  tech: [
+                    "Growth hacking",
+                    "GTM strategy",
+                    "Start-up",
+                    "FnB business scalability",
+                    "Partner & investor management",
+                  ],
                 },
               ].map((job, index) => (
                 <div
@@ -232,106 +285,106 @@ export default function Home() {
         </section>
 
         <section
-  id="thoughts"
-  ref={(el) => (sectionsRef.current[2] = el)}
-  className="min-h-screen py-20 sm:py-32 opacity-0"
->
-  <div className="space-y-12 sm:space-y-16">
-    <h2 className="text-3xl sm:text-4xl font-light">Recent Thoughts</h2>
-
-    <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
-      {[
-        {
-          title: "how to build your own AI assistant (the one that's actually useful).",
-          excerpt: "it's not about magic prompts. it's about giving your chatbot a job and a memory.",
-          date: "2025",
-          readTime: "7 min",
-          url: "https://khaigpt.substack.com/p/how-to-build-your-own-ai-assistant",
-        },
-        {
-          title: "congratulations, the code is now the easiest part.",
-          excerpt: "so why does everything still feel so hard even with AI?",
-          date: "2025",
-          readTime: "5 min",
-          url: "https://khaigpt.substack.com/p/congratulations-the-code-is-now-the",
-        },
-        {
-          title: "so, we all have to learn to code now?",
-          excerpt: "a realistic guide to 'vibe coding' that won't make you a bad developer and a distracted marketer.",
-          date: "2025",
-          readTime: "4 min",
-          url: "https://khaigpt.substack.com/p/so-we-all-have-to-learn-to-code-now",
-        },
-        {
-          // fixed the inner quotes by using single quotes for the outer string
-          title: 'optimize for "fun".',
-          excerpt: "why it beats every dashboard you're staring at.",
-          date: "2025",
-          readTime: "4 min",
-          url: "https://khaigpt.substack.com/p/optimize-for-fun",
-        },
-      ].map((post, index) => (
-        <article
-          key={index}
-          className="group p-6 sm:p-8 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-500 hover:shadow-lg cursor-pointer"
+          id="thoughts"
+          ref={(el) => (sectionsRef.current[2] = el)}
+          className="min-h-screen py-20 sm:py-32 section-hidden"
         >
-          <div className="space-y-4">
-            <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
-              <span>{post.date}</span>
-              <span>{post.readTime}</span>
-            </div>
+          <div className="space-y-12 sm:space-y-16">
+            <h2 className="text-3xl sm:text-4xl font-light">Recent Thoughts</h2>
 
-            <h3 className="text-lg sm:text-xl font-medium group-hover:text-muted-foreground transition-colors duration-300">
-              <a
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                {post.title}
-              </a>
-            </h3>
-
-            <p className="text-muted-foreground leading-relaxed">{post.excerpt}</p>
-
-            <div>
-              <a
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300"
-              >
-                <span>khaigpt.substack.com</span>
-                <svg
-                  className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+            <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
+              {[
+                {
+                  title: "how to build your own AI assistant (the one that's actually useful).",
+                  excerpt: "it's not about magic prompts. it's about giving your chatbot a job and a memory.",
+                  date: "2025",
+                  readTime: "7 min",
+                  url: "https://khaigpt.substack.com/p/how-to-build-your-own-ai-assistant",
+                },
+                {
+                  title: "congratulations, the code is now the easiest part.",
+                  excerpt: "so why does everything still feel so hard even with AI?",
+                  date: "2025",
+                  readTime: "5 min",
+                  url: "https://khaigpt.substack.com/p/congratulations-the-code-is-now-the",
+                },
+                {
+                  title: "so, we all have to learn to code now?",
+                  excerpt:
+                    "a realistic guide to 'vibe coding' that won't make you a bad developer and a distracted marketer.",
+                  date: "2025",
+                  readTime: "4 min",
+                  url: "https://khaigpt.substack.com/p/so-we-all-have-to-learn-to-code-now",
+                },
+                {
+                  title: 'optimize for "fun".',
+                  excerpt: "why it beats every dashboard you're staring at.",
+                  date: "2025",
+                  readTime: "4 min",
+                  url: "https://khaigpt.substack.com/p/optimize-for-fun",
+                },
+              ].map((post, index) => (
+                <article
+                  key={index}
+                  className="group p-6 sm:p-8 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-500 hover:shadow-lg cursor-pointer"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
+                      <span>{post.date}</span>
+                      <span>{post.readTime}</span>
+                    </div>
+
+                    <h3 className="text-lg sm:text-xl font-medium group-hover:text-muted-foreground transition-colors duration-300">
+                      <a href={post.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                        {post.title}
+                      </a>
+                    </h3>
+
+                    <p className="text-muted-foreground leading-relaxed">{post.excerpt}</p>
+
+                    <div>
+                      <a
+                        href={post.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+                      >
+                        <span>khaigpt.substack.com</span>
+                        <svg
+                          className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
+        </section>
 
-        <section id="connect" ref={(el) => (sectionsRef.current[3] = el)} className="py-20 sm:py-32 opacity-0">
+        <section
+          id="connect"
+          ref={(el) => (sectionsRef.current[3] = el)}
+          className="min-h-screen py-20 sm:py-32 section-hidden"
+        >
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
             <div className="space-y-6 sm:space-y-8">
               <h2 className="text-3xl sm:text-4xl font-light">Let's Connect</h2>
 
               <div className="space-y-6">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Always interested in new opportunities, collaborations, and conversations about startup, technology and culture.
+                  Always interested in new opportunities, collaborations, and conversations about startup, technology
+                  and culture.
                 </p>
 
                 <div className="space-y-4">
