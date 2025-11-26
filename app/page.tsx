@@ -17,12 +17,13 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            console.log("[v0] Section visible:", entry.target.id)
             entry.target.classList.add("animate-fade-in-up")
             setActiveSection(entry.target.id)
           }
         })
       },
-      { threshold: 0.3, rootMargin: "0px 0px -20% 0px" },
+      { threshold: 0.1, rootMargin: "0px 0px 0px 0px" },
     )
 
     sectionsRef.current.forEach((section) => {
