@@ -160,10 +160,10 @@ export default function Home() {
               {[
                 {
                   year: "2025-Present",
-                  role: "Growth",
+                  role: "Growth Marketing",
                   company: "Promer.ai",
                   description:
-                    "Joining Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
+                    "At Promer AI we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
                   tech: [
                     "GTM & growth strategy",
                     "Cross-functional",
@@ -191,7 +191,7 @@ export default function Home() {
                     "Game product development",
                     "AI automation",
                     "Start-up",
-                    "Viral growth channels",
+                    "Growth & distribution channels",
                   ],
                 },
                 {
@@ -217,7 +217,7 @@ export default function Home() {
                     "GTM strategy",
                     "Cross-functional",
                     "Start-up",
-                    "Product marketing",
+                    "Game product marketing",
                     "Marketing automation",
                     "Growth & distribution channels",
                   ],
@@ -230,7 +230,7 @@ export default function Home() {
                     "Offered strategic consulting with a focus on the technology sector, particularly in e-commerce.",
                   tech: [
                     "GTM strategy",
-                    "Analytical & quantitative abilities",
+                    "Landscape analysis & product positioning",
                     "Client relationship management",
                     "Cross-functional",
                     "E-commerce",
