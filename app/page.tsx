@@ -79,10 +79,10 @@ export default function Home() {
                   <span className="text-foreground"> startup</span>, and
                   <span className="text-foreground"> growth</span>. Chat with my AI{" "}
                   <a
-                    href="https://www.superme.ai/kduong"
+                    href="https://www.superme.ai/khai"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground hover:text-muted-foreground transition-colors duration-300 underline decoration-foreground/30 hover:decoration-foreground/60"
+                    className="text-foreground hover:text-muted-foreground transition-colors duration-300"
                   >
                     here
                   </a>
