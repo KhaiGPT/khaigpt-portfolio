@@ -75,9 +75,18 @@ export default function Home() {
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   Marketing & Growth leader taking consumer products from 0 to 1 and scaling them to million users
                   across SEA. Currently at the intersections of
-                  <span className="text-foreground"> startup</span>,
-                  <span className="text-foreground"> AI technology</span>, and
-                  <span className="text-foreground"> growth</span>.
+                  <span className="text-foreground"> AI technology</span>,
+                  <span className="text-foreground"> startup</span>, and
+                  <span className="text-foreground"> growth</span>. Chat with my AI{" "}
+                  <a
+                    href="https://www.superme.ai/kduong"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground hover:text-muted-foreground transition-colors duration-300 underline decoration-foreground/30 hover:decoration-foreground/60"
+                  >
+                    here
+                  </a>
+                  .
                 </p>
 
                 <div className="space-y-4">
@@ -113,7 +122,7 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground font-mono">CURRENTLY</div>
                 <div className="space-y-2">
-                  <div className="text-foreground">Growth</div>
+                  <div className="text-foreground">Growth Marketing</div>
                   <div className="text-muted-foreground">@ Promer.ai</div>
                   <div className="text-xs text-muted-foreground">2025 — Present</div>
                 </div>
@@ -130,7 +139,6 @@ export default function Home() {
                     "Start-up",
                     "Cross-functional",
                     "AI automation",
-                    "Business scalability",
                   ].map((skill) => (
                     <span
                       key={skill}
@@ -163,7 +171,7 @@ export default function Home() {
                   role: "Growth Marketing",
                   company: "Promer.ai",
                   description:
-                    "At Promer AI we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
+                    "Core team of Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
                   tech: [
                     "GTM & growth strategy",
                     "Cross-functional",
@@ -177,7 +185,7 @@ export default function Home() {
                   role: "Indie Builder",
                   company: "KhaiGPT.substack.com",
                   description:
-                    "I hunt for invisible shifts in startup, culture, and tech. occasionally ship rough stuff with AI.",
+                    "I hunt for invisible shifts in startup, culture, and tech. Occasionally ship rough stuff with AI and share my experience.",
                   tech: ["Content creation", "Growth hacking", "AI automation", "Context engineering", "AI coding"],
                 },
                 {
@@ -209,7 +217,7 @@ export default function Home() {
                 },
                 {
                   year: "2021-2023",
-                  role: "Marketing & Growth",
+                  role: "GTM & Marketing",
                   company: "PlaySipher.com",
                   description:
                     "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
@@ -227,7 +235,7 @@ export default function Home() {
                   role: "Associate Consultant",
                   company: "McKinsey & Company",
                   description:
-                    "Offered strategic consulting with a focus on the technology sector, particularly in e-commerce.",
+                    "Offered strategic consulting with a focus on the technology sector, particularly in e-commerce transformation.",
                   tech: [
                     "GTM strategy",
                     "Landscape analysis & product positioning",
