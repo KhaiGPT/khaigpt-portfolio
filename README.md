@@ -2,7 +2,7 @@
 
 A clean, modern portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and dark/light theme support.
 
-## ✨ Features
+## Features
 
 - **Minimalist Design** - Clean typography with Geist font and strategic use of whitespace
 - **Responsive Layout** - Mobile-first design that works on all devices
@@ -10,14 +10,14 @@ A clean, modern portfolio website built with Next.js and Tailwind CSS, featuring
 - **Smooth Animations** - Subtle scroll-triggered animations and hover effects
 - **Modern Stack** - Built with Next.js 15, TypeScript, and Tailwind CSS
 
-## 🚀 Built With
+## Built With
 
 - [Next.js](https://nextjs.org/) - React framework
 - [TypeScript](https://www.typescriptlang.org/) - Type safety
 - [Tailwind CSS](https://tailwindcss.com/) - Styling
 - [v0.dev](https://v0.dev/) - AI-powered development
 
-## 📦 Getting Started
+## Getting Started
 
 \`\`\`bash
 # Clone the repository
@@ -43,7 +43,3 @@ The portfolio is designed to be easily customizable:
 ## 📄 License
 
 Open source and available under the [MIT License](LICENSE).
-
----
-
-**Built with ❤️ using [v0.dev](https://v0.dev) by Felix Macaspac**
