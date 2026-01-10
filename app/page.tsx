@@ -77,7 +77,7 @@ export default function Home() {
                   across SEA. Currently at the intersections of
                   <span className="text-foreground"> AI technology</span>,
                   <span className="text-foreground"> startup</span>, and
-                  <span className="text-foreground"> growth</span>. Chat with my AI{" "}
+                  <span className="text-foreground"> growth marketing</span>. Chat with my AI{" "}
                   <a
                     href="https://www.superme.ai/khai"
                     target="_blank"
@@ -311,11 +311,11 @@ export default function Home() {
                   url: "https://khaigpt.substack.com/p/how-to-build-your-own-ai-assistant",
                 },
                 {
-                  title: "congratulations, the code is now the easiest part.",
-                  excerpt: "so why does everything still feel so hard even with AI?",
+                  title: "thinking is the only moat left.",
+                  excerpt: "and most people are giving it away for free.",
                   date: "2025",
-                  readTime: "5 min",
-                  url: "https://khaigpt.substack.com/p/congratulations-the-code-is-now-the",
+                  readTime: "3 min",
+                  url: "https://khaigpt.substack.com/p/thinking-is-the-only-moat-left",
                 },
                 {
                   title: "so, we all have to learn to code now?",
@@ -393,7 +393,7 @@ export default function Home() {
               <div className="space-y-6">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   Always interested in new opportunities, collaborations, and conversations about startup, technology
-                  and growth.
+                  and growth marketing.
                 </p>
 
                 <div className="space-y-4">
