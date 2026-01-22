@@ -73,11 +73,10 @@ export default function Home() {
 
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Marketing & Growth leader taking consumer products from 0 to 1 and scaling them to million users
-                  across SEA. Currently at the intersections of
-                  <span className="text-foreground"> AI technology</span>,
+                  Growth marketing leader with 6+ years driving acquisition, activation, and retention at scale across SEA markets. Currently at the intersections of
+                  <span className="text-foreground"> AI</span>,
                   <span className="text-foreground"> startup</span>, and
-                  <span className="text-foreground"> growth marketing</span>. Chat with my AI{" "}
+                  <span className="text-foreground"> B2B</span>. Chat with my AI{" "}
                   <a
                     href="https://www.superme.ai/khai"
                     target="_blank"
@@ -132,13 +131,13 @@ export default function Home() {
                 <div className="text-sm text-muted-foreground font-mono">KEY COMPETENCIES</div>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "GTM & growth strategy",
-                    "Growth & distribution channels",
+                    "Product-Led Growth",
+                    "Funnel Optimization & CRO",
                     "SEA market expertise",
-                    "Product & UX literacy",
+                    "Acquisition/Retention Channels",
                     "Start-up",
                     "Cross-functional",
-                    "AI automation",
+                    "A/B Testing & Experimentation",
                   ].map((skill) => (
                     <span
                       key={skill}
@@ -174,9 +173,9 @@ export default function Home() {
                     "Core team of Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
                   tech: [
                     "GTM & growth strategy",
-                    "Cross-functional",
+                    "Funnel Optimization & CRO",
                     "Growth & distribution channels",
-                    "AI automation",
+                    "A/B Testing & Experimentation",
                     "B2B AI Product Development",
                   ],
                 },
@@ -226,7 +225,7 @@ export default function Home() {
                     "Cross-functional",
                     "Start-up",
                     "Game product marketing",
-                    "Marketing automation",
+                    "Funnel Optimization & CRO",
                     "Growth & distribution channels",
                   ],
                 },
