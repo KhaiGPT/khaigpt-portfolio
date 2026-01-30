@@ -256,7 +256,7 @@ export default function Home() {
                     "Growth & distribution channels",
                     "GTM strategy",
                     "Start-up",
-                    "FnB & hospitality business operation",
+                    "Business scalability",
                     "Partner relationship management",
                   ],
                 },
@@ -395,7 +395,7 @@ export default function Home() {
               <div className="space-y-6">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   Always interested in new opportunities, collaborations, and conversations about startup, technology
-                  and growth marketing.
+                  and growth/marketing.
                 </p>
 
                 <div className="space-y-4">
