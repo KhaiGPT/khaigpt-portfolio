@@ -76,7 +76,7 @@ export default function Home() {
                   Growth marketing leader with 6+ years driving acquisition, activation, and retention at scale across SEA markets. Currently at the intersections of
                   <span className="text-foreground"> AI</span>,
                   <span className="text-foreground"> startup</span>, and
-                  <span className="text-foreground"> B2B</span>. Chat with my AI{" "}
+                  <span className="text-foreground"> consumer</span>. Chat with my AI{" "}
                   <a
                     href="https://www.superme.ai/khai"
                     target="_blank"
