@@ -132,9 +132,9 @@ export default function Home() {
                 <div className="flex flex-wrap gap-2">
                   {[
                     "Product-Led Growth",
-                    "Funnel Optimization & CRO",
-                    "SEA market expertise",
-                    "Acquisition/Retention Channels",
+                    "Funnel Optimization & ASO",
+                    "SEA Go-to-market",
+                    "Acquisition & Retention Channels",
                     "Start-up",
                     "Cross-functional",
                     "A/B Testing & Experimentation",
@@ -172,8 +172,8 @@ export default function Home() {
                   description:
                     "Core team of Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
                   tech: [
-                    "GTM & growth strategy",
-                    "Funnel optimization & CRO",
+                    "GTM strategy",
+                    "Funnel optimization & ASO",
                     "Growth & distribution channels",
                     "A/B testing & experimentation",
                     "B2B product-led growth",
@@ -186,7 +186,13 @@ export default function Home() {
                   company: "KhaiGPT.substack.com",
                   description:
                     "I hunt for invisible shifts in startup, tech, and culture. Occasionally ship stuff with AI and share my experience.",
-                  tech: ["Content creation", "GTM", "AI automation", "Context engineering", "AI coding"],
+                  tech: [
+                    "Content creation", 
+                    "GTM", 
+                    "AI automation", 
+                    "Context engineering", 
+                    "AI coding",
+                  ]
                 },
                 {
                   year: "2024-2025",
@@ -196,7 +202,7 @@ export default function Home() {
                     "Founder of Nakame.social, where we built a wholesome hybrid of AI companion and Mario Party with feel-good games.",
                   tech: [
                     "GTM",
-                    "Game product development",
+                    "Product development",
                     "Consumer product-led growth",
                     "Start-up",
                     "Growth & distribution channels",
@@ -210,7 +216,7 @@ export default function Home() {
                   description:
                     "Define product-market fit, then execute at scale. Built go-to-market frameworks for consumer & gaming projects that consistently punch above their weight. Find out more: https://www.upwork.com/freelancers/~01f5d29bca2f46bef2.",
                   tech: [
-                    "GTM strategy",
+                    "GTM",
                     "Start-up",
                     "Acquisition & retention channels",
                     "A/B testing & experimentation",
@@ -224,12 +230,12 @@ export default function Home() {
                   description:
                     "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
                   tech: [
-                    "GTM strategy",
+                    "GTM",
                     "Start-up",
                     "Consumer product-led growth",
-                    "Funnel optimization & CRO",
+                    "Funnel optimization & ASO",
                     "A/B testing & experimentation",
-                    "Acquisition & retention channels",
+                    "Growth & distribution channels",
                   ],
                 },
                 {
@@ -241,6 +247,7 @@ export default function Home() {
                   tech: [
                     "GTM strategy",
                     "Segmentation & product positioning",
+                    "A/B testing & experimentation",
                     "Client relationship management",
                     "Cross-functional",
                     "E-commerce",
@@ -253,8 +260,8 @@ export default function Home() {
                   description:
                     "Bootstrapped a new F&B concept with a 30% monthly growth rate, grew 5 outlets in Vietnam & Cambodia within 14 months.",
                   tech: [
-                    "Growth & distribution channels",
-                    "GTM strategy",
+                    "Marketing & distribution channels",
+                    "GTM",
                     "Start-up",
                     "Business scalability",
                     "Partner relationship management",
