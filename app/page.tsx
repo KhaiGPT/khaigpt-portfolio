@@ -76,7 +76,7 @@ export default function Home() {
                   Growth marketing leader with 6+ years driving acquisition, activation, and retention at scale across SEA markets. Currently at the intersections of
                   <span className="text-foreground"> AI</span>,
                   <span className="text-foreground"> startup</span>, and
-                  <span className="text-foreground"> B2B</span>. Chat with my AI{" "}
+                  <span className="text-foreground"> consumer</span>. Chat with my AI{" "}
                   <a
                     href="https://www.superme.ai/khai"
                     target="_blank"
@@ -173,10 +173,11 @@ export default function Home() {
                     "Core team of Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
                   tech: [
                     "GTM & growth strategy",
-                    "Funnel Optimization & CRO",
+                    "Funnel optimization & CRO",
                     "Growth & distribution channels",
-                    "A/B Testing & Experimentation",
-                    "B2B AI Product Development",
+                    "A/B testing & experimentation",
+                    "B2B product-led growth",
+                    "Cross-functional",
                   ],
                 },
                 {
@@ -184,8 +185,8 @@ export default function Home() {
                   role: "Indie Builder",
                   company: "KhaiGPT.substack.com",
                   description:
-                    "I hunt for invisible shifts in startup, culture, and tech. Occasionally ship rough stuff with AI and share my experience.",
-                  tech: ["Content creation", "Growth hacking", "AI automation", "Context engineering", "AI coding"],
+                    "I hunt for invisible shifts in startup, tech, and culture. Occasionally ship stuff with AI and share my experience.",
+                  tech: ["Content creation", "GTM", "AI automation", "Context engineering", "AI coding"],
                 },
                 {
                   year: "2024-2025",
@@ -194,11 +195,12 @@ export default function Home() {
                   description:
                     "Founder of Nakame.social, where we built a wholesome hybrid of AI companion and Mario Party with feel-good games.",
                   tech: [
-                    "GTM Strategy",
+                    "GTM",
                     "Game product development",
-                    "AI automation",
+                    "Consumer product-led growth",
                     "Start-up",
                     "Growth & distribution channels",
+                    "A/B testing & experimentation",
                   ],
                 },
                 {
@@ -209,8 +211,9 @@ export default function Home() {
                     "Define product-market fit, then execute at scale. Built go-to-market frameworks for consumer & gaming projects that consistently punch above their weight. Find out more: https://www.upwork.com/freelancers/~01f5d29bca2f46bef2.",
                   tech: [
                     "GTM strategy",
-                    "Growth & distribution channels",
-                    "AI automation",
+                    "Start-up",
+                    "Acquisition & retention channels",
+                    "A/B testing & experimentation",
                     "Client relationship management",
                   ],
                 },
@@ -222,11 +225,11 @@ export default function Home() {
                     "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
                   tech: [
                     "GTM strategy",
-                    "Cross-functional",
                     "Start-up",
-                    "Game product marketing",
-                    "Funnel Optimization & CRO",
-                    "Growth & distribution channels",
+                    "Consumer product-led growth",
+                    "Funnel optimization & CRO",
+                    "A/B testing & experimentation",
+                    "Acquisition & retention channels",
                   ],
                 },
                 {
@@ -250,11 +253,11 @@ export default function Home() {
                   description:
                     "Bootstrapped a new F&B concept with a 30% monthly growth rate, grew 5 outlets in Vietnam & Cambodia within 14 months.",
                   tech: [
-                    "Growth hacking",
+                    "Growth & distribution channels",
                     "GTM strategy",
                     "Start-up",
-                    "FnB business scalability",
-                    "Partner & investor management",
+                    "Business scalability",
+                    "Partner relationship management",
                   ],
                 },
               ].map((job, index) => (
@@ -392,7 +395,7 @@ export default function Home() {
               <div className="space-y-6">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   Always interested in new opportunities, collaborations, and conversations about startup, technology
-                  and growth marketing.
+                  and growth/marketing.
                 </p>
 
                 <div className="space-y-4">
