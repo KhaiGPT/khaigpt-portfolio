@@ -258,7 +258,7 @@ export default function Home() {
                   role: "Founder",
                   company: "BetterU Health & Wellness",
                   description:
-                    "Bootstrapped a new F&B concept with a 30% monthly growth rate, grew 5 outlets in Vietnam & Cambodia within 14 months.",
+                    "Bootstrapped a new F&B concept with a 30% monthly growth rate, grew to multiple outlets in Vietnam & Cambodia within 14 months.",
                   tech: [
                     "Marketing & distribution channels",
                     "GTM",
