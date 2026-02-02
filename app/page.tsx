@@ -73,10 +73,10 @@ export default function Home() {
 
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Growth marketing leader with 6+ years driving acquisition, activation, and retention at scale across SEA markets. Currently at the intersections of
+                  Growth marketing leader with 6+ years driving user growth at scale across consumer and gaming products. Currently at the intersections of
                   <span className="text-foreground"> AI</span>,
                   <span className="text-foreground"> startup</span>, and
-                  <span className="text-foreground"> consumer</span>. Chat with my AI{" "}
+                  <span className="text-foreground"> consumer</span>. Chat with my AI persona{" "}
                   <a
                     href="https://www.superme.ai/khai"
                     target="_blank"
@@ -121,9 +121,9 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground font-mono">CURRENTLY</div>
                 <div className="space-y-2">
-                  <div className="text-foreground">Growth Marketing</div>
-                  <div className="text-muted-foreground">@ Promer.ai</div>
-                  <div className="text-xs text-muted-foreground">2025 — Present</div>
+                  <div className="text-foreground">Head of Growth & Marketing</div>
+                  <div className="text-muted-foreground">@ Menlo</div>
+                  <div className="text-xs text-muted-foreground">2026 — Present</div>
                 </div>
               </div>
 
