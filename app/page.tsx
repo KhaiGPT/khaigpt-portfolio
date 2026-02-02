@@ -63,7 +63,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
             <div className="lg:col-span-3 space-y-6 sm:space-y-8">
               <div className="space-y-3 sm:space-y-2">
-                <div className="text-sm text-muted-foreground font-mono tracking-wider">PORTFOLIO / 2026</div>
+                <div className="text-sm text-muted-foreground font-mono tracking-wider">PORTFOLIO / 2025</div>
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
                   Khai
                   <br />
@@ -73,10 +73,10 @@ export default function Home() {
 
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Growth marketing leader with 6+ years driving user growth at scale across consumer and gaming products. Currently at the intersections of
+                  Growth marketing leader with 6+ years driving user growth at scale across consumer and gaming. Currently at the intersections of
                   <span className="text-foreground"> AI</span>,
-                  <span className="text-foreground"> startup</span>, and
-                  <span className="text-foreground"> consumer</span>. Chat with my AI persona{" "}
+                  <span className="text-foreground"> technology</span>, and
+                  <span className="text-foreground"> culture</span>. Chat with my AI persona{" "}
                   <a
                     href="https://www.superme.ai/khai"
                     target="_blank"
@@ -95,7 +95,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
                   >
-                    <span className="text-base sm:text-lg">Book a free call</span>
+                    <span className="text-base sm:text-lg">Book a discovery chat with me</span>
                     <svg
                       className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
@@ -214,7 +214,7 @@ export default function Home() {
                   role: "GTM & Growth",
                   company: "Freelance Advisor/Fractional Head",
                   description:
-                    "Define product-market fit, then execute at scale. Built go-to-market frameworks for consumer & gaming projects that consistently punch above their weight. Find out more: https://www.upwork.com/freelancers/~01f5d29bca2f46bef2.",
+                    "Identify the right go-to-market wedges, then execute at scale. Defined directions and growth loops for consumer & gaming projects that consistently punch above their weight.",
                   tech: [
                     "GTM",
                     "Start-up",
@@ -401,7 +401,7 @@ export default function Home() {
 
               <div className="space-y-6">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Always interested in new opportunities, collaborations, and conversations about startup, technology
+                  Always interested in new opportunities, collaborations, and conversations about startup, culture-shaping technologies
                   and growth/marketing.
                 </p>
 
@@ -412,7 +412,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
                   >
-                    <span className="text-base sm:text-lg">Book a free call</span>
+                    <span className="text-base sm:text-lg">Book a discovery chat with me</span>
                     <svg
                       className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
@@ -433,7 +433,7 @@ export default function Home() {
                 {[
                   { name: "Substack", handle: "@KhaiGPT", url: "https://khaigpt.substack.com" },
                   { name: "X", handle: "@KhaiGPT", url: "https://x.com/khaiGPT" },
-                  { name: "Linkedin", handle: "KhaiGPT", url: "https://www.linkedin.com/in/khaigpt/" },
+                  { name: "Linkedin", handle: "KhaiGPT", url: "https://www.linkedin.com/in/khaidhuynh/" },
                   { name: "Superme agent", handle: "Khai", url: "https://www.superme.ai/khai" },
                 ].map((social) => (
                   <a
@@ -459,7 +459,7 @@ export default function Home() {
         <footer className="py-12 sm:py-16 border-t border-border">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
             <div className="space-y-2">
-              <div className="text-sm text-muted-foreground">© 2026 Khai Huynh. All rights reserved.</div>
+              <div className="text-sm text-muted-foreground">© 2025 Khai Huynh. All rights reserved.</div>
             </div>
 
             <div className="flex items-center gap-4">
