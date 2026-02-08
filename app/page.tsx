@@ -313,8 +313,8 @@ export default function Home() {
             <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
               {[
                 {
-                  title: "how to build your own AI assistant (the one that's actually useful).",
-                  excerpt: "it's not about magic prompts. it's about giving your chatbot a job and a memory.",
+                  title: "how to build an easy AI assistant (that's actually useful).",
+                  excerpt: "5' setup from your ai chatbot of choice is all it takes.",
                   date: "2025",
                   readTime: "7 min",
                   url: "https://khaigpt.substack.com/p/how-to-build-your-own-ai-assistant",
