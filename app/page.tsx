@@ -170,13 +170,13 @@ export default function Home() {
                   role: "Growth Marketing",
                   company: "Promer.ai",
                   description:
-                    "Core team of Promer AI where we are building B2B solutions to help e-com/DTC teams & individuals resolve scaling acquisition channels.",
+                    "Core team of Promer AI where we help e-com/DTC teams & individuals resolve scaling acquisition channels.",
                   tech: [
                     "GTM strategy",
                     "Funnel optimization & ASO",
                     "Growth & distribution channels",
                     "A/B testing & experimentation",
-                    "B2B product-led growth",
+                    "Product-led growth",
                     "Cross-functional",
                   ],
                 },
