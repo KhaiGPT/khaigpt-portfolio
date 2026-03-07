@@ -130,7 +130,7 @@ export default function Home() {
                 <div className="text-sm text-muted-foreground font-mono">KEY COMPETENCIES</div>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "Product-Led Growth",
+                    "Product-led Growth",
                     "Funnel Optimization & ASO",
                     "SEA Go-to-market",
                     "Acquisition & Retention Channels",
@@ -184,7 +184,7 @@ export default function Home() {
                   role: "Indie Builder",
                   company: "KhaiGPT.substack.com",
                   description:
-                    "I hunt for invisible shifts in startup, tech, and culture. Occasionally ship stuff with AI and share my experience.",
+                    "Abstract away the early signals & invisible shifts in startup, tech, and culture. Occasionally ship stuff and share my experience.",
                   tech: [
                     "Content creation", 
                     "GTM", 
