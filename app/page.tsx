@@ -73,8 +73,8 @@ export default function Home() {
 
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Growth marketing leader with 6+ years driving user growth at scale across consumer and gaming. On the side I like to build things with
-                  <span className="text-foreground"> AI</span>, write about
+                  Growth marketing leader with 8+ years driving user growth at scale across consumer and gaming. On the side I like to build things with
+                  <span className="text-foreground"> AI</span> and write about
                   <span className="text-foreground"> technology & culture</span>. Chat with my AI persona{" "}
                   <a
                     href="https://www.superme.ai/khai"
@@ -130,7 +130,7 @@ export default function Home() {
                 <div className="text-sm text-muted-foreground font-mono">KEY COMPETENCIES</div>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "Product-Led Growth",
+                    "Product-led Growth",
                     "Funnel Optimization & ASO",
                     "SEA Go-to-market",
                     "Acquisition & Retention Channels",
@@ -184,7 +184,7 @@ export default function Home() {
                   role: "Indie Builder",
                   company: "KhaiGPT.substack.com",
                   description:
-                    "I hunt for invisible shifts in startup, tech, and culture. Occasionally ship stuff with AI and share my experience.",
+                    "Abstract away the early signals & invisible shifts in startup, tech, and culture. Occasionally ship stuff and share my experience.",
                   tech: [
                     "Content creation", 
                     "GTM", 
