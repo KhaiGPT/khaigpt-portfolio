@@ -121,7 +121,7 @@ export default function Home() {
                 <div className="text-sm text-muted-foreground font-mono">CURRENTLY</div>
                 <div className="space-y-2">
                   <div className="text-foreground">Head of Growth & Marketing</div>
-                  <div className="text-muted-foreground">@Consumer AI</div>
+                  <div className="text-muted-foreground">@B2B AI</div>
                   <div className="text-xs text-muted-foreground">2025 — Present</div>
                 </div>
               </div>
@@ -137,6 +137,7 @@ export default function Home() {
                     "Start-up",
                     "Cross-functional",
                     "A/B Testing & Experimentation",
+                    "Business Scalability",
                   ].map((skill) => (
                     <span
                       key={skill}
@@ -166,7 +167,7 @@ export default function Home() {
               {[
                 {
                   year: "2025-Present",
-                  role: "Growth Marketing",
+                  role: "Head of Growth Marketing",
                   company: "Promer.ai",
                   description:
                     "Core team of Promer AI where we help e-com/DTC teams & individuals resolve scaling acquisition channels.",
@@ -195,7 +196,7 @@ export default function Home() {
                 },
                 {
                   year: "2024-2025",
-                  role: "Product & GTM",
+                  role: "Founder",
                   company: "Nakame.social",
                   description:
                     "Founder of Nakame.social, where we built a wholesome hybrid of AI companion and Mario Party with feel-good games.",
@@ -210,7 +211,7 @@ export default function Home() {
                 },
                 {
                   year: "2022-Present",
-                  role: "GTM & Growth",
+                  role: "GTM & Growth Consultant",
                   company: "Freelance Advisor/Fractional Head",
                   description:
                     "Identify the right go-to-market wedges, then execute at scale. Defined directions and growth loops for consumer & gaming projects that consistently punch above their weight.",
@@ -224,7 +225,7 @@ export default function Home() {
                 },
                 {
                   year: "2021-2023",
-                  role: "GTM & Marketing",
+                  role: "Head of Marketing",
                   company: "PlaySipher.com",
                   description:
                     "Founding member of Ather Labs, top 5 fastest-growing free game of SEA in 2022 where I owned GTM, campaign P&L, and attribution.",
@@ -254,7 +255,7 @@ export default function Home() {
                 },
                 {
                   year: "2016-2020",
-                  role: "Founder",
+                  role: "Founder & Managing Director",
                   company: "BetterU Health & Wellness",
                   description:
                     "Bootstrapped a new F&B concept with a 30% monthly growth rate, grew to multiple outlets in Vietnam & Cambodia within 14 months.",
