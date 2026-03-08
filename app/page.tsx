@@ -74,7 +74,8 @@ export default function Home() {
               <div className="space-y-6 max-w-md">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   Entrepreneur and growth leader with 10+ years building and scaling businesses across SEA markets. Currently at the intersections of
-                  <span className="text-foreground"> startup</span> , AI application
+                  <span className="text-foreground"> startup</span> ,
+                  <span className="text-foreground"> AI application</span>
                   <span className="text-foreground"> & growth marketing</span>. Chat with my AI persona{" "}
                   <a
                     href="https://www.superme.ai/khai"
