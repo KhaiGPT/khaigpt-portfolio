@@ -83,7 +83,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="text-foreground hover:text-muted-foreground transition-colors duration-300"
                   >
-                    here
+                    here 🤖
                   </a>
                   .
                 </p>
