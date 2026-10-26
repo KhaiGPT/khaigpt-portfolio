@@ -1,5 +1,5 @@
 export const site = {
-  url: "https://khaigpt.vercel.app",
+  url: "https://khaihuynh.app",
   name: "Khai Huynh",
   handle: "KhaiGPT",
   title: "Khai Huynh — Growth & AI Consultant for Apps and Small Businesses",

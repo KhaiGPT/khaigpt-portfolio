@@ -474,8 +474,19 @@ html.lg-refract .glass {
   inset: 0;
   z-index: 4;
   pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, #f2f3f5 calc(var(--r) - 160px), #fff calc(var(--r) - 60px), rgb(255 255 255 / 0) var(--r));
+  /* the same grained paper as the page, revealed through a soft-edged circle */
+  background: #f2f3f5 url(/noise.webp) 0 0 / 160px;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 calc(var(--r) - 140px), transparent var(--r));
+  mask-image: radial-gradient(circle at 50% 50%, #000 calc(var(--r) - 140px), transparent var(--r));
   opacity: min(1, calc(var(--bloom) * 40));
+}
+/* a bright rim rides the edge of the bloom */
+.hero-bloom::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgb(255 255 255 / 0) calc(var(--r) - 260px), #fff calc(var(--r) - 110px), rgb(255 255 255 / 0) calc(var(--r) - 20px));
+  opacity: calc(1 - var(--bloom));
 }
 .hero-hint {
   position: absolute;
@@ -498,6 +509,11 @@ html.lg-refract .glass {
 }
 
 /* --------------------------------------------------------------- sections */
+/* every section after the hero sits above its pinned layer, which lingers while the proof overlaps it */
+main > section:not(.hero) {
+  position: relative;
+  z-index: 1;
+}
 .sec {
   padding-block: clamp(80px, 12vw, 160px);
   color: var(--fg);
