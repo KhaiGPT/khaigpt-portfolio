@@ -1,22 +1,29 @@
 import { CopyEmail } from "@/components/ui/CopyEmail"
 import { ArrowUp, ArrowUpRight, BrandIcon } from "@/components/ui/Icons"
+import { Magnetic } from "@/components/ui/Magnetic"
 import { contact, cta } from "@/content/home"
 import { site, socials } from "@/content/site"
+import { Mercury } from "./Mercury"
 
 export function Contact() {
   return (
     <section id="contact" className="sec sec-dark contact" data-dark="" aria-labelledby="contact-title" data-testid="section-contact">
-      <div className="wrap contact-in">
+      <div className="contact-pool">
+        <Mercury />
         <h2 id="contact-title" className="contact-title" data-rv>
           {contact.title}
         </h2>
+      </div>
+      <div className="wrap contact-in">
         <p className="lede" data-rv>
           {contact.body}
         </p>
         <div className="contact-actions" data-rv>
-          <a href={site.links.cal} target="_blank" rel="noopener" className="pill pill-solid pill-xl press" data-testid="contact-book-call">
-            {cta.primary} <ArrowUpRight className="pill-arrow" />
-          </a>
+          <Magnetic strength={0.18}>
+            <a href={site.links.cal} target="_blank" rel="noopener" className="pill pill-solid pill-xl shine press" data-testid="contact-book-call">
+              {cta.primary} <ArrowUpRight className="pill-arrow" />
+            </a>
+          </Magnetic>
           <CopyEmail />
         </div>
         <footer className="foot">
@@ -29,13 +36,6 @@ export function Contact() {
               </li>
             ))}
           </ul>
-          <p className="foot-note">
-            {contact.writing.lead}{" "}
-            <a href={site.links.substack} target="_blank" rel="noopener">
-              {contact.writing.link}
-            </a>
-            .
-          </p>
           <p className="foot-line">
             <span>
               © {new Date().getFullYear()} Khai Huynh · {site.location}

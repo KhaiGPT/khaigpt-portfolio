@@ -18,10 +18,10 @@ export function Hero() {
           </h1>
           <p className="hero-sub">{hero.sub}</p>
           <div className="hero-ctas">
-            <a href={site.links.cal} target="_blank" rel="noopener" className="pill pill-solid press" data-testid="hero-book-call">
+            <a href={site.links.cal} target="_blank" rel="noopener" className="pill pill-solid shine press" data-testid="hero-book-call">
               {cta.primary} <ArrowUpRight className="pill-arrow" />
             </a>
-            <a href="#sprint" className="glass pill press" data-testid="hero-see-sprint">
+            <a href="#help" className="glass pill press" data-testid="hero-see-help">
               {hero.secondary} <ChevronDown />
             </a>
           </div>

@@ -4,9 +4,9 @@ import { Section } from "./Section"
 export function How() {
   return (
     <Section id="how" kicker="How it starts" title="Three steps. No pitch deck.">
-      <ol className="steps">
+      <ol className="steps" data-rv>
         {steps.map((s, i) => (
-          <li key={s.n} className="step" data-rv style={{ "--i": i } as React.CSSProperties}>
+          <li key={s.n} className="step" style={{ "--i": i } as React.CSSProperties}>
             <span className="step-n" aria-hidden>
               {s.n}
             </span>

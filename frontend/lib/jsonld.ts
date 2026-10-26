@@ -3,9 +3,10 @@ import { site } from "@/content/site"
 
 const id = (frag: string) => `${site.url}/#${frag}`
 
-const offer = (name: string, description: string, anchor: string) => ({
+const offer = (name: string, description: string, anchor: string, price?: string) => ({
   "@type": "Offer",
   url: id(anchor),
+  ...(price && { price: price.replace(/[^0-9.]/g, ""), priceCurrency: "USD" }),
   itemOffered: { "@type": "Service", name, description, provider: { "@id": id("person") } },
 })
 
@@ -30,7 +31,7 @@ export const jsonLd = {
       alternateName: site.handle,
       url: `${site.url}/`,
       email: `mailto:${site.email}`,
-      image: `${site.url}/og.jpg`,
+      image: `${site.url}/art/khai.webp`,
       jobTitle: site.jobTitle,
       description: site.bio,
       homeLocation: { "@type": "Place", name: site.location },
@@ -62,9 +63,9 @@ export const jsonLd = {
         "@type": "OfferCatalog",
         name: "Services",
         itemListElement: [
-          offer(sprint.kicker, sprint.title, "sprint"),
+          offer(sprint.kicker, sprint.title, "sprint", sprint.price),
           offer(fractional.kicker, fractional.body, "fractional"),
-          offer(`AI ${local.kicker.toLowerCase()}`, local.body, "local"),
+          offer(local.kicker, local.body, "local"),
           offer(workshop.kicker, workshop.body, "workshops"),
         ],
       },

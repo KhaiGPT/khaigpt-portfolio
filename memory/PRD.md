@@ -37,13 +37,18 @@ Rebuild Khai Huynh's personal portfolio: super clean, minimalist, design-forward
   - SEO: new title/description, ProfessionalService + OfferCatalog + FAQPage JSON-LD. /_tmp keyframes deleted.
   - Perf (local prod build): desktop LCP ~0.18s; mobile 4G + 4x CPU LCP ~0.77s; CLS ≈ 0.
 
+- 2026-10 (session 4b) — premium pass + packages:
+  - Page: Hero → Proof (count-up stats + rolling growth-metric tile + steel-wordmark marquee) → How I can help (4 package cards that pin and stack: Sprint gantt that fills itself, Fractional pipeline with a running pulse, Local phone that types out a missed-call rescue, Workshop 15 seats lighting up) → How it starts (line draws, steps pop) → About (portrait with 3D tilt + sheen; track record where hovering a row floats that company's chrome object) → Notes (Substack posts restored, free tips framing) → FAQ → Contact (WebGL liquid-mercury metaballs behind the headline, text inverts over the chrome; follows the cursor).
+  - Top nav: sliding scroll-spy pill. Primary buttons: light sweep on hover. Paper has a faint grain (`public/noise.webp`).
+  - Founding-client prices (~$45/h of real work): Sprint $1,500 (for a case study), Fractional from $1,500/mo, Local setup from $1,000, Workshop from $600.
+  - Portrait: `scripts/make_portrait.py` (rembg birefnet-portrait cutout → crop, grade, ember/ice rim light) → `public/art/khai.webp`. RepTime logo → `public/art/reptime.webp`.
+  - Perf: mobile 4G + 4x CPU LCP ~0.8s, CLS 0. Mercury only renders while on screen, at 0.6x resolution.
+
 ## Waiting on the user
-- Sprint price ("from $X") and fractional monthly price.
-- Headshot photo, 2–3 testimonials (name, title, company), permission for client names.
-- Confirm promises written into the copy: scope within 24h, free missed-lead check, "leave the call with at least one fix", ~2 hrs of client time.
-- Analytics choice (none installed) and separate Cal.com event types per offer.
+- Confirm founding prices. Testimonials once the first clients finish (none yet).
+- Google Analytics ID once the site is live.
 
 ## Backlog
 - P1: Deploy to Vercel (khaigpt.vercel.app) and run real Lighthouse on production.
 - P1: Dedicated /local landing page once there is a local-business case study (for ads to that audience).
-- P2: Per-article pages for Substack posts (more indexable URLs).
+- P2: Per-article pages for Substack posts / free AI tips (more indexable URLs).

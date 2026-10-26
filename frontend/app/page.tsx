@@ -3,15 +3,13 @@ import { GlassFilter } from "@/components/chrome/GlassFilter"
 import { Reveals } from "@/components/chrome/Reveals"
 import { TopBar } from "@/components/chrome/TopBar"
 import { Contact } from "@/components/home/Contact"
+import { About } from "@/components/home/About"
 import { Faq } from "@/components/home/Faq"
-import { Fractional } from "@/components/home/Fractional"
+import { Help } from "@/components/home/Help"
 import { Hero } from "@/components/home/Hero"
 import { How } from "@/components/home/How"
-import { Local } from "@/components/home/Local"
+import { Notes } from "@/components/home/Notes"
 import { Proof } from "@/components/home/Proof"
-import { Record } from "@/components/home/Record"
-import { Sprint } from "@/components/home/Sprint"
-import { Workshop } from "@/components/home/Workshop"
 import { jsonLd } from "@/lib/jsonld"
 import type { Metadata } from "next"
 
@@ -32,12 +30,10 @@ export default function Home() {
       <main id="main">
         <Hero />
         <Proof />
-        <Sprint />
-        <Fractional />
+        <Help />
         <How />
-        <Local />
-        <Workshop />
-        <Record />
+        <About />
+        <Notes />
         <Faq />
         <Contact />
       </main>

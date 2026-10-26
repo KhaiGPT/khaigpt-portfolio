@@ -41,10 +41,10 @@ export function GlassFilter() {
     return () => document.documentElement.classList.remove("lg-refract")
   }, [])
 
-  // specular highlight follows the pointer across any glass surface
+  // specular highlight follows the pointer across any glass or spotlit surface
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
-      const el = (e.target as Element | null)?.closest?.(".glass") as HTMLElement | null
+      const el = (e.target as Element | null)?.closest?.(".glass, .spot") as HTMLElement | null
       if (!el) return
       const r = el.getBoundingClientRect()
       el.style.setProperty("--mx", `${(((e.clientX - r.left) / r.width) * 100).toFixed(1)}%`)
