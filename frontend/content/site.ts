@@ -4,8 +4,8 @@ export const site = {
   handle: "KhaiGPT",
   title: "Khai Huynh — Growth & AI Consultant for Apps and Small Businesses",
   description:
-    "Khai Huynh helps mobile apps grow, sets up AI receptionists for local service businesses, and runs practical AI training for marketers, ops and growth teams. Ex-McKinsey, 10+ years, 1M+ users grown.",
-  bio: "Growth & GTM operator with 10+ years scaling consumer apps and games across Southeast Asia — 0→1M+ users, $1.1M incremental revenue at Promer AI, ~$150K/mo acquisition programs. Ex-McKinsey, founder of BetterU (5 locations, 35+ people) and Nakame.",
+    "Khai Huynh helps mobile apps grow from pre-launch to scale, builds AI automation for local service businesses, and runs practical AI training for marketers, ops and growth teams. Ex-McKinsey, 10+ years, 5M+ users grown.",
+  bio: "10+ years in growth and GTM across consumer apps and games: 5M+ users grown, $40M+ revenue. Ex-McKinsey and VC-backed founder, now solo building apps to $100K ARR and sharing what I learn.",
   email: "huynhduongkhai@gmail.com",
   location: "Ho Chi Minh City, Vietnam",
   jobTitle: "Growth & AI Consultant",

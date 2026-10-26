@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "mobile app growth consultant",
     "app growth sprint",
     "fractional growth lead",
-    "AI receptionist for local businesses",
+    "AI automation for local businesses",
     "practical AI training",
     "AI training for marketers",
     "Khai Huynh",

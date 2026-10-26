@@ -1,9 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { InfoTip } from "@/components/ui/InfoTip"
 
-type Metric = { n: string; what: string; info: string }
+type Metric = { n: string; what: string }
 
 /** The fourth proof tile: growth results roll past like a split-flap board. Hover pauses it. */
 export function MetricRoll({ metrics }: { metrics: Metric[] }) {
@@ -28,8 +27,7 @@ export function MetricRoll({ metrics }: { metrics: Metric[] }) {
             </span>
           ))}
         </span>
-        <InfoTip text={metrics[i].info} label="About this result" />
-        <span className="sr-only">Growth results: {metrics.map((m) => `${m.n} ${m.what} (${m.info})`).join("; ")}</span>
+        <span className="sr-only">More results: {metrics.map((m) => `${m.n} ${m.what}`).join("; ")}</span>
       </dt>
       <dd className="proof-n roll-window" aria-hidden>
         {metrics.map((m, j) => (

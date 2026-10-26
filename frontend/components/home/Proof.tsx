@@ -1,4 +1,3 @@
-import { InfoTip } from "@/components/ui/InfoTip"
 import { proof } from "@/content/home"
 import { CountUp } from "./CountUp"
 import { MetricRoll } from "./MetricRoll"
@@ -9,11 +8,10 @@ export function Proof() {
       <dl className="proof-stats">
         {proof.stats.map((s, i) => (
           <div key={s.what} className="proof-stat spot" data-rv style={{ "--i": i } as React.CSSProperties}>
-            <dt className="proof-what">
-              {s.what}
-              <InfoTip text={s.info} label={`About “${s.what}”`} />
-            </dt>
-            <dd className="proof-n">{s.label ?? <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} />}</dd>
+            <dt className="proof-what">{s.what}</dt>
+            <dd className="proof-n">
+              <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} />
+            </dd>
           </div>
         ))}
         <MetricRoll metrics={proof.metrics} />
