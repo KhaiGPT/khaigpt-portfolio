@@ -9,12 +9,11 @@ export default function Stage() {
   const ref = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
-    let alive = true
     let r: StageRenderer | undefined
     let offs: (() => void)[] = []
     const cancel = afterLoadIdle(() => {
       const canvas = ref.current
-      if (!alive || !canvas) return
+      if (!canvas) return
       try {
         r = new StageRenderer(canvas)
       } catch (err) {
@@ -32,7 +31,6 @@ export default function Stage() {
       stage.start()
     })
     return () => {
-      alive = false
       cancel()
       offs.forEach((off) => off())
       r?.dispose()

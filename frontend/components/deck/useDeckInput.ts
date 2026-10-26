@@ -30,9 +30,16 @@ export function useDeckInput(step: (d: 1 | -1) => void, jump: (i: number) => voi
     const onWheel = (e: WheelEvent) => {
       if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return
       const dy = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY
-      if (innerCanScroll(e.target, dy)) return void (acc = 0)
       const now = performance.now()
       const abs = Math.abs(dy)
+      // an inner column consumed this gesture: its momentum mustn't spill over into a page flip
+      if (innerCanScroll(e.target, dy)) {
+        lastT = now
+        lastAbs = abs
+        acc = 0
+        spent = true
+        return
+      }
       const gap = now - lastT
       const fresh = gap > 200 || abs > lastAbs * 1.6 + 8
       lastT = now

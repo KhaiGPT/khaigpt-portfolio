@@ -6,8 +6,14 @@ export const pad2 = (n: number) => String(n).padStart(2, "0")
 
 /** Runs fn once the page has loaded and the main thread is idle, so first paint isn't contended. */
 export function afterLoadIdle(fn: () => void) {
-  const idle = () => ("requestIdleCallback" in window ? requestIdleCallback(fn, { timeout: 1500 }) : setTimeout(fn, 300))
+  const ric = "requestIdleCallback" in window
+  let id = 0
+  const idle = () => (id = ric ? requestIdleCallback(fn, { timeout: 1500 }) : window.setTimeout(fn, 300))
   if (document.readyState === "complete") idle()
   else addEventListener("load", idle, { once: true })
-  return () => removeEventListener("load", idle)
+  return () => {
+    removeEventListener("load", idle)
+    if (ric) cancelIdleCallback(id)
+    else clearTimeout(id)
+  }
 }

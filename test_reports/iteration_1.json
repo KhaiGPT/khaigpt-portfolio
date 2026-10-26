@@ -1,0 +1,35 @@
+{
+  "summary": "Tested the frontend (Next.js dev mode on the preview URL) on desktop 1440x900 and mobile 390x844 / 360x740. Working correctly: home loads with the hero, no console errors, and only one chapter is ever active. The pager, dots, arrow keys and mouse wheel all move between chapters and update the URL hash. Reply chips go to the right chapter. Deep links (#work, #hi, #about) work both on a fresh load and on a hash change. The work roles list switches detail and art, and ArrowLeft/Right also work. The Ask Q&A thread works. Copy email puts the address on the clipboard. Social and book-a-chat links have the right hrefs and target=_blank. Art loading is deferred: only hero_wide.webp loads before window load, then data-warm and data-gl='ready' appear and the other 11 images load, with none blank. The 404 page returns HTTP 404 with wings art, the heading, and 5 links plus 'take me home', and each link lands on its chapter. SEO checks pass. CLS is 0 on desktop and mobile. All 13 images have descriptive alt text. Problems found are mobile layout only, worst on 360x740.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Hello chapter on mobile 360x740", "issue": "The hero art (hero_tall image, plus the WebGL render on top of it) overlaps the 'AVAILABLE FOR NEW THINGS' label and the h1 'khai huynh'. Measured: img top 64 / bottom 449, h1 top 330 / bottom 460. At 390x844 the gap is fine (img bottom 503, h1 top 501). The art box needs to shrink on short viewports, e.g. limit height with max-height in svh or use a height media query.", "selector": "img[data-art=hero], [data-testid=hero-title]", "priority": "HIGH"},
+      {"component": "Writing chapter on mobile 360x740 (also About)", "issue": "The writing column is an inner scroll area (scrollHeight 661 vs clientHeight 487). Its bottom (754px) runs past the viewport (740) and sits under the pager (680-720). Before you scroll, 'on finding limits', the 'subscribe' button and the reply chip are hidden behind or below the pager. On About at 360x740 the 'what do you write?' chip (699-743) also overlaps the pager. At 390x844 the writing reply chip (754-798) partly overlaps the pager (top 780). Add bottom padding about the pager's height (about 80px) plus the safe-area inset to the scroll columns, or end them above the pager.", "selector": ".writing-col[data-scroll], #about .copy-col[data-scroll]", "priority": "MEDIUM"},
+      {"component": "404 page on mobile 390x844", "issue": "'take me home' (805-855) is cut off at the bottom of the first screen. It can be reached by scrolling inside .nf, so this is minor. Consider a little more bottom padding or smaller wings art on mobile.", "selector": "[data-testid=not-found-home]", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Ask chapter, desktop", "issues": ["After 3 or more questions the oldest bubble scrolls up under the 'sure — ask away.' heading and shows as a half-faded fragment ('One Shot.'). A cleaner top fade or more spacing would look better."]},
+      {"screen": "Work chapter, mobile", "issues": ["The roles row scrolls sideways (scrollWidth 1393 / clientWidth 350) and the selected role scrolls into view. This works, but nothing shows that more roles exist off to the right except a cut-off label."]}
+    ]
+  },
+  "test_report_links": ["/app/backend/tests/test_portfolio_seo.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "Fix the hero art overlapping the h1 on short mobile viewports (360x740).",
+    "Add bottom padding about the pager's height plus the safe-area inset to the mobile scroll columns (Writing, About) so the subscribe button and reply chips do not sit under the pager.",
+    "Optional: more bottom space on the mobile 404 so 'take me home' is fully visible without scrolling."
+  ],
+  "critical_code_review_comments": [
+    "lib/utils.ts afterLoadIdle: the cancel function only removes the load listener. It does not cancel an idle callback that is already queued (requestIdleCallback or setTimeout). If the component unmounts in between, fn still runs. Stage guards against this with `alive`, but DeckProvider's data-warm does not (harmless here).",
+    "Mouse wheel on the 360x740 Writing chapter: one 200px wheel event both scrolled the inner column (scrollTop 0 to 174) and moved the deck to Ask. Expected: it only scrolls the inner column until the end is reached. This may be a quirk of Playwright's synthetic wheel. Check by hand with a trackpad that scrolling an inner column does not also flip the chapter.",
+    "The 404 page inherits root og:url / og:* tags pointing at the home page. This is minor because the page is noindex.",
+    "On desktop, hero_wide.webp shows up twice in resource timing, probably a second fetch for the WebGL texture. Check that the cache is reused (crossOrigin mismatch)."
+  ],
+  "updated_files": ["/app/backend/tests/test_portfolio_seo.py"],
+  "success_rate": {"backend": "N/A (no backend); SEO HTTP tests 6/6 pass", "frontend": "~90% (all functional flows pass; 2 mobile layout issues)"},
+  "seed_data_creation": "none",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Static Next.js 15 portfolio running in dev mode. Wait about 1.1s between chapter steps (820ms lock). Mobile touch swipes can be simulated with CDP Input.dispatchTouchEvent: keep the gesture under 900ms; swipes are consumed by inner [data-scroll] columns until those reach their end. reply-hi only appears in Ask after at least one question has been asked. Recheck the 360x740 hero overlap and the Writing/About bottom padding. The Next dev 'N' indicator at bottom-left is dev-only; ignore it.",
+  "rca of the issue": "Hero overlap: on short portrait viewports the hero art keeps its tall aspect ratio and is not capped by the space left above the title block, so the two collide when height is about 740px or less. Pager overlap: the mobile scroll columns (.writing-col, the about .copy-col) have no bottom padding to make room for the fixed pager, so their last items render under it."
+}

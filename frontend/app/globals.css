@@ -970,8 +970,8 @@ html.lg-refract .glass {
   padding: 24px 4px 4px;
   scrollbar-width: none;
   touch-action: pan-y;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 28px);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 28px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 52px);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 52px);
 }
 .thread::-webkit-scrollbar {
   display: none;
@@ -1188,7 +1188,8 @@ html.lg-refract .glass {
 @media (max-width: 767px) {
   :root {
     --top: 76px;
-    --bottom: 92px;
+    /* glass pager height + its offset from the home indicator + breathing room */
+    --bottom: calc(76px + max(16px, env(safe-area-inset-bottom)));
     --art-h: 25svh;
   }
   /* copy scrolls beneath the glass pager, the way iOS content slides under a tab bar */
@@ -1205,6 +1206,22 @@ html.lg-refract .glass {
     padding-bottom: calc(var(--bottom) + 12px);
     justify-content: flex-start;
     gap: 16px;
+  }
+  /* scrim under the pager: copy sinks into it as it scrolls beneath, like an iOS tab bar */
+  .deck::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: calc(var(--bottom) + 8px);
+    background: linear-gradient(to top, rgb(5 5 5 / 0.92) 40%, rgb(5 5 5 / 0));
+    pointer-events: none;
+  }
+  .nf {
+    gap: 16px;
+    padding-bottom: 40px;
+  }
+  .nf-art {
+    width: min(46vw, 200px);
   }
   .ask-col {
     overflow-y: auto;
@@ -1364,6 +1381,12 @@ html.lg-refract .glass {
 @media (max-width: 767px) and (max-height: 700px) {
   :root {
     --art-h: 21svh;
+  }
+}
+/* short phones: the hero gives way to the name block (~36vw title + eyebrow, tag and replies) */
+@media (max-width: 767px) and (orientation: portrait) and (max-height: 780px) {
+  .hero-art {
+    height: max(150px, min(52svh, calc(100svh - 64px - var(--bottom) - 36vw - 215px)));
   }
 }
 @media (min-width: 768px) and (max-height: 720px) {
