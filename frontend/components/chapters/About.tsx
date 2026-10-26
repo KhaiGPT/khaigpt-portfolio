@@ -6,10 +6,10 @@ import { Replies } from "@/components/ui/Replies"
 import { art } from "@/content/art"
 
 const stats = [
-  { n: "10+", label: "years building" },
+  { n: "10+", label: "years scaling products" },
+  { n: "1M+", label: "players, Sipher" },
+  { n: "$1.1M", label: "incremental revenue, Promer AI" },
   { n: "12k+", label: "newsletter readers" },
-  { n: "30%", label: "MoM growth, BetterU" },
-  { n: "top 5", label: "fastest-growing SEA game ’22" },
 ]
 
 export function About() {
@@ -24,7 +24,7 @@ export function About() {
           ex-founder, ex-McKinsey, now <em className="serif">solo leveling</em> consumer apps.
         </R>
         <R i={2} as="p" className="lede">
-          10+ years building and scaling businesses across southeast asia — where startups, AI and growth meet.
+          growth & GTM operator with 10+ years scaling products across southeast asia — 0→1 builds, acquisition, retention and the teams behind them.
         </R>
         <R i={3} as="dl" className="stats" data-testid="about-stats">
           {stats.map((s) => (

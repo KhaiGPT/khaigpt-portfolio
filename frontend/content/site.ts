@@ -4,12 +4,12 @@ export const site = {
   handle: "KhaiGPT",
   title: "Khai Huynh — I build things & scale products",
   description:
-    "Khai Huynh is a Vietnam-based founder and growth leader with 10+ years building and scaling startups across Southeast Asia — ex-McKinsey, founder of BetterU and Nakame, and writer of the Zero-One Shot newsletter.",
-  bio: "Entrepreneur and growth leader with 10+ years building and scaling businesses across Southeast Asia. Ex-McKinsey, founder of BetterU and Nakame.social, Head of Growth Marketing at Promer.ai, and writer of Zero-One Shot, a newsletter on startups, AI and culture read by 12,000+ people.",
+    "Khai Huynh is a growth & GTM operator in Ho Chi Minh City with 10+ years scaling products across Southeast Asia — 0→1M+ users, ex-McKinsey, founder of BetterU and Nakame, and writer of the Zero-One Shot newsletter.",
+  bio: "Growth & GTM operator with 10+ years scaling products and market expansion across Southeast Asia — from 0→1M+ users and ~$150K/mo acquisition programs to 0→1 products and international teams of up to 15. Head of Growth Marketing at Promer AI, ex-McKinsey, founder of BetterU and Nakame, and writer of Zero-One Shot.",
   email: "huynhduongkhai@gmail.com",
-  location: "Vietnam",
+  location: "Ho Chi Minh City, Vietnam",
   jobTitle: "Head of Growth Marketing",
-  employer: "Promer.ai",
+  employer: "Promer AI",
   links: {
     cal: "https://cal.com/khaih",
     substack: "https://khaigpt.substack.com",

@@ -4,17 +4,17 @@ export const faqs: Faq[] = [
   {
     id: "do",
     q: "what do you actually do?",
-    a: "i help products find their first wedge, then scale them. right now that's growth at Promer.ai, building consumer apps solo, and writing Zero-One Shot.",
+    a: "i help products find their first wedge, then scale them. right now that's heading growth at Promer AI, shipping my own consumer apps (hi, RepTime), and writing Zero-One Shot.",
   },
   {
     id: "help",
     q: "can you help my startup grow?",
-    a: "probably! i take on a few advisory and fractional growth roles at a time — mostly consumer, gaming and AI products. book a chat and let's see if it clicks.",
+    a: "probably! i take on a few product & growth consulting projects at a time — mostly consumer, gaming and AI products across SEA. book a chat and let's see if it clicks.",
   },
   {
     id: "where",
     q: "where are you based?",
-    a: "vietnam. i work remotely with teams across southeast asia and beyond.",
+    a: "ho chi minh city, vietnam. i work remotely with teams across southeast asia and beyond.",
   },
   {
     id: "solo",

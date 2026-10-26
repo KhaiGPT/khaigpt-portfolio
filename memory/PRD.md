@@ -24,6 +24,19 @@ Rebuild Khai Huynh's personal portfolio: super clean, minimalist, design-forward
   - Dev: allowedDevOrigins for preview hosts.
 - Testing: iteration_1 + iteration_2 (100% pass on retests/regressions).
 
+- 2026-06 (session 3):
+  - Content updated from the new resume (`content/work.ts`, `site.ts`, `faq.ts`, `lib/jsonld.ts`, About stats). Work list = 7 items: Promer AI · Firegroup, Nakame, Independent consulting, Indie apps · RepTime (new, uses the paper-airplane art as a stand-in until the RepTime logo art), Sipher, McKinsey, BetterU. Zero-One Shot lives only in Writing.
+  - Seedance 2.0 prompts + first/last keyframes delivered. Keyframes: `/app/frontend/public/_tmp/seedance_{wide,tall}_{first,last}.jpg` (robots disallow `/_tmp/`; DELETE after the clips arrive). Generator: `/app/scripts/video_src/make_keyframes.py`.
+
+## NEXT SESSION — scroll-driven hero video + vertical scroll (user decisions, locked)
+- Waiting on the user: Seedance clip(s) (16:9 required, 9:16 optional) + the RepTime logo (to generate chrome art for the Indie item). Neither was attached yet.
+- Hero: hands stay STILL until scroll; scroll scrubs the approach until the fingertips touch → explosion → site turns from dark to light. It must FULLY REVERSE when scrolling back up.
+- Light mode: bright, cool gallery-white paper (barely visible texture).
+- Background removal: done here via fal `fal-ai/birefnet/v2/video` (model "Matting", output_mask=true, VP9/ProRes) through the Emergent Universal Key (verified priceable in the catalog; needs X-App-ID/X-Job-ID headers = $job_id). Use the mask video + the original RGB to build alpha frames. ffmpeg is not installed (use imageio-ffmpeg).
+- Still art is luma-keyed (alpha from brightness), so dark chrome turns see-through on paper. Re-matte the stills from `/app/scripts/art_src/*.jpg` with `fal-ai/birefnet` before light mode ships.
+- Planned build: replace the deck (fixed chapters, flip input, pager, horizontal work row on mobile) with one smooth vertical scroll (Lenis + motion useScroll). Pinned hero track (~300vh): frame scrub, then a WebGL shockwave/flash revealing paper from the contact point. Live refraction, cast shadows and light glow around the hands. Sections below are on paper. Fixed chrome switches theme at the explosion. The vertical rail stays on desktop only. No horizontal swipe anywhere.
+- Frames: a WebP alpha sequence (~48–64 frames, ~900px wide, cropped to the hands' bounding box), with frame 0 preloaded as the LCP image and the rest loaded coarse-to-fine after load.
+
 ## Backlog
 - P1: Deploy to Vercel (khaigpt.vercel.app) and run real Lighthouse on production.
 - P2: Per-article pages/OG for Substack posts (more indexable URLs); slow-4G LCP (~3s, bandwidth-bound by fonts + JS).
