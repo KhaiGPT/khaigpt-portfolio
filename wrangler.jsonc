@@ -1,0 +1,11 @@
+// Cloudflare Workers config, used when the build runs from the repo root (Cloudflare's default).
+// Serves the static export that `npm run build` writes to frontend/out. frontend/wrangler.jsonc is the same, for builds rooted in frontend/.
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "khaigpt-portfolio",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./frontend/out",
+    "not_found_handling": "404-page"
+  }
+}
