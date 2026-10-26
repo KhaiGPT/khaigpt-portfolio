@@ -1,0 +1,134 @@
+{
+  "project_type": "portfolio",
+  "tech_stack": [
+    "Next.js 15 App Router",
+    "Tailwind CSS v4",
+    "WebGL / React Three Fiber",
+    "Framer Motion",
+    "Lenis (Smooth Scroll)"
+  ],
+  "theme": "Dark (Deep Obsidian Luxury)",
+  "aesthetic_concept": "Liquid Glass & Cinematic Shaders. An Apple-level premium, minimalist, and design-forward experience. A deep obsidian background with liquid silver highlights and fluid bouncy spring motion. High contrast, highly organic, and heavily reliant on raw WebGL displacement to feel 'wet' and alive. Absolutely no generic gradients, pure AI-slop layouts, or clunky text walls. The story is told through striking visuals, fluid transitions, and typography.",
+  "typography": {
+    "fonts": {
+      "headings": "Cabinet Grotesk",
+      "body": "Satoshi",
+      "mono": "JetBrains Mono"
+    },
+    "guidelines": "Do not use Inter for headings. Keep hierarchy tight and punchy. Use fluid clamp() sizes (max text-6xl). Headings must have tracking-tighter for a high-end editorial feel. Body text should be leading-relaxed."
+  },
+  "color_tokens": {
+    "base": {
+      "background": "#050505",
+      "surface": "#0a0a0c",
+      "text_primary": "#f5f5f5",
+      "text_secondary": "#a1a1aa",
+      "text_muted": "#52525b"
+    },
+    "accents": {
+      "liquid_silver": "#e5e5e5",
+      "glass_border": "rgba(255, 255, 255, 0.12)",
+      "glass_bg": "rgba(255, 255, 255, 0.03)",
+      "glass_highlight": "rgba(255, 255, 255, 0.2)"
+    },
+    "guidelines": "Do NOT use default 'SaaS blue' or flat hex colors. The 'color' in this design comes from the refraction of images underneath glass and the stark contrast of white/silver against absolute black."
+  },
+  "liquid_glass_recipe": {
+    "classes": "backdrop-blur-2xl bg-white/[0.03] border border-white/[0.12] shadow-[0_8px_32px_rgba(0,0,0,0.4)] rounded-3xl",
+    "inner_highlight": "inset ring-1 ring-white/[0.05]",
+    "hover_state": "hover:bg-white/[0.06] hover:border-white/[0.2] transition-colors duration-500 ease-out",
+    "notes": "Apple-style glass depends on edge definition and structural blur, not just translucency. Always use backdrop-saturate-150. It must sit above rich content (like a WebGL shader or image) so the blur actively distorts something."
+  },
+  "shader_concepts": {
+    "hero": "A fluid WebGL displacement shader using Khai's portrait and an abstract liquid texture. As the user moves their mouse, the shader creates organic, viscous ripples, warping the image like it's submerged in dark liquid.",
+    "transitions": "Cinematic Page Morph: Section-to-section scrolling is paged. Use a WebGL transition where the current section softly warps, distorts, and dissolves into the next using a fluid displacement map, hiding standard DOM scroll behavior.",
+    "images": "All article/timeline images should have a slight WebGL hover effect (like an RGB shift or localized liquid ripple) instead of a basic CSS transform scale.",
+    "technical_approach": "Use pure WebGL or React Three Fiber + Drei. Do not fake this with CSS filters. The math needs to be GPU-driven."
+  },
+  "motion_specs": {
+    "spring": {
+      "type": "spring",
+      "stiffness": 200,
+      "damping": 20,
+      "mass": 1
+    },
+    "scroll": "Lenis smooth scrolling with momentum. Enable conversational pacing—scroll should feel intentional, snapping to critical viewports where appropriate.",
+    "interactions": "Bouncy Apple-like scaling (scale: 0.98 on click/tap). Magnetic hover effects on buttons and timeline nodes."
+  },
+  "layout_per_section": [
+    {
+      "name": "hero",
+      "content": "Khai Huynh, i build things and scale products.",
+      "layout": "Full screen (100vh). Massive Cabinet Grotesk typography layered directly over or intersecting the WebGL canvas. The portrait is integrated into the shader.",
+      "image_url": "https://images.unsplash.com/photo-1681097561932-36d0df02b379?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwyfHxhc2lhbiUyMG1hbGUlMjBwb3J0cmFpdCUyMHRlY2h8ZW58MHx8fHwxNzkyOTczNzk4fDA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      "name": "about",
+      "content": "ex vc founder, now solo leveling consumer apps...",
+      "layout": "Bento Grid (Tetris Mode A). Asymmetric tension. One large card for the main philosophy, smaller functional cards for metrics (12k+ subs, 30% MoM). High density text inside ultra-premium Liquid Glass cards."
+    },
+    {
+      "name": "timeline",
+      "content": "Promer.ai, Nakame.social, PlaySipher, McKinsey, BetterU...",
+      "layout": "Visual timeline (No boring lists). A vertical glowing line with nodes. Hovering a node summons a massive liquid glass preview card that overtakes the background or floats adjacently. Minimal text—focus on logos, roles, and dates."
+    },
+    {
+      "name": "writing",
+      "content": "Substack posts: thinking is the only moat left, optimize for fun, etc.",
+      "layout": "Horizontal scroll or staggered masonry. Minimal secondary text. Use striking, full-bleed images inside cards.",
+      "image_url_racecar": "https://images.unsplash.com/photo-1606590526474-b07bb3623ad1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w7NDQ2NDJ8MHwxfHNlYXJjaHwxfHxyYWNlJTIwY2FyJTIwZGFya3xlbnwwfHx8fDE3OTI5NzM3OTd8MA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      "name": "faq_subtle",
+      "content": "Subtle FAQ section to satisfy FAQ Schema requirements without ruining the aesthetic.",
+      "layout": "A sleek, minimal accordion using Radix/Shadcn wrapped in a Liquid Glass container, positioned just before the footer."
+    },
+    {
+      "name": "contact",
+      "content": "Say hi. Email and socials.",
+      "layout": "Massive typographic footer. A giant 'say hi.' text. A magnetic hover button that copies the email to clipboard. Social links (X, LinkedIn, Substack, GitHub, Cal.com, Superme.ai) as sleek icon buttons. No contact forms."
+    }
+  ],
+  "accessibility_and_seo": {
+    "seo": "Implement Next.js App Router metadata API: Server-side rendering, sitemap.xml, robots.txt, canonical tags, no noindex, meta descriptions, one H1 per page, JSON-LD FAQ schema, Breadcrumb schema. Include a hidden or subtle author bio schema.",
+    "performance": "Target < 2s load time. Fix CLS (explicit width/height on images). Use next/image for WebP conversion. Lazy load the WebGL canvas.",
+    "motion": "Respect prefers-reduced-motion CSS media query. Fall back to simple fades if true."
+  },
+  "image_generation_prompts": {
+    "hero_portrait": "asian male tech founder, cinematic tech lighting, moody, looking directly at camera, dark obsidian background, ultra realistic 8k, shot on 35mm lens",
+    "writing_race_car": "black race car in a dark cinematic tunnel, minimal lighting, high contrast, speed and limits concept, sleek",
+    "timeline_ai": "abstract neural network node, glowing white and liquid silver on dark background, 3d render, octane render",
+    "timeline_gaming": "minimalist pixel art mixed with high-end glassmorphism, dark theme, elegant UI"
+  },
+  "data_testid_conventions": {
+    "prefix": "data-testid",
+    "format": "kebab-case, role-based",
+    "examples": [
+      "hero-title",
+      "timeline-node-promer",
+      "copy-email-button",
+      "social-link-github",
+      "writing-card-limits",
+      "faq-accordion-item"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Execute everything in a single unified page architecture with Lenis smooth scrolling.",
+    "Build the WebGL shaders from scratch using React Three Fiber or raw WebGL. Do not mock it. Ensure the canvas responds to mouse movement.",
+    "For the timeline, avoid long paragraphs. Use icons, tags, and brief stats.",
+    "Do not use generic AI emojis (e.g., 🚀, 💡, 🤖). Use sleek SVG icons (Phosphor or Lucide).",
+    "Implement the SEO requirements meticulously in layout.tsx and page.tsx.",
+    "Ensure 'Apple Liquid Glass' uses backdrop-saturate and very low opacity white backgrounds with crisp 1px borders."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: transition: all.",
+    "You MUST NOT center align the app container.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations.",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons."
+  ]
+}
