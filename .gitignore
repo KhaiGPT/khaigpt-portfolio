@@ -24,3 +24,10 @@ next-env.d.ts
 
 # python
 __pycache__/
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+.credentials
