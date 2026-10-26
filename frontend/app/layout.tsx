@@ -37,17 +37,14 @@ export const metadata: Metadata = {
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
-  keywords: ["Khai Huynh", "KhaiGPT", "growth marketing", "go-to-market", "startup founder", "Southeast Asia", "Vietnam", "consumer apps", "Zero-One Shot"],
+  keywords: ["mobile app growth consultant", "app growth sprint", "fractional growth", "paywall optimization", "app store optimization", "user acquisition", "AI for local businesses", "Khai Huynh", "KhaiGPT"],
   openGraph: {
-    type: "profile",
+    type: "website",
     url: "/",
     siteName: site.name,
     title: site.title,
     description: site.description,
     locale: "en_US",
-    firstName: "Khai",
-    lastName: "Huynh",
-    username: site.handle,
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Khai Huynh — two liquid-chrome hands reaching for each other" }],
   },
   twitter: {
@@ -62,18 +59,20 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#050505",
-  colorScheme: "dark",
+  themeColor: "#000000",
+  colorScheme: "dark light",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
 }
 
-const noscriptCss = `.chapter{position:relative!important;visibility:visible!important;min-height:100svh}.rv,.art-img{opacity:1!important;translate:none!important;scale:none!important;filter:none!important}.art-img{display:block!important}.deck{height:auto!important;overflow:visible!important}html,body{overflow:auto!important}.pager{display:none}`
+
+/** without JS the scroll-scrubbed hero would be a long black runway */
+const noscriptCss = `.hero{height:auto!important}.hero-pin{position:relative!important}`
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${cabinet.variable} ${satoshi.variable} ${zodiak.variable}`}>
+    <html lang="en" data-theme="dark" className={`${cabinet.variable} ${satoshi.variable} ${zodiak.variable}`}>
       <head>
         <noscript>
           <style>{noscriptCss}</style>
