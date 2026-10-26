@@ -25,8 +25,26 @@ export function InfoTip({ text, label = "More info", className }: { text: string
     }
   }, [open])
 
+  // keep the bubble on screen: measure it once it shows and slide it back from either edge
+  const place = () =>
+    requestAnimationFrame(() => {
+      const el = ref.current
+      const pop = el?.querySelector<HTMLElement>(".tip-pop")
+      if (!el || !pop || !pop.offsetWidth) return
+      const b = el.getBoundingClientRect()
+      const w = pop.offsetWidth
+      const left = b.left + b.width / 2 - w / 2
+      const pad = 12
+      const dx = left < pad ? pad - left : left + w > innerWidth - pad ? innerWidth - pad - (left + w) : 0
+      pop.style.setProperty("--dx", `${Math.round(dx)}px`)
+    })
+
+  useEffect(() => {
+    if (open) place()
+  }, [open])
+
   return (
-    <span ref={ref} className={cn("tip", className)} data-open={open || undefined}>
+    <span ref={ref} className={cn("tip", className)} data-open={open || undefined} onPointerEnter={place} onFocus={place}>
       <button type="button" className="tip-btn press" aria-label={label} aria-describedby={id} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
         <svg viewBox="0 0 16 16" width="1em" height="1em" aria-hidden>
           <circle cx="8" cy="8" r="7.25" fill="none" stroke="currentColor" strokeWidth="1.3" />
