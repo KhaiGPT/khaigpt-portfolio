@@ -10,7 +10,7 @@ export const site = {
   location: "Ho Chi Minh City, Vietnam",
   jobTitle: "Growth & AI Consultant",
   /** Google Analytics 4 Measurement ID ("G-…"). Empty = no analytics loaded. */
-  gaId: "" as string,
+  gaId: "G-BTZPNQDB82" as string,
   links: {
     cal: "https://cal.com/khaih",
     substack: "https://khaigpt.substack.com",
