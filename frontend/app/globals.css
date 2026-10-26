@@ -89,6 +89,10 @@ body {
   -webkit-tap-highlight-color: transparent;
   overflow-x: clip;
 }
+/* iPhone browsers size the page to its widest child and ignore clipping on body, so clip the content wrapper too */
+main {
+  overflow-x: clip;
+}
 ::selection {
   background: var(--color-ember);
   color: #0b0b0b;
@@ -394,6 +398,12 @@ html.lg-refract .glass {
   opacity: var(--copy);
   translate: 0 calc((1 - var(--copy)) * -60px);
   filter: blur(calc((1 - var(--copy)) * 14px));
+}
+.hero-pin[data-paper] {
+  background: #f2f3f5 url(/noise.webp) 0 0 / 160px;
+}
+.hero-pin[data-paper] > :not(.hero-bloom) {
+  visibility: hidden;
 }
 .hero-pin[data-quiet] .hero-copy {
   pointer-events: none;
@@ -1189,30 +1199,39 @@ html[data-js][data-theme="dark"] .proof [data-rv][data-in] {
   box-shadow:
     inset 0 0 0 1px rgb(255 255 255 / 0.1),
     0 18px 40px -12px rgb(0 0 0 / 0.5);
-  translate: -50% 6px;
+  /* --dx nudges the bubble back inside the screen near the edges (set by InfoTip) */
+  translate: calc(-50% + var(--dx, 0px)) 6px;
   scale: 0.96;
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
+  /* closed bubbles are display:none, not just invisible, so they can't widen the page on phones */
+  display: none;
   transition:
     opacity 0.2s ease,
     translate 0.5s var(--spring-bouncy),
     scale 0.5s var(--spring-bouncy),
-    visibility 0s 0.2s;
+    display 0.2s allow-discrete;
 }
 .tip:hover .tip-pop,
 .tip:focus-within .tip-pop,
 .tip[data-open] .tip-pop {
-  translate: -50% 0;
+  display: block;
+  translate: calc(-50% + var(--dx, 0px)) 0;
   scale: 1;
   opacity: 1;
-  visibility: visible;
-  transition-delay: 0s;
+}
+@starting-style {
+  .tip:hover .tip-pop,
+  .tip:focus-within .tip-pop,
+  .tip[data-open] .tip-pop {
+    translate: calc(-50% + var(--dx, 0px)) 6px;
+    scale: 0.96;
+    opacity: 0;
+  }
 }
 @media (hover: none) {
   .tip:hover:not([data-open]) .tip-pop {
-    opacity: 0;
-    visibility: hidden;
+    display: none;
   }
 }
 

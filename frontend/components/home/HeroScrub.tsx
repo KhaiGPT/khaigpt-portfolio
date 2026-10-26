@@ -97,6 +97,7 @@ export function HeroScrub({ copy, alt }: { copy: ReactNode; alt: string }) {
       s.setProperty("--flash", (span(p, 0.55, 0.64) * (1 - span(p, 0.7, 0.8))).toFixed(3))
       s.setProperty("--bloom", span(p, 0.62, 0.82).toFixed(4))
       pinEl.toggleAttribute("data-quiet", p > 0.07)
+      pinEl.toggleAttribute("data-paper", p >= 0.82)
       el.toggleAttribute("data-dark", p < 0.74)
       syncTheme()
       want = span(p, 0.02, 0.6) * (FRAMES - 1)
