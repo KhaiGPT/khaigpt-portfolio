@@ -13,7 +13,6 @@ export const art = {
   avocado: a("work_betteru", 707, 630, "Halved avocado cast in liquid chrome, for BetterU, the health food brand Khai founded"),
   quill: a("writing_quill", 746, 846, "Chrome feather quill dripping a single drop of mercury, for Khai's newsletter Zero-One Shot"),
   wings: a("about_wings", 973, 931, "Liquid-chrome Icarus wings with feather tips melting into mercury"),
-  khai: a("khai", 900, 900, "Khai Huynh, head-and-shoulders portrait in a black blazer and white tee"),
 } satisfies Record<string, Art>
 
 export type ArtKey = keyof typeof art

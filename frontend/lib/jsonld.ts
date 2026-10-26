@@ -3,10 +3,9 @@ import { site } from "@/content/site"
 
 const id = (frag: string) => `${site.url}/#${frag}`
 
-const offer = (name: string, description: string, anchor: string, price?: string) => ({
+const offer = (name: string, description: string, anchor: string) => ({
   "@type": "Offer",
   url: id(anchor),
-  ...(price && { price: price.replace(/[^0-9.]/g, ""), priceCurrency: "USD" }),
   itemOffered: { "@type": "Service", name, description, provider: { "@id": id("person") } },
 })
 
@@ -31,7 +30,7 @@ export const jsonLd = {
       alternateName: site.handle,
       url: `${site.url}/`,
       email: `mailto:${site.email}`,
-      image: `${site.url}/art/khai.webp`,
+      image: `${site.url}/og.jpg`,
       jobTitle: site.jobTitle,
       description: site.bio,
       homeLocation: { "@type": "Place", name: site.location },
@@ -54,7 +53,7 @@ export const jsonLd = {
     {
       "@type": "ProfessionalService",
       "@id": id("service"),
-      name: `${site.name} — Mobile-App Growth`,
+      name: `${site.name} — Growth & AI Consulting`,
       url: `${site.url}/`,
       description: site.description,
       founder: { "@id": id("person") },
@@ -62,12 +61,7 @@ export const jsonLd = {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Services",
-        itemListElement: [
-          offer(sprint.kicker, sprint.title, "sprint", sprint.price),
-          offer(fractional.kicker, fractional.body, "fractional"),
-          offer(local.kicker, local.body, "local"),
-          offer(workshop.kicker, workshop.body, "workshops"),
-        ],
+        itemListElement: [...[sprint, fractional, local, workshop].map((p) => offer(p.title, `${p.body} (${p.kicker})`, p.id))],
       },
     },
     {

@@ -362,7 +362,7 @@ html.lg-refract .glass {
 /* ------------------------------------------------------------------ hero */
 .hero {
   position: relative;
-  height: 340vh;
+  height: 250vh;
   background: #000;
   color: var(--fg);
 }
@@ -375,6 +375,7 @@ html.lg-refract .glass {
   --lift: 0px;
   position: sticky;
   top: 0;
+  z-index: 0;
   height: 100vh;
   height: 100svh;
   overflow: hidden;
@@ -402,16 +403,23 @@ html.lg-refract .glass {
   max-width: 15ch;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(44px, 6.4vw, 104px);
+  font-size: clamp(52px, 8.4vw, 136px);
   line-height: 0.92;
   letter-spacing: -0.045em;
   text-wrap: balance;
 }
 .hero-sub {
-  max-width: 44ch;
-  font-size: clamp(16px, 1.35vw, 20px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 0;
+  font-size: clamp(16px, 1.3vw, 19px);
   color: var(--fg-2);
-  text-wrap: balance;
+}
+.hero-sub li + li::before {
+  content: "·";
+  margin: 0 12px;
+  color: var(--fg-3);
 }
 .hero-ctas {
   display: flex;
@@ -422,20 +430,6 @@ html.lg-refract .glass {
 }
 .hero-ctas .pill {
   height: 52px;
-}
-.hero-alt {
-  font-size: 14px;
-  color: var(--fg-3);
-}
-.hero-alt span {
-  color: var(--fg);
-  text-decoration: underline;
-  text-decoration-color: rgb(255 255 255 / 0.3);
-  text-underline-offset: 4px;
-  transition: text-decoration-color 0.2s ease;
-}
-.hero-alt:hover span {
-  text-decoration-color: var(--color-ember);
 }
 /* the hands: a 1280×440 band, pinned low, then lifted to centre and zoomed into the touch */
 .hero-band {
@@ -622,8 +616,18 @@ html[data-js] [data-rv][data-in] {
 }
 
 /* ------------------------------------------------------------------ proof */
+/* the proof rides up over the end of the hero, so it is waiting the moment the paper blooms */
 .proof {
+  position: relative;
+  z-index: 1;
+  margin-top: -72vh;
   padding-block: clamp(56px, 8vw, 110px) clamp(24px, 4vw, 40px);
+}
+html[data-js][data-theme="dark"] .proof [data-rv][data-in] {
+  opacity: 0;
+  translate: 0 28px;
+  filter: blur(8px);
+  transition: none;
 }
 .proof-stats {
   display: grid;
@@ -652,16 +656,11 @@ html[data-js] [data-rv][data-in] {
   line-height: 0.9;
   letter-spacing: -0.04em;
 }
-.proof-stat dt {
-  display: grid;
-  gap: 2px;
-}
 .proof-what {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-weight: 700;
-}
-.proof-where {
-  font-size: 13.5px;
-  color: var(--fg-3);
 }
 /* the rolling tile: each value slides up and out, the next rises in */
 .roll-window {
@@ -671,7 +670,7 @@ html[data-js] [data-rv][data-in] {
 .roll-item {
   grid-area: 1 / 1;
   display: grid;
-  gap: 2px;
+  white-space: nowrap;
   transition:
     translate 0.8s var(--spring-bouncy),
     opacity 0.45s ease;
@@ -836,6 +835,10 @@ html[data-js] [data-rv][data-in] {
   gap: 18px;
 }
 .pkg-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 14px;
   max-width: 15ch;
   font-family: var(--font-display);
   font-weight: 800;
@@ -850,33 +853,8 @@ html[data-js] [data-rv][data-in] {
   color: var(--fg-2);
 }
 .pkg-buy {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px 24px;
-  width: 100%;
   margin-top: 10px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
 }
-.price {
-  display: grid;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(28px, 2.4vw, 36px);
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-.price span {
-  margin-top: 6px;
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 13.5px;
-  letter-spacing: 0;
-  color: var(--fg-3);
-}
-
 /* sprint: a 10-day gantt that fills itself in */
 .board {
   display: grid;
@@ -912,11 +890,9 @@ html[data-js] [data-rv][data-in] {
   border-top: 1px solid var(--line);
 }
 .board-text {
-  display: grid;
-  gap: 2px;
-  font-size: 13.5px;
-  line-height: 1.35;
-  color: var(--fg-2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .board-text strong {
   font-family: var(--font-display);
@@ -953,24 +929,6 @@ html[data-js] [data-rv][data-in] {
   transition: scale 0.9s cubic-bezier(0.6, 0, 0.2, 1);
   transition-delay: calc(0.25s + var(--k) * 0.55s);
 }
-.board-keep {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-  font-size: 14px;
-  font-weight: 500;
-}
-.board-keep li {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.board-keep svg {
-  color: var(--ember-text);
-}
-
 /* fractional: the pipeline, with a pulse running through it */
 .pipe {
   position: relative;
@@ -1229,58 +1187,192 @@ html[data-js] [data-rv][data-in] {
   }
 }
 
-/* workshop: fifteen seats light up one by one */
-.seats {
+/* info tips: detail on demand instead of on the page */
+.tip {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+.tip-btn {
   display: grid;
-  justify-items: center;
-  gap: 24px;
-  padding: clamp(24px, 3vw, 36px);
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin: -4px;
+  border-radius: 99px;
+  font-size: 15px;
+  color: var(--fg-3);
+  transition:
+    color 0.2s ease,
+    scale 0.8s var(--spring-jelly);
+}
+.tip-lg .tip-btn {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+}
+.tip-btn:hover,
+.tip[data-open] .tip-btn {
+  color: var(--ember-text);
+}
+.tip-pop {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  z-index: 20;
+  width: max-content;
+  max-width: min(300px, 80vw);
+  padding: 11px 14px;
+  border-radius: 14px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: left;
+  color: #f3f0ea;
+  background: rgb(22 22 24 / 0.94);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.1),
+    0 18px 40px -12px rgb(0 0 0 / 0.5);
+  translate: -50% 6px;
+  scale: 0.96;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    translate 0.5s var(--spring-bouncy),
+    scale 0.5s var(--spring-bouncy),
+    visibility 0s 0.2s;
+}
+.tip:hover .tip-pop,
+.tip:focus-within .tip-pop,
+.tip[data-open] .tip-pop {
+  translate: -50% 0;
+  scale: 1;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+@media (hover: none) {
+  .tip:hover:not([data-open]) .tip-pop {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* workshop: role playbooks, one task before and after */
+.plays {
+  display: grid;
+  gap: 18px;
+  padding: clamp(20px, 2.6vw, 32px);
   border-radius: 26px;
   background: rgb(255 255 255 / 0.03);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.07);
 }
-.seats-art {
-  width: 150px;
-  height: auto;
-  animation: float 6s ease-in-out infinite;
-}
-.seat-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 46px);
-  gap: 10px;
-}
-.seat-grid li {
-  display: grid;
-  place-items: center;
-  height: 46px;
-  border-radius: 15px;
-  font-size: 20px;
-  color: transparent;
+.plays-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
   background: rgb(255 255 255 / 0.05);
-  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08);
+  justify-self: start;
 }
-[data-live] .seat-grid li {
-  animation: seat-on 0.7s var(--spring-bouncy) both;
-  animation-delay: calc(0.4s + var(--s) * 0.11s);
+.plays-tab {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg-2);
 }
-@keyframes seat-on {
-  0% {
-    scale: 1;
-  }
-  40% {
-    scale: 0.8;
-  }
-  100% {
-    scale: 1;
-    color: #1a0b04;
-    background: linear-gradient(140deg, #ffb48a, #ff5b1f);
-    box-shadow: 0 8px 22px -8px rgb(255 91 31 / 0.8);
+.plays-tab[aria-selected="true"] {
+  background: #f3f0ea;
+  color: #0b0b0b;
+}
+.plays-panel {
+  display: grid;
+  gap: 16px;
+  animation: plays-in 0.6s var(--spring-bouncy);
+}
+@keyframes plays-in {
+  from {
+    opacity: 0;
+    translate: 0 8px;
   }
 }
-.seats figcaption {
+.plays-task {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(19px, 1.7vw, 24px);
+  letter-spacing: -0.02em;
+}
+.plays-eg {
+  padding: 3px 8px;
+  border-radius: 99px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.plays-row {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 6px 12px;
+  align-items: center;
+}
+.plays-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.plays-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 38px;
+  width: calc(var(--w) * 100%);
+  min-width: 76px;
+  padding: 0 12px;
+  border-radius: 11px;
+  font-weight: 700;
+  font-size: 14px;
+  transform-origin: 0 50%;
+  animation: bar-in 0.9s cubic-bezier(0.6, 0, 0.2, 1) both;
+}
+.plays-before .plays-bar {
+  background: rgb(255 255 255 / 0.1);
+}
+.plays-after .plays-bar {
+  color: #1a0b04;
+  background: linear-gradient(90deg, #ff5b1f, #ff8b52);
+  box-shadow: 0 8px 22px -8px rgb(255 91 31 / 0.8);
+  animation-delay: 0.25s;
+}
+@keyframes bar-in {
+  from {
+    scale: 0 1;
+  }
+}
+.plays-time {
+  white-space: nowrap;
+}
+.plays-how {
+  grid-column: 2;
+  font-size: 13.5px;
   color: var(--fg-3);
 }
 
@@ -1349,70 +1441,14 @@ html[data-js] .steps[data-in] .step-n {
 /* ------------------------------------------------------------------ about */
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.4fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr);
   gap: clamp(32px, 6vw, 96px);
   align-items: start;
 }
-.about-side {
+.about-grid .sec-head {
   position: sticky;
   top: 110px;
-}
-.portrait-wrap {
-  perspective: 900px;
-}
-.portrait {
-  --rx: 0deg;
-  --ry: 0deg;
-  position: relative;
-  aspect-ratio: 1;
-  border-radius: 34px;
-  overflow: hidden;
-  background:
-    radial-gradient(70% 60% at 22% 30%, rgb(255 91 31 / 0.18), transparent 70%),
-    radial-gradient(70% 60% at 85% 25%, rgb(168 210 255 / 0.14), transparent 70%),
-    radial-gradient(100% 90% at 50% 10%, #26272c, #070708 75%);
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.18),
-    inset 0 0 0 1px rgb(255 255 255 / 0.06),
-    0 50px 90px -50px rgb(13 14 17 / 0.8);
-  transform: rotateX(var(--rx)) rotateY(var(--ry));
-  transition: transform 1s var(--spring-bouncy);
-}
-.portrait[data-hover] {
-  transition-duration: 0.25s;
-  transition-timing-function: ease-out;
-}
-.portrait img {
-  position: absolute;
-  inset: 4% 0 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 0;
-  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 99%);
-  mask-image: linear-gradient(to bottom, #000 80%, transparent 99%);
-}
-.portrait-sheen {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at var(--sx, 30%) var(--sy, 0%), rgb(255 255 255 / 0.22), transparent 42%);
-  mix-blend-mode: screen;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-.portrait[data-hover] .portrait-sheen {
-  opacity: 1;
-}
-.portrait-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 16px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--fg-3);
+  margin: 0;
 }
 .about .sec-head .lede {
   max-width: 54ch;
@@ -1557,8 +1593,20 @@ html[data-js] .steps[data-in] .step-n {
   letter-spacing: -0.02em;
 }
 .post-dek {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
   color: var(--fg-2);
   font-size: 15px;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.5s var(--spring-soft),
+    opacity 0.3s ease;
+}
+.post:hover .post-dek,
+.post:focus-visible .post-dek {
+  grid-template-rows: 1fr;
+  opacity: 1;
 }
 .post-arrow {
   font-size: 22px;
@@ -1847,12 +1895,9 @@ html[data-js] .steps[data-in] .step-n {
   .notes-grid {
     grid-template-columns: minmax(0, 1fr);
   }
-  .about-side,
+  .about-grid .sec-head,
   .notes-head {
     position: static;
-  }
-  .about-side {
-    max-width: 380px;
   }
   .rec-float {
     display: none;
@@ -1872,7 +1917,7 @@ html[data-js] .steps[data-in] .step-n {
     height: 28px;
   }
   .hero {
-    height: 280vh;
+    height: 230vh;
   }
   .hero-copy {
     gap: 14px;
@@ -1882,7 +1927,12 @@ html[data-js] .steps[data-in] .step-n {
     font-size: clamp(38px, 11.4vw, 56px);
   }
   .hero-sub {
+    flex-direction: column;
+    align-items: center;
     font-size: 15.5px;
+  }
+  .hero-sub li + li::before {
+    content: none;
   }
   .hero-ctas {
     flex-direction: column;
@@ -1908,9 +1958,6 @@ html[data-js] .steps[data-in] .step-n {
   }
   .proof-n {
     font-size: clamp(34px, 10vw, 44px);
-  }
-  .proof-where {
-    font-size: 12.5px;
   }
   .roll-dots {
     top: 18px;
@@ -1982,14 +2029,6 @@ html[data-js] .steps[data-in] .step-n {
   .phone-screen {
     min-height: 430px;
   }
-  .seat-grid {
-    grid-template-columns: repeat(5, 40px);
-    gap: 8px;
-  }
-  .seat-grid li {
-    height: 40px;
-    border-radius: 13px;
-  }
   .steps {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
@@ -2028,6 +2067,9 @@ html[data-js] .steps[data-in] .step-n {
   }
   .post-year {
     grid-column: 1 / -1;
+  }
+  .post-dek {
+    display: none;
   }
   .contact-actions {
     flex-direction: column;
@@ -2085,6 +2127,9 @@ html[data-js] .steps[data-in] .step-n {
   .hero-pin {
     position: relative;
   }
+  .proof {
+    margin-top: 0;
+  }
   html[data-js] [data-rv],
   html[data-js] .steps .step-n {
     opacity: 1 !important;
@@ -2099,7 +2144,6 @@ html[data-js] .steps[data-in] .step-n {
   .hero-hint,
   .marquee-track ul,
   .pipe-art,
-  .seats-art,
   .notes-art img,
   .flow li,
   .flow-dot,
@@ -2116,9 +2160,9 @@ html[data-js] .steps[data-in] .step-n {
   .pkg {
     scale: none;
   }
-  [data-live] .seat-grid li {
-    animation-duration: 0.01s;
-    animation-delay: 0s;
+  .plays-panel,
+  .plays-bar {
+    animation: none !important;
   }
 }
 @media (prefers-reduced-transparency: reduce) {

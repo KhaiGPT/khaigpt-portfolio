@@ -37,7 +37,16 @@ export const metadata: Metadata = {
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
-  keywords: ["mobile app growth consultant", "app growth sprint", "fractional growth", "paywall optimization", "app store optimization", "user acquisition", "AI for local businesses", "Khai Huynh", "KhaiGPT"],
+  keywords: [
+    "mobile app growth consultant",
+    "app growth sprint",
+    "fractional growth lead",
+    "AI receptionist for local businesses",
+    "practical AI training",
+    "AI training for marketers",
+    "Khai Huynh",
+    "KhaiGPT",
+  ],
   openGraph: {
     type: "website",
     url: "/",
@@ -66,9 +75,8 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 }
 
-
 /** without JS the scroll-scrubbed hero would be a long black runway */
-const noscriptCss = `.hero{height:auto!important}.hero-pin{position:relative!important}`
+const noscriptCss = `.hero{height:auto!important}.hero-pin{position:relative!important}.proof{margin-top:0!important}`
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

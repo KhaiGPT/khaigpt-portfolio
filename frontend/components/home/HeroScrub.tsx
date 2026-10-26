@@ -42,9 +42,12 @@ export function HeroScrub({ copy, alt }: { copy: ReactNode; alt: string }) {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches
     const set = matchMedia(MOBILE_MQ).matches ? "m" : "d"
     const frames: (HTMLImageElement | null)[] = Array(FRAMES).fill(null)
-    let want = 0
+    let want = 0 // fractional frame index
     let drawn = -1
     let raf = 0
+    let target = 0 // scroll progress
+    let cur = 0 // eased progress the visuals follow, for a little inertia
+    let last = 0
 
     const nearest = (i: number) => {
       for (let d = 0; d < FRAMES; d++) {
@@ -53,11 +56,25 @@ export function HeroScrub({ copy, alt }: { copy: ReactNode; alt: string }) {
       }
       return -1
     }
+    // blend the two frames either side of the exact position, so 66 frames scrub like a real video
     const draw = () => {
-      const j = nearest(want)
-      if (j < 0 || j === drawn || !ctx) return
-      ctx.drawImage(frames[j]!, 0, 0, cv.width, cv.height)
-      drawn = j
+      if (!ctx) return
+      const lo = Math.floor(want)
+      const t = want - lo
+      const a = frames[lo]
+      const b = frames[Math.min(FRAMES - 1, lo + 1)]
+      const key = a && b ? Math.round(want * 16) / 16 : nearest(Math.round(want))
+      if (key < 0 || key === drawn) return
+      ctx.globalAlpha = 1
+      if (a && b) {
+        ctx.drawImage(a, 0, 0, cv.width, cv.height)
+        if (t > 0.03) {
+          ctx.globalAlpha = t
+          ctx.drawImage(b, 0, 0, cv.width, cv.height)
+          ctx.globalAlpha = 1
+        }
+      } else ctx.drawImage(frames[key]!, 0, 0, cv.width, cv.height)
+      drawn = key
       cv.dataset.on = ""
     }
     const size = () => {
@@ -72,29 +89,43 @@ export function HeroScrub({ copy, alt }: { copy: ReactNode; alt: string }) {
       drawn = -1
       draw()
     }
-    const update = () => {
-      raf = 0
-      const r = el.getBoundingClientRect()
-      const total = el.offsetHeight - innerHeight
-      const p = reduced || total <= 0 ? 0 : clamp01(-r.top / total)
+    const render = (p: number) => {
       const s = pinEl.style
-      s.setProperty("--copy", (1 - span(p, 0, 0.14)).toFixed(3))
-      s.setProperty("--zoom", (1 + 0.42 * span(p, 0.02, 0.72)).toFixed(4))
-      s.setProperty("--rise", span(p, 0.02, 0.5).toFixed(4))
-      s.setProperty("--flash", (span(p, 0.64, 0.74) * (1 - span(p, 0.8, 0.9))).toFixed(3))
-      s.setProperty("--bloom", span(p, 0.72, 0.94).toFixed(4))
-      pinEl.toggleAttribute("data-quiet", p > 0.08)
-      el.toggleAttribute("data-dark", p < 0.84)
+      s.setProperty("--copy", (1 - span(p, 0, 0.12)).toFixed(3))
+      s.setProperty("--zoom", (1 + 0.42 * span(p, 0.02, 0.62)).toFixed(4))
+      s.setProperty("--rise", span(p, 0.02, 0.42).toFixed(4))
+      s.setProperty("--flash", (span(p, 0.55, 0.64) * (1 - span(p, 0.7, 0.8))).toFixed(3))
+      s.setProperty("--bloom", span(p, 0.62, 0.82).toFixed(4))
+      pinEl.toggleAttribute("data-quiet", p > 0.07)
+      el.toggleAttribute("data-dark", p < 0.74)
       syncTheme()
-      want = Math.round(span(p, 0.03, 0.7) * (FRAMES - 1))
+      want = span(p, 0.02, 0.6) * (FRAMES - 1)
       draw()
     }
+    const measure = () => {
+      const total = el.offsetHeight - innerHeight
+      target = reduced || total <= 0 ? 0 : clamp01(-el.getBoundingClientRect().top / total)
+    }
+    // ease toward the scroll position (time-based, so it feels the same at 60 and 120 Hz)
+    const tick = (now: number) => {
+      raf = 0
+      const dt = Math.min(64, now - (last || now))
+      last = now
+      cur += (target - cur) * (1 - Math.exp(-dt / 70))
+      if (Math.abs(target - cur) < 0.0004) cur = target
+      render(cur)
+      if (cur !== target) raf = requestAnimationFrame(tick)
+      else last = 0
+    }
     const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update)
+      measure()
+      if (!raf) raf = requestAnimationFrame(tick)
     }
 
     size()
-    update()
+    measure()
+    cur = target
+    render(cur)
     addEventListener("scroll", onScroll, { passive: true })
     addEventListener("resize", size)
 

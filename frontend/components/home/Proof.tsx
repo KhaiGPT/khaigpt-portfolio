@@ -1,3 +1,4 @@
+import { InfoTip } from "@/components/ui/InfoTip"
 import { proof } from "@/content/home"
 import { CountUp } from "./CountUp"
 import { MetricRoll } from "./MetricRoll"
@@ -5,14 +6,14 @@ import { MetricRoll } from "./MetricRoll"
 export function Proof() {
   return (
     <section className="proof wrap" aria-label="Results" data-testid="proof">
-      <dl className="proof-stats spot-group">
+      <dl className="proof-stats">
         {proof.stats.map((s, i) => (
           <div key={s.what} className="proof-stat spot" data-rv style={{ "--i": i } as React.CSSProperties}>
-            <dt>
-              <span className="proof-what">{s.what}</span>
-              <span className="proof-where">{s.where}</span>
+            <dt className="proof-what">
+              {s.what}
+              <InfoTip text={s.info} label={`About “${s.what}”`} />
             </dt>
-            <dd className="proof-n">{s.label ?? <CountUp value={s.value} decimals={s.decimals} prefix={s.prefix} suffix={s.suffix} />}</dd>
+            <dd className="proof-n">{s.label ?? <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} />}</dd>
           </div>
         ))}
         <MetricRoll metrics={proof.metrics} />
