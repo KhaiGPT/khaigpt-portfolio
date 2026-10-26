@@ -8,7 +8,7 @@ Rebuild Khai Huynh's personal portfolio: super clean, minimalist, design-forward
 - Deck: fixed-viewport chapters (`components/deck/*`) — hello, about, work, writing, ask, hi. Wheel/keys/swipe/pager/reply-chip navigation, hash deep links (`/#work`).
 - Stage: raw WebGL2 liquid-chrome renderer (`components/stage/*`) behind the DOM; boots after window load + idle; static `<img>` art is the SSR/no-WebGL fallback and the layout anchor.
 - Content: static TS maps in `content/*` (site, art + alt text, chapters, work, writing, faq).
-- SEO: page-level metadata (canonical, robots), OG/Twitter, JSON-LD Person (`lib/jsonld.ts`), `robots.ts`, `sitemap.ts`, `manifest.ts`. Canonical domain: https://khaihuynh.app (Cloudflare DNS → Vercel) (`content/site.ts`).
+- SEO: page-level metadata (canonical, robots), OG/Twitter, JSON-LD Person (`lib/jsonld.ts`), `robots.ts`, `sitemap.ts`, `manifest.ts`. Canonical domain: https://khaihuynh.app. Hosting: Cloudflare Workers static assets — `output: "export"` builds to `frontend/out/`, `frontend/wrangler.jsonc` serves it, `public/_headers` sets caching. Local check: `npx wrangler dev` in frontend/. (`content/site.ts`).
 - Backend: unused stub.
 - Perf tool: `/app/scripts/perf_check.py <url>` (headless Chrome CDP: FCP/LCP/CLS/load on desktop, slow-4G and 4G mobile).
 
