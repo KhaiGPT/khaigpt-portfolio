@@ -92,7 +92,7 @@ export function HeroScrub({ copy, alt }: { copy: ReactNode; alt: string }) {
     const render = (p: number) => {
       const s = pinEl.style
       s.setProperty("--copy", (1 - span(p, 0, 0.12)).toFixed(3))
-      s.setProperty("--zoom", (1 + 0.42 * span(p, 0.02, 0.62)).toFixed(4))
+      s.setProperty("--zoom-t", span(p, 0.02, 0.62).toFixed(4))
       s.setProperty("--rise", span(p, 0.02, 0.42).toFixed(4))
       s.setProperty("--flash", (span(p, 0.55, 0.64) * (1 - span(p, 0.7, 0.8))).toFixed(3))
       s.setProperty("--bloom", span(p, 0.62, 0.82).toFixed(4))

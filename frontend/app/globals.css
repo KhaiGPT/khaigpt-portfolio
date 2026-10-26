@@ -372,7 +372,9 @@ html.lg-refract .glass {
 }
 .hero-pin {
   --copy: 1;
-  --zoom: 1;
+  --zoom-t: 0;
+  /* how far the camera pushes in by the touch: a lot on wide screens, a little on phones so both hands stay in frame */
+  --zoom-amt: 0.42;
   --rise: 0;
   --flash: 0;
   --bloom: 0;
@@ -452,7 +454,7 @@ html.lg-refract .glass {
   margin-left: calc(min(100vw, 52svh * 2.909) * -0.48);
   transform-origin: 48% 50%;
   translate: 0 calc(var(--rise) * var(--lift));
-  scale: var(--zoom);
+  scale: calc(1 + var(--zoom-amt) * var(--zoom-t));
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
 }
@@ -1910,9 +1912,12 @@ html[data-js] .steps[data-in] .step-n {
     width: 100%;
     max-width: 360px;
   }
+  .hero-pin {
+    --zoom-amt: 0.14;
+  }
   .hero-band {
-    width: 170vw;
-    margin-left: -81.6vw;
+    width: 125vw;
+    margin-left: -60vw;
     bottom: max(10px, 3svh);
     -webkit-mask-image: none;
     mask-image: none;
