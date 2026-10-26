@@ -1,3 +1,4 @@
+import { Analytics } from "@/components/chrome/Analytics"
 import { Dock } from "@/components/chrome/Dock"
 import { GlassFilter } from "@/components/chrome/GlassFilter"
 import { Reveals } from "@/components/chrome/Reveals"
@@ -40,6 +41,7 @@ export default function Home() {
       <Dock />
       <Reveals />
       <GlassFilter />
+      <Analytics />
     </>
   )
 }
