@@ -934,8 +934,13 @@ html[data-js][data-theme="dark"] .proof [data-rv][data-in] {
   position: relative;
   padding: clamp(24px, 3vw, 38px);
   border-radius: 26px;
-  background: rgb(255 255 255 / 0.03);
-  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.07);
+  background:
+    radial-gradient(90% 80% at 100% 0%, rgb(255 91 31 / 0.1), transparent 55%),
+    radial-gradient(120% 100% at 100% 0%, #1b1c21 0%, #070708 62%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.12),
+    inset 0 0 0 1px rgb(255 255 255 / 0.06),
+    0 30px 60px -36px rgb(13 14 17 / 0.6);
   overflow: hidden;
 }
 .pipe-art {
@@ -1046,145 +1051,75 @@ html[data-js][data-theme="dark"] .proof [data-rv][data-in] {
   }
 }
 
-/* local: a phone that plays the rescue */
-.phone {
-  justify-self: center;
-  width: min(100%, 330px);
-  padding: 11px;
-  border-radius: 50px;
-  background: linear-gradient(145deg, #45474e, #111215 34%, #2c2e33 70%, #0d0e10);
-  box-shadow:
-    inset 0 1px 1px rgb(255 255 255 / 0.35),
-    inset 0 -1px 1px rgb(0 0 0 / 0.6),
-    0 50px 90px -40px rgb(13 14 17 / 0.75),
-    0 0 0 1px rgb(13 14 17 / 0.2);
-  rotate: -2deg;
-  transition: rotate 1s var(--spring-bouncy);
+/* fractional: a funnel that widens week by week */
+.funnel {
+  display: grid;
+  gap: 18px;
+  padding: clamp(20px, 2.6vw, 32px);
+  border-radius: 26px;
+  background: rgb(255 255 255 / 0.03);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.07);
 }
-.pkg:hover .phone {
-  rotate: 0deg;
+.funnel-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(17px, 1.5vw, 21px);
+  letter-spacing: -0.02em;
 }
-.phone-screen {
+.funnel ol {
+  display: grid;
+  gap: 12px;
+}
+.funnel-row {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) 92px;
+  gap: 14px;
+  align-items: center;
+}
+.funnel-label {
+  font-size: 14px;
+  color: var(--fg-2);
+}
+.funnel-track {
   position: relative;
+  height: 34px;
+  border-radius: 10px;
+  background: rgb(255 255 255 / 0.04);
+}
+.funnel-bar,
+.funnel-ghost {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 10px;
+}
+.funnel-bar {
+  width: calc(var(--a) * 100%);
+  background: linear-gradient(90deg, #ff5b1f, #ff8b52);
+  box-shadow: 0 8px 22px -8px rgb(255 91 31 / 0.8);
+}
+.funnel-ghost {
+  width: calc(var(--a) * 100%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.35);
+  background: rgb(255 255 255 / 0.06);
+}
+[data-live] .funnel-bar {
+  width: calc(var(--b) * 100%);
+  transition: width 1.4s cubic-bezier(0.6, 0, 0.2, 1);
+  transition-delay: calc(0.4s + var(--k) * 0.25s);
+}
+.funnel-n {
   display: flex;
-  flex-direction: column;
-  min-height: 470px;
-  padding: 16px 12px 16px;
-  border-radius: 40px;
-  background:
-    radial-gradient(120% 60% at 50% 0%, #17181c, transparent 60%),
-    #0a0a0c;
-  color: #f3f0ea;
-  overflow: hidden;
-}
-.phone-island {
-  align-self: center;
-  width: 96px;
-  height: 28px;
-  border-radius: 20px;
-  background: #000;
-}
-.phone-head {
-  display: grid;
-  justify-items: center;
-  gap: 4px;
-  padding: 10px 0 12px;
-  font-size: 11.5px;
-  color: #8f939b;
-  border-bottom: 1px solid rgb(255 255 255 / 0.06);
-}
-.phone-avatar {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 99px;
-  font-weight: 700;
-  font-size: 13px;
-  color: #0b0b0b;
-  background: linear-gradient(140deg, #ffb48a, #ff5b1f);
-}
-.phone-msgs {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   justify-content: flex-end;
-  gap: 7px;
-  padding-top: 12px;
+  gap: 8px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
-.msg {
-  max-width: 82%;
-  padding: 9px 14px;
-  border-radius: 20px;
-  font-size: 14.5px;
-  line-height: 1.35;
-}
-.msg:not([data-on]) {
-  display: none;
-}
-.msg[data-on] {
-  animation: msg-in 0.6s var(--spring-bouncy) both;
-}
-@keyframes msg-in {
-  from {
-    opacity: 0;
-    translate: 0 12px;
-    scale: 0.88;
-  }
-}
-.msg-ai {
-  align-self: flex-start;
-  background: #26272c;
-  border-bottom-left-radius: 6px;
-  transform-origin: 0 100%;
-}
-.msg-them {
-  align-self: flex-end;
-  background: #0a84ff;
-  color: #fff;
-  border-bottom-right-radius: 6px;
-  transform-origin: 100% 100%;
-}
-.msg-sys {
-  align-self: center;
-  max-width: none;
-  padding: 3px 10px;
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.04em;
-  color: #7d818a;
-}
-.msg-sys:last-of-type {
-  margin-top: 6px;
-  padding: 7px 12px;
-  border-radius: 999px;
-  color: #3ddc84;
-  background: rgb(61 220 132 / 0.1);
-}
-.msg-typing {
-  display: flex;
-  gap: 4px;
-  padding: 13px 14px;
-}
-.msg-typing i {
-  width: 7px;
-  height: 7px;
-  border-radius: 9px;
-  background: currentColor;
-  opacity: 0.5;
-  animation: typing 1s ease-in-out infinite;
-}
-.msg-typing i:nth-child(2) {
-  animation-delay: 0.15s;
-}
-.msg-typing i:nth-child(3) {
-  animation-delay: 0.3s;
-}
-@keyframes typing {
-  30% {
-    translate: 0 -4px;
-    opacity: 1;
-  }
+.funnel-n s {
+  font-weight: 400;
+  color: var(--fg-3);
 }
 
 /* info tips: detail on demand instead of on the page */
@@ -2018,16 +1953,17 @@ html[data-js] .steps[data-in] .step-n {
   .flow {
     max-width: none;
   }
+  .funnel-row {
+    grid-template-columns: 74px minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+  .funnel-label {
+    font-size: 13px;
+  }
   .pipe-art {
     width: 42%;
     right: -12%;
     opacity: 0.5;
-  }
-  .phone {
-    rotate: 0deg;
-  }
-  .phone-screen {
-    min-height: 430px;
   }
   .steps {
     grid-template-columns: minmax(0, 1fr);
@@ -2147,10 +2083,11 @@ html[data-js] .steps[data-in] .step-n {
   .notes-art img,
   .flow li,
   .flow-dot,
-  .flow-pulse,
-  .msg,
-  .msg-typing i {
+  .flow-pulse {
     animation: none !important;
+  }
+  [data-live] .funnel-bar {
+    transition: none;
   }
   [data-live] .board-bar::after,
   .steps::before {

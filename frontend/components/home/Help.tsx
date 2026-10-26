@@ -5,7 +5,6 @@ import { fractional, help, local, sprint, workshop, type Package } from "@/conte
 import { site } from "@/content/site"
 import { cn } from "@/lib/utils"
 import type { ReactNode } from "react"
-import { PhoneThread } from "./PhoneThread"
 import { Playbooks } from "./Playbooks"
 import { StackFx } from "./StackFx"
 
@@ -32,8 +31,8 @@ export function Help() {
         </nav>
         <div className="stack">
           <Card p={sprint} i={0} visual={<SprintBoard />} />
-          <Card p={fractional} i={1} visual={<Pipeline />} />
-          <Card p={local} i={2} visual={<PhoneThread thread={local.thread} />} />
+          <Card p={fractional} i={1} visual={<Funnel />} />
+          <Card p={local} i={2} visual={<Pipeline steps={local.pipeline} />} />
           <Card p={workshop} i={3} visual={<Playbooks playbooks={workshop.playbooks} />} />
         </div>
       </div>
@@ -110,15 +109,43 @@ function SprintBoard() {
   )
 }
 
+/** Week after week the funnel widens: each bar grows from where it started (the ghost line) to where tests took it. */
+function Funnel() {
+  const w = (v: number) => Math.sqrt(v / 100) // root scale, so the small paid step is still visible
+  return (
+    <figure className="funnel" aria-label="Example funnel, before and after a few months of weekly tests">
+      <p className="funnel-head">
+        <span className="plays-eg">Example</span>
+        Your funnel, week 1 → week 12
+      </p>
+      <ol>
+        {fractional.funnel.map((st, k) => (
+          <li key={st.label} className="funnel-row" style={{ "--a": w(st.from), "--b": w(st.to), "--k": k } as React.CSSProperties}>
+            <span className="funnel-label">{st.label}</span>
+            <span className="funnel-track" aria-hidden>
+              <span className="funnel-ghost" />
+              <span className="funnel-bar" />
+            </span>
+            <span className="funnel-n">
+              {st.from !== st.to && <s>{st.from}%</s>}
+              {st.to}%
+            </span>
+          </li>
+        ))}
+      </ol>
+    </figure>
+  )
+}
+
 /** The automation loop: a pulse runs the pipeline and lights each stage as it passes. */
-function Pipeline() {
-  const n = fractional.pipeline.length
+function Pipeline({ steps }: { steps: string[] }) {
+  const n = steps.length
   return (
     <figure className="pipe" aria-label="The automation I build and run">
       <img className="pipe-art" src={art.magnet.src} width={art.magnet.w} height={art.magnet.h} alt="" loading="lazy" decoding="async" />
       <ol className="flow" style={{ "--n": n } as React.CSSProperties}>
         <span className="flow-pulse" aria-hidden />
-        {fractional.pipeline.map((step, i) => (
+        {steps.map((step, i) => (
           <li key={step} style={{ "--i": i } as React.CSSProperties}>
             <span className="flow-dot" aria-hidden />
             {step}

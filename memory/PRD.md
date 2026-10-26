@@ -51,6 +51,8 @@ Rebuild Khai Huynh's personal portfolio: super clean, minimalist, design-forward
   - AI training reframed for mid-career marketers/ops/growth people: role playbook switcher with before/after bars (`Playbooks.tsx`, times labelled "Example").
   - Portrait removed at Khai's request (photo + script deleted). Indie apps dated 2025 — now.
 
+- 2026-10 (session 4d): proof = 5M+ users, $40M+ revenue, $100K ARR solo-built + roller (SEA expansion, churn, activation, ROAS, sales), no info tips there; grown-with adds Project SEED, Ancient8, Menlo AI. Sprint + Part-time Growth Lead now cover pre-launch (market research, product audit, growth model). Card 02 visual = example funnel widening week 1 → 12; card 03 = "AI Automation" for local businesses using the pipeline (lead capture, content system, CRM update, instant follow-up, booking, reporting). About: indie apps above Independent, $100K ARR, new subtitle.
+
 ## Waiting on the user
 - Final live URL (canonical) and Google Analytics ID.
 - Testimonials once the first clients finish.

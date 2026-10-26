@@ -24,24 +24,24 @@ export const hero = {
   imageAlt: "Two liquid-chrome hands reaching for each other across a black void, fingertips about to touch",
 }
 
-/** value counts up from 0; label renders as-is */
-export type Stat = { value: number; prefix?: string; suffix?: string; label?: string; what: string; info: string }
+/** value counts up from 0 */
+export type Stat = { value: number; prefix?: string; suffix?: string; what: string }
 
 export const proof = {
   stats: <Stat[]>[
-    { value: 1, suffix: "M+", what: "users grown", info: "Across the consumer apps and games I’ve grown, incl. ~1M players at Sipher." },
-    { value: 0, label: "SEA", what: "market expansion", info: "Vietnam and Cambodia with BetterU; #1 free game in key SEA markets with Sipher." },
-    { value: 6, prefix: "$", suffix: "K", what: "MRR, solo-built", info: "A consumer AI app I built and grew on my own." },
+    { value: 5, suffix: "M+", what: "users grown" },
+    { value: 40, prefix: "$", suffix: "M+", what: "revenue" },
+    { value: 100, prefix: "$", suffix: "K", what: "ARR, solo-built" },
   ],
   /** the fourth tile rolls through these */
   metrics: [
-    { n: "−40%", what: "churn", info: "Cohort churn at Promer AI" },
-    { n: "+30%", what: "activation", info: "At Promer AI" },
-    { n: "$1.1M", what: "new revenue", info: "Incremental revenue at Promer AI, at 2.5:1 LTV:CAC" },
-    { n: "2.1x", what: "ROAS", info: "On ~$150K/month of ads at Sipher" },
-    { n: "+45%", what: "online sales", info: "For a retail client at McKinsey" },
+    { n: "SEA", what: "market expansion" },
+    { n: "−40%", what: "churn" },
+    { n: "+30%", what: "activation" },
+    { n: "2.1x", what: "ROAS" },
+    { n: "+45%", what: "online sales" },
   ],
-  names: ["McKinsey & Company", "Sipher", "Promer AI", "Delysium", "The Scourge", "Firegroup", "Nakame"],
+  names: ["McKinsey & Company", "Sipher", "Promer AI", "Project SEED", "Ancient8", "Menlo AI", "Delysium", "The Scourge", "Firegroup", "Nakame"],
 }
 
 export const help = {
@@ -66,51 +66,50 @@ export type Package = {
 export const sprint = {
   id: "sprint",
   tone: "light",
-  kicker: "For mobile apps",
+  kicker: "For mobile apps, pre-launch or live",
   title: "Growth Sprint",
-  body: "I find where your app loses users and revenue, then launch the first fixes.",
+  body: "I research your market, audit your product and funnel, and hand you a growth plan with the first tests running.",
   facts: ["7–10 days", "Fixed scope"],
-  info: "Best for live apps with subscriptions or in-app purchases. You keep: a ranked fix list, a clean tracking plan, a test backlog and creative briefs.",
+  info: "Pre-launch: market research, positioning, a growth model and a launch plan. Live: tracking check, store/onboarding/paywall audit, and 3–5 tests. You keep every doc.",
   cta: "Book a free call",
   phases: [
-    { from: 1, to: 2, title: "Check tracking", info: "Make sure your MMP, SKAN, events and revenue numbers agree." },
-    { from: 3, to: 5, title: "Find the leaks", info: "Store page, onboarding and paywall, screen by screen." },
-    { from: 6, to: 7, title: "Plan the ads", info: "Which channels to spend on, and which creatives to test." },
-    { from: 8, to: 10, title: "Launch tests", info: "3–5 experiments live, each with a clear success metric." },
+    { from: 1, to: 2, title: "Market research", info: "Competitors, audience and what they pay for — or, for live apps, a check that your tracking and revenue data agree." },
+    { from: 3, to: 5, title: "Product audit", info: "Store page, onboarding, paywall and the core loop, screen by screen." },
+    { from: 6, to: 7, title: "Growth model", info: "Where users come from, what they’re worth, and which channels to bet on." },
+    { from: 8, to: 10, title: "Launch tests", info: "3–5 experiments or launch steps live, each with a clear success metric." },
   ],
 } satisfies Package & Record<string, unknown>
+
+export type Step = { label: string; from: number; to: number }
 
 export const fractional = {
   id: "fractional",
   tone: "dark",
-  kicker: "For mobile apps, ongoing",
+  kicker: "For mobile apps, pre-launch to scale",
   title: "Part-time Growth Lead",
-  body: "I join your team a few hours a week to run tests, ads and automation.",
+  body: "I join your team a few hours a week to plan, launch and grow your app.",
   facts: ["5–10 hrs / week", "Monthly"],
-  info: "Usually after a Growth Sprint. A 30-min sync each week, new tests every week, and the automation on the right — built and kept running.",
+  info: "Pre-launch: market research, positioning, growth model and launch plan. After launch: weekly tests, ads, onboarding and paywall work, lifecycle and reporting.",
   cta: "Book a free call",
-  pipeline: ["Lead capture", "Qualify", "CRM update", "Instant follow-up", "Booking", "Lifecycle triggers", "Reporting"],
+  /** an example funnel, before and after a few months of weekly tests (share of visitors left at each step) */
+  funnel: <Step[]>[
+    { label: "Store visits", from: 100, to: 100 },
+    { label: "Installs", from: 28, to: 41 },
+    { label: "Trials", from: 9, to: 16 },
+    { label: "Paid", from: 2.4, to: 5.1 },
+  ],
 } satisfies Package & Record<string, unknown>
-
-export type Msg = { from: "them" | "ai" | "sys"; text: string }
 
 export const local = {
   id: "local",
   tone: "light",
   kicker: "For local service businesses",
-  title: "AI Receptionist",
-  body: "Answers missed calls and texts, books the job, and follows up. Day and night.",
+  title: "AI Automation",
+  body: "AI that captures every lead, follows up in seconds, books the job and keeps your CRM up to date.",
   facts: ["HVAC", "Dental", "Roofing", "Medspa", "Restaurants"],
-  info: "Works with the phone line, calendar and CRM you already use. Start with a free check: I contact your business like a customer and show you where leads slip.",
-  cta: "Get a free missed-call check",
-  thread: [
-    { from: "sys", text: "Missed call · 9:42 PM" },
-    { from: "ai", text: "Hi, it’s Northside Heating — sorry we missed you! What’s going on?" },
-    { from: "them", text: "AC stopped blowing cold" },
-    { from: "ai", text: "On it. A tech can come tomorrow 8–10am or 1–3pm. Which works?" },
-    { from: "them", text: "8–10 please" },
-    { from: "sys", text: "Booked · added to CRM · tech notified" },
-  ] satisfies Msg[],
+  info: "Built on the phone line, calendar and CRM you already use. Start with a free check: I contact your business like a customer and show you where leads slip.",
+  cta: "Get a free lead check",
+  pipeline: ["Lead capture", "Content system", "CRM update", "Instant follow-up", "Booking", "Reporting"],
 } satisfies Package & Record<string, unknown>
 
 export type Playbook = { id: string; role: string; task: string; before: { time: string; mins: number; how: string }; after: { time: string; mins: number; how: string } }
@@ -160,13 +159,13 @@ export type Role = { years: string; company: string; role: string; result: strin
 export const about = {
   kicker: "About",
   hello: "Hi, I’m Khai.",
-  body: "10+ years in growth. Ex-McKinsey, two-time founder. I still build my own apps, so I test ideas with my own money first.",
+  body: "10+ years in Growth and GTM. Ex-McKinsey and VC-backed founder. Now solo building apps and sharing what I learn.",
 }
 
 export const record: Role[] = [
   { years: "2025 — now", company: "Promer AI · Firegroup", role: "Head of Growth Marketing", result: "$1.1M new revenue, −40% churn, +30% activation", art: "magnet" },
+  { years: "2025 — now", company: "Indie apps · RepTime", role: "Solo builder", result: "AI consumer apps to $100K ARR. Now building RepTime.", art: "reptime" },
   { years: "2023 — now", company: "Independent", role: "Product & Growth Advisor", result: "The Scourge: $1M+ sales · Delysium: 47K concurrent users", art: "compass" },
-  { years: "2025 — now", company: "Indie apps · RepTime", role: "Solo builder", result: "AI consumer app to $6K MRR. Now building RepTime.", art: "reptime" },
   { years: "2024 — 2025", company: "Nakame", role: "Founder", result: "AI companion app, 20K users, 15M organic views", art: "dice" },
   { years: "2021 — 2023", company: "Sipher", role: "Head of Marketing", result: "~1M players, 2.1x ROAS on ~$150K/mo ads", art: "joystick" },
   { years: "2018 — 2019", company: "McKinsey & Company", role: "Associate Consultant", result: "Retail clients: online sales +45%, LTV +20%", art: "knight" },
@@ -190,8 +189,8 @@ export const faqs: Faq[] = [
   },
   {
     id: "fit",
-    q: "Is my app a good fit?",
-    a: "Best fit: a live app with real users and subscriptions or in-app purchases. Not live yet? Book anyway — I’ll tell you honestly if it’s too early.",
+    q: "My app isn’t live yet. Can you help?",
+    a: "Yes. Before launch I cover market research, product audit, positioning and a growth model, so you launch with a plan instead of a guess.",
   },
   {
     id: "need",
@@ -206,7 +205,7 @@ export const faqs: Faq[] = [
   {
     id: "local",
     q: "I run a local business. Do I need to be technical?",
-    a: "No. I set it up on the tools you already use, train your team, and keep an eye on it.",
+    a: "No. I connect the tools you already use, train your team, and keep an eye on it.",
   },
   {
     id: "tz",
