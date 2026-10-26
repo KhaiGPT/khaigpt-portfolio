@@ -8,7 +8,7 @@ Rebuild Khai Huynh's personal portfolio: super clean, minimalist, design-forward
 - Deck: fixed-viewport chapters (`components/deck/*`) — hello, about, work, writing, ask, hi. Wheel/keys/swipe/pager/reply-chip navigation, hash deep links (`/#work`).
 - Stage: raw WebGL2 liquid-chrome renderer (`components/stage/*`) behind the DOM; boots after window load + idle; static `<img>` art is the SSR/no-WebGL fallback and the layout anchor.
 - Content: static TS maps in `content/*` (site, art + alt text, chapters, work, writing, faq).
-- SEO: page-level metadata (canonical, robots), OG/Twitter, JSON-LD Person (`lib/jsonld.ts`), `robots.ts`, `sitemap.ts`, `manifest.ts`. Canonical domain: https://khaigpt.vercel.app (`content/site.ts`).
+- SEO: page-level metadata (canonical, robots), OG/Twitter, JSON-LD Person (`lib/jsonld.ts`), `robots.ts`, `sitemap.ts`, `manifest.ts`. Canonical domain: https://khaihuynh.app (Cloudflare DNS → Vercel) (`content/site.ts`).
 - Backend: unused stub.
 - Perf tool: `/app/scripts/perf_check.py <url>` (headless Chrome CDP: FCP/LCP/CLS/load on desktop, slow-4G and 4G mobile).
 
@@ -58,6 +58,6 @@ Rebuild Khai Huynh's personal portfolio: super clean, minimalist, design-forward
 - Testimonials once the first clients finish.
 
 ## Backlog
-- P1: Deploy to Vercel (khaigpt.vercel.app) and run real Lighthouse on production.
+- P1: Run real Lighthouse on production (khaihuynh.app). Add Google Analytics once the ID arrives.
 - P1: Dedicated /local landing page once there is a local-business case study (for ads to that audience).
 - P2: Per-article pages for Substack posts / free AI tips (more indexable URLs).
