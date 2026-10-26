@@ -1,7 +1,7 @@
 // Cloudflare Workers config: serves the static export in out/ (built by `next build`).
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "khaihuynh",
+  "name": "khaigpt-portfolio",
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./out",
