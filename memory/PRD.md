@@ -28,16 +28,22 @@ Rebuild Khai Huynh's personal portfolio: super clean, minimalist, design-forward
   - Content updated from the new resume (`content/work.ts`, `site.ts`, `faq.ts`, `lib/jsonld.ts`, About stats). Work list = 7 items: Promer AI · Firegroup, Nakame, Independent consulting, Indie apps · RepTime (new, uses the paper-airplane art as a stand-in until the RepTime logo art), Sipher, McKinsey, BetterU. Zero-One Shot lives only in Writing.
   - Seedance 2.0 prompts + first/last keyframes delivered. Keyframes: `/app/frontend/public/_tmp/seedance_{wide,tall}_{first,last}.jpg` (robots disallow `/_tmp/`; DELETE after the clips arrive). Generator: `/app/scripts/video_src/make_keyframes.py`.
 
-## NEXT SESSION — scroll-driven hero video + vertical scroll (user decisions, locked)
-- Waiting on the user: Seedance clip(s) (16:9 required, 9:16 optional) + the RepTime logo (to generate chrome art for the Indie item). Neither was attached yet.
-- Hero: hands stay STILL until scroll; scroll scrubs the approach until the fingertips touch → explosion → site turns from dark to light. It must FULLY REVERSE when scrolling back up.
-- Light mode: bright, cool gallery-white paper (barely visible texture).
-- Background removal: done here via fal `fal-ai/birefnet/v2/video` (model "Matting", output_mask=true, VP9/ProRes) through the Emergent Universal Key (verified priceable in the catalog; needs X-App-ID/X-Job-ID headers = $job_id). Use the mask video + the original RGB to build alpha frames. ffmpeg is not installed (use imageio-ffmpeg).
-- Still art is luma-keyed (alpha from brightness), so dark chrome turns see-through on paper. Re-matte the stills from `/app/scripts/art_src/*.jpg` with `fal-ai/birefnet` before light mode ships.
-- Planned build: replace the deck (fixed chapters, flip input, pager, horizontal work row on mobile) with one smooth vertical scroll (Lenis + motion useScroll). Pinned hero track (~300vh): frame scrub, then a WebGL shockwave/flash revealing paper from the contact point. Live refraction, cast shadows and light glow around the hands. Sections below are on paper. Fixed chrome switches theme at the explosion. The vertical rail stays on desktop only. No horizontal swipe anywhere.
-- Frames: a WebP alpha sequence (~48–64 frames, ~900px wide, cropped to the hands' bounding box), with frame 0 preloaded as the LCP image and the rest loaded coarse-to-fine after load.
+- 2026-10 (session 4) — conversion rework (one vertical scroll, consulting offers):
+  - Replaced the deck (fixed chapters, pager, WebGL stage, chat Q&A, writing chapter) with one native vertical scroll. Old code is in git history.
+  - Hero: Seedance hands clip (`scripts/video_src/hands.mp4`) cut by `scripts/video_src/make_frames.py` into 66 WebP frames (`public/hero/{d,m}/`). `components/home/HeroScrub.tsx` pins a 340vh track (280vh on phones): copy lifts away → frames scrub + zoom → flash → paper bloom. Pure function of scroll, so it fully reverses. Frame 0 is the SSR poster / LCP; the rest load after load+idle, coarse-to-fine. No matting needed: the clip is on pure black and the bloom swallows the hands.
+  - Theme: paper page; hero, Local band and Contact are dark islands (`[data-dark]`). `lib/theme.ts` flips the fixed top bar to match what is under it.
+  - Page order: Hero → Proof stats → 01 Sprint (4-phase timeline) → 02 Fractional (animated pipeline) → How it starts → 03 Local service businesses (self-playing missed-call SMS thread) → 04 Workshops → About/track record → FAQ (<details>) → Contact. Phone-only sticky "Book a call" dock.
+  - All copy in `content/home.ts`. Prices are null (renders "Fixed price, quoted on the call").
+  - SEO: new title/description, ProfessionalService + OfferCatalog + FAQPage JSON-LD. /_tmp keyframes deleted.
+  - Perf (local prod build): desktop LCP ~0.18s; mobile 4G + 4x CPU LCP ~0.77s; CLS ≈ 0.
+
+## Waiting on the user
+- Sprint price ("from $X") and fractional monthly price.
+- Headshot photo, 2–3 testimonials (name, title, company), permission for client names.
+- Confirm promises written into the copy: scope within 24h, free missed-lead check, "leave the call with at least one fix", ~2 hrs of client time.
+- Analytics choice (none installed) and separate Cal.com event types per offer.
 
 ## Backlog
 - P1: Deploy to Vercel (khaigpt.vercel.app) and run real Lighthouse on production.
-- P2: Per-article pages/OG for Substack posts (more indexable URLs); slow-4G LCP (~3s, bandwidth-bound by fonts + JS).
-- P2: Subtle horizontal-scroll hint for mobile work roles row.
+- P1: Dedicated /local landing page once there is a local-business case study (for ads to that audience).
+- P2: Per-article pages for Substack posts (more indexable URLs).

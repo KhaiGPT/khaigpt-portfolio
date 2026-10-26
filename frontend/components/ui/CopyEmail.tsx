@@ -1,6 +1,6 @@
 "use client"
 
-import { AnimatePresence, m } from "motion/react"
+import { AnimatePresence, domAnimation, LazyMotion, m } from "motion/react"
 import { useEffect, useRef, useState } from "react"
 import { site } from "@/content/site"
 import { Check, Copy } from "./Icons"
@@ -36,23 +36,25 @@ export function CopyEmail() {
   }
 
   return (
-    <Magnetic strength={0.12}>
-      <div className="glass email-pill" data-copied={copied || undefined}>
-        <a href={`mailto:${site.email}`} className="email-address" data-testid="email-link">
-          {site.email}
-        </a>
-        <button type="button" onClick={copy} className="email-copy press" aria-label="Copy email address" data-testid="copy-email-button">
-          <AnimatePresence mode="popLayout" initial={false}>
-            <m.span key={copied ? "ok" : "copy"} className="inline-flex items-center gap-1.5" {...swap} transition={{ type: "spring", stiffness: 480, damping: 30 }}>
-              {copied ? <Check /> : <Copy />}
-              {copied ? "copied" : "copy"}
-            </m.span>
-          </AnimatePresence>
-        </button>
-        <span className="sr-only" aria-live="polite" data-testid="copy-email-status">
-          {copied ? "Email address copied" : ""}
-        </span>
-      </div>
-    </Magnetic>
+    <LazyMotion features={domAnimation} strict>
+      <Magnetic strength={0.12}>
+        <div className="glass email-pill" data-copied={copied || undefined}>
+          <a href={`mailto:${site.email}`} className="email-address" data-testid="email-link">
+            {site.email}
+          </a>
+          <button type="button" onClick={copy} className="email-copy press" aria-label="Copy email address" data-testid="copy-email-button">
+            <AnimatePresence mode="popLayout" initial={false}>
+              <m.span key={copied ? "ok" : "copy"} className="inline-flex items-center gap-1.5" {...swap} transition={{ type: "spring", stiffness: 480, damping: 30 }}>
+                {copied ? <Check /> : <Copy />}
+                {copied ? "copied" : "copy"}
+              </m.span>
+            </AnimatePresence>
+          </button>
+          <span className="sr-only" aria-live="polite" data-testid="copy-email-status">
+            {copied ? "Email address copied" : ""}
+          </span>
+        </div>
+      </Magnetic>
+    </LazyMotion>
   )
 }

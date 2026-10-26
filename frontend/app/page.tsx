@@ -1,10 +1,17 @@
-import { About } from "@/components/chapters/About"
-import { Ask } from "@/components/chapters/Ask"
-import { Hello } from "@/components/chapters/Hello"
-import { SayHi } from "@/components/chapters/SayHi"
-import { Work } from "@/components/chapters/Work"
-import { Writing } from "@/components/chapters/Writing"
-import { Experience } from "@/components/deck/Experience"
+import { Dock } from "@/components/chrome/Dock"
+import { GlassFilter } from "@/components/chrome/GlassFilter"
+import { Reveals } from "@/components/chrome/Reveals"
+import { TopBar } from "@/components/chrome/TopBar"
+import { Contact } from "@/components/home/Contact"
+import { Faq } from "@/components/home/Faq"
+import { Fractional } from "@/components/home/Fractional"
+import { Hero } from "@/components/home/Hero"
+import { How } from "@/components/home/How"
+import { Local } from "@/components/home/Local"
+import { Proof } from "@/components/home/Proof"
+import { Record } from "@/components/home/Record"
+import { Sprint } from "@/components/home/Sprint"
+import { Workshop } from "@/components/home/Workshop"
 import { jsonLd } from "@/lib/jsonld"
 import type { Metadata } from "next"
 
@@ -20,17 +27,23 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <link rel="preload" as="image" href="/art/hero_wide.webp" media="(min-width: 768px), (orientation: landscape)" fetchPriority="high" />
-      <link rel="preload" as="image" href="/art/hero_tall.webp" media="(max-width: 767px) and (orientation: portrait)" fetchPriority="high" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <Experience>
-        <Hello />
-        <About />
-        <Work />
-        <Writing />
-        <Ask />
-        <SayHi />
-      </Experience>
+      <TopBar />
+      <main id="main">
+        <Hero />
+        <Proof />
+        <Sprint />
+        <Fractional />
+        <How />
+        <Local />
+        <Workshop />
+        <Record />
+        <Faq />
+        <Contact />
+      </main>
+      <Dock />
+      <Reveals />
+      <GlassFilter />
     </>
   )
 }
