@@ -1,8 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { InfoTip } from "@/components/ui/InfoTip"
 
-type Metric = { n: string; what: string; where: string }
+type Metric = { n: string; what: string; info: string }
 
 /** The fourth proof tile: growth results roll past like a split-flap board. Hover pauses it. */
 export function MetricRoll({ metrics }: { metrics: Metric[] }) {
@@ -15,22 +16,24 @@ export function MetricRoll({ metrics }: { metrics: Metric[] }) {
     return () => clearInterval(t)
   }, [paused, metrics.length])
 
+  const pos = (j: number) => (j === i ? "on" : j === (i - 1 + metrics.length) % metrics.length ? "out" : "in")
+
   return (
     <div className="proof-stat roll" data-rv style={{ "--i": 3 } as React.CSSProperties} onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)}>
-      <dt className="roll-dt">
+      <dt className="proof-what">
         <span className="roll-window" aria-hidden>
           {metrics.map((m, j) => (
-            <span key={m.n} className="roll-item" data-pos={j === i ? "on" : j === (i - 1 + metrics.length) % metrics.length ? "out" : "in"}>
-              <span className="proof-what">{m.what}</span>
-              <span className="proof-where">{m.where}</span>
+            <span key={m.n} className="roll-item" data-pos={pos(j)}>
+              {m.what}
             </span>
           ))}
         </span>
-        <span className="sr-only">Growth results: {metrics.map((m) => `${m.n} ${m.what} (${m.where})`).join("; ")}</span>
+        <InfoTip text={metrics[i].info} label="About this result" />
+        <span className="sr-only">Growth results: {metrics.map((m) => `${m.n} ${m.what} (${m.info})`).join("; ")}</span>
       </dt>
       <dd className="proof-n roll-window" aria-hidden>
         {metrics.map((m, j) => (
-          <span key={m.n} className="roll-item" data-pos={j === i ? "on" : j === (i - 1 + metrics.length) % metrics.length ? "out" : "in"}>
+          <span key={m.n} className="roll-item" data-pos={pos(j)}>
             {m.n}
           </span>
         ))}

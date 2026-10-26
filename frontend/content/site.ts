@@ -2,13 +2,13 @@ export const site = {
   url: "https://khaigpt.vercel.app",
   name: "Khai Huynh",
   handle: "KhaiGPT",
-  title: "Khai Huynh — Mobile-App Growth Sprints & Fractional Growth",
+  title: "Khai Huynh — Growth & AI Consultant for Apps and Small Businesses",
   description:
-    "Khai Huynh runs 10-day growth sprints for mobile apps: attribution check, App Store, onboarding and paywall audit, UA and creative test plan, and 3–5 live experiments. Ex-McKinsey, 10+ years scaling apps and games to 1M+ users.",
+    "Khai Huynh helps mobile apps grow, sets up AI receptionists for local service businesses, and runs practical AI training for marketers, ops and growth teams. Ex-McKinsey, 10+ years, 1M+ users grown.",
   bio: "Growth & GTM operator with 10+ years scaling consumer apps and games across Southeast Asia — 0→1M+ users, $1.1M incremental revenue at Promer AI, ~$150K/mo acquisition programs. Ex-McKinsey, founder of BetterU (5 locations, 35+ people) and Nakame.",
   email: "huynhduongkhai@gmail.com",
   location: "Ho Chi Minh City, Vietnam",
-  jobTitle: "Mobile-App Growth Consultant",
+  jobTitle: "Growth & AI Consultant",
   links: {
     cal: "https://cal.com/khaih",
     substack: "https://khaigpt.substack.com",

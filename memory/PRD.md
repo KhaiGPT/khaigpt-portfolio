@@ -44,9 +44,16 @@ Rebuild Khai Huynh's personal portfolio: super clean, minimalist, design-forward
   - Portrait: `scripts/make_portrait.py` (rembg birefnet-portrait cutout → crop, grade, ember/ice rim light) → `public/art/khai.webp`. RepTime logo → `public/art/reptime.webp`.
   - Perf: mobile 4G + 4x CPU LCP ~0.8s, CLS 0. Mercury only renders while on screen, at 0.6x resolution.
 
+- 2026-10 (session 4c) — clarity pass:
+  - Hero: shorter track (250vh desktop / 230vh phone), eased progress + crossfade between frames for fluid scrub; proof overlaps the hero end (`.proof` margin-top -72vh) and reveals the moment the page turns light.
+  - Copy: plain service names (Growth Sprint, Part-time Growth Lead, AI Receptionist, Practical AI Training), one line each, audience as kicker. Detail moved into ⓘ tips (`components/ui/InfoTip.tsx`: hover/focus on desktop, tap on touch).
+  - Prices removed from the page and JSON-LD; FAQ says a fixed price follows the free call.
+  - AI training reframed for mid-career marketers/ops/growth people: role playbook switcher with before/after bars (`Playbooks.tsx`, times labelled "Example").
+  - Portrait removed at Khai's request (photo + script deleted). Indie apps dated 2025 — now.
+
 ## Waiting on the user
-- Confirm founding prices. Testimonials once the first clients finish (none yet).
-- Google Analytics ID once the site is live.
+- Final live URL (canonical) and Google Analytics ID.
+- Testimonials once the first clients finish.
 
 ## Backlog
 - P1: Deploy to Vercel (khaigpt.vercel.app) and run real Lighthouse on production.

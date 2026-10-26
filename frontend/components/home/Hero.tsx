@@ -14,9 +14,13 @@ export function Hero() {
             {hero.eyebrow}
           </p>
           <h1 id="hero-title" className="hero-h1" data-testid="hero-title">
-            Your app’s growth, <em className="serif">debugged</em> in 10&nbsp;days.
+            I help apps <em className="serif">grow.</em>
           </h1>
-          <p className="hero-sub">{hero.sub}</p>
+          <ul className="hero-sub">
+            {hero.sub.map((l) => (
+              <li key={l}>{l}</li>
+            ))}
+          </ul>
           <div className="hero-ctas">
             <a href={site.links.cal} target="_blank" rel="noopener" className="pill pill-solid shine press" data-testid="hero-book-call">
               {cta.primary} <ArrowUpRight className="pill-arrow" />
@@ -25,9 +29,6 @@ export function Hero() {
               {hero.secondary} <ChevronDown />
             </a>
           </div>
-          <a href="#local" className="hero-alt" data-testid="hero-local-link">
-            {hero.alt.lead} <span>{hero.alt.link} →</span>
-          </a>
         </>
       }
     />
