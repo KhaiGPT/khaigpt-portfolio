@@ -1383,6 +1383,14 @@ html.lg-refract .glass {
     --art-h: 21svh;
   }
 }
+@media (max-width: 767px) and (max-height: 760px) {
+  .nf {
+    gap: 12px;
+  }
+  .nf-art {
+    width: min(36vw, 150px);
+  }
+}
 /* short phones: the hero gives way to the name block (~36vw title + eyebrow, tag and replies) */
 @media (max-width: 767px) and (orientation: portrait) and (max-height: 780px) {
   .hero-art {

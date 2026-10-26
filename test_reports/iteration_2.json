@@ -1,0 +1,29 @@
+{
+  "summary": "Iteration 2: frontend retest on the preview URL at desktop 1440x900 and 1280x640, and mobile 360x740, 375x667, 390x844 and 414x896. All 3 issues from iteration 1 are fixed. (1) The hero no longer collides with the text on short phones. At 360x740 the art bottom is 303, the eyebrow top 299 and the h1 top 330, so the art overlaps the eyebrow by 4px (1.7% of its height). At 375x667: art bottom 225, eyebrow top 221 (2.6%), h1 top 251. At 414x896 the hero is 466px tall with no h1 overlap. (2) Writing and About on mobile: with the chapter active and the column scrolled to the end, 'subscribe' (544-594 at 360x740, 648-698 at 390x844) and the last reply chips (bottom 650 / 754) sit fully above the pager (top 676 / 780). Both chips are clickable: writing goes to #ask and about goes to #writing. (3) 404 at 390x844: 'take me home' sits at 738-788, fully visible. On desktop the wings art is in the right column. The page returns HTTP 404 with a single noindex robots meta and no canonical. Wheel spill-over fix verified with in-page events at a fixed 16ms rate. A decaying trackpad gesture and a constant gesture that both run past the end of the writing column do NOT flip the chapter. A fresh gesture after a pause flips it once. A continuous gesture on Hello flips exactly once. Ask: after 4 questions (9 bubbles) the top 52px mask fades the oldest bubble cleanly; only a faint bubble border is still visible. Regression checks all pass: pager next/prev/dots, ArrowDown/Home/End, reply chips, deep links on fresh load and on hash change, work role switching (aria-pressed and the visible card update; ArrowRight works), ask Q&A, copy email (clipboard plus status text), the 5 socials (target=_blank), back-to-top, deferred art (data-gl='ready', 12 images loaded), descriptive alt text on all images, 404 links (/#about, /#hi, home), robots.txt (no Host line), a single robots meta, canonical only on /, CLS 0 on desktop and mobile, and no console errors. The SEO pytest suite passed 6/6.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "404 page at 360x740 (not in the requested scope)", "issue": "'take me home' (704-754) still runs 14px past the 740px viewport, and the dev-only 'N' badge overlaps the 'how do i reach you?' chip. It can be reached by scrolling inside .nf. 390x844 is fine. Optional: tighten the gap or art size on phones shorter than 760px.", "selector": "[data-testid=not-found-home]", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Hello at 390x844", "issues": ["The hero img box bottom (502.9) is 1.75px past the h1 top (501.1). This falls inside the fully transparent 14% bottom mask, so nothing is visible. Nit only."]},
+      {"screen": "Ask on desktop after 3+ questions", "issues": ["The 52px fade hides the oldest bubble's text. A faint bottom border arc of that bubble still shows just under the heading. This is acceptable; optionally fade the border too or use a slightly taller fade."]}
+    ]
+  },
+  "test_report_links": ["/app/backend/tests/test_portfolio_seo.py", "/app/test_reports/pytest/pytest_results_iter2.xml"],
+  "action_items": [
+    "Optional (LOW): make the 404 'take me home' fit within 360x740 without scrolling."
+  ],
+  "critical_code_review_comments": [
+    "useDeckInput wheel: the logic is correct. Note that page flips rely on gaps of more than 200ms between wheel events, so a slow or janky main thread (>200ms gaps) can make momentum look like a fresh gesture. In testing, Playwright mouse.wheel produced 200-600ms gaps in the remote browser and caused flips. This is an environment artifact and does not reproduce with real-rate events.",
+    "afterLoadIdle now cancels the pending idle callback or timeout. Fixed.",
+    "The [data-testid=work-detail] element is an invisible sizer (opacity 0, always shows the first role). Tests should use the visible work-card-* or aria-pressed instead. Consider renaming that testid, e.g. work-detail-sizer, to avoid confusion."
+  ],
+  "updated_files": ["/app/test_reports/iteration_2.json"],
+  "success_rate": {"backend": "N/A (static site; SEO pytest 6/6)", "frontend": "100% of requested retests and regressions"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Wait for [data-testid=chapter-X][data-state=active] before measuring layout; idle chapters are translated, so their rects are misleading. For wheel tests, dispatch synthetic WheelEvents in-page using a busy-wait 16ms loop, and manually add to scrollTop after each dispatch. Playwright mouse.wheel gaps exceed 200ms in this environment. On desktop 1280x640 only the writing column scrolls (scrollHeight 557 vs clientHeight 484)."
+}

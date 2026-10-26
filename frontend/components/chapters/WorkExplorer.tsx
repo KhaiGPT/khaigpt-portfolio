@@ -56,7 +56,7 @@ export function WorkExplorer({ heading }: { heading: ReactNode }) {
       <R
         i={3}
         className="work-detail glass"
-        data-testid="work-detail"
+        data-testid="work-detail-sizer"
         onTouchStart={(e) => (touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY })}
         onTouchEnd={(e) => {
           const dx = e.changedTouches[0].clientX - touch.current.x
