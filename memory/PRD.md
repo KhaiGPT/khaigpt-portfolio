@@ -53,10 +53,10 @@ Rebuild Khai Huynh's personal portfolio: super clean, minimalist, design-forward
 
 - 2026-10 (session 4d): proof = 5M+ users, $40M+ revenue, $100K ARR solo-built + roller (SEA expansion, churn, activation, ROAS, sales), no info tips there; grown-with adds Project SEED, Ancient8, Menlo AI. Sprint + Part-time Growth Lead now cover pre-launch (market research, product audit, growth model). Card 02 visual = example funnel widening week 1 → 12; card 03 = "AI Automation" for local businesses using the pipeline (lead capture, content system, CRM update, instant follow-up, booking, reporting). About: indie apps above Independent, $100K ARR, new subtitle.
 
-- 2026-10 (session 5): moved to Cloudflare Workers static assets + khaihuynh.app; GA4 (G-BTZPNQDB82) with book_call_click / generate_lead etc.; /privacy page and /llms.txt (built from content). Hero H1 "I help / grow apps & build with AI." Interest form section (#interest, above FAQ): name, email, company/app, service (4 + not sure), revenue range (optional), note (optional); posts to Web3Forms (site.form.key), falls back to a pre-filled email when no key. Each package card has a "Not ready? Leave your details →" link that pre-picks its service.
+- 2026-10 (session 5): moved to Cloudflare Workers static assets + khaihuynh.app; GA4 (G-BTZPNQDB82) with book_call_click / generate_lead etc.; /privacy page and /llms.txt (built from content). Hero H1 "I help / grow apps & build with AI." Interest form section (#interest, above FAQ): name, email, company/app, service (4 + not sure), revenue range (optional), note (optional); posts to Web3Forms (site.form.key), falls back to a pre-filled email when no key. Each package card has an "Or leave your details →" link that pre-picks its service.
 
 ## Waiting on the user
-- Web3Forms access key for the interest form (`frontend/content/site.ts` → form.key).
+
 - Final live URL (canonical) and Google Analytics ID.
 - Testimonials once the first clients finish.
 

@@ -19,7 +19,7 @@ declare global {
  *   contact_email    { method: "mailto" | "copy" }
  *   newsletter_click { link }
  *   faq_open         { question }
- *   interest_click   { cta }             (a “Not ready?” link)
+ *   interest_click   { cta }             (an “Or leave your details” link)
  *   generate_lead    { service, revenue } (sent by the interest form)
  *   section_view     { section }
  */

@@ -7,7 +7,7 @@ import { site } from "@/content/site"
 
 type State = "idle" | "sending" | "done" | "error"
 
-/** Fired by the “Not ready?” links on the package cards, so the form opens with that service picked. */
+/** Fired by the “Or leave your details” links on the package cards, so the form opens with that service picked. */
 export const PICK_EVENT = "interest:pick"
 
 export function InterestForm() {

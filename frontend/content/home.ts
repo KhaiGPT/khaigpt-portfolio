@@ -184,7 +184,7 @@ export const interest = {
   id: "interest",
   kicker: "Not ready for a call?",
   title: "Leave your details.",
-  body: "Tell me where you are. I’ll reply by email.",
+  body: "Tell me where I could deliver instant impact.",
   services: [
     { id: "sprint", label: "Growth Sprint" },
     { id: "fractional", label: "Part-time Growth Lead" },
@@ -195,7 +195,7 @@ export const interest = {
   revenue: ["Pre-launch / no revenue yet", "Below $250K", "$250K–$500K", "$500K–$1M", "$1M–$3M", "Over $3M"],
   submit: "Send",
   done: { title: "Got it, thanks.", body: "I’ll reply by email. If it’s urgent, book a free call instead." },
-  cardLink: "Not ready? Leave your details",
+  cardLink: "Or leave your details",
 }
 
 export type Faq = { id: string; q: string; a: string }
