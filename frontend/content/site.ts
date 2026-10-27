@@ -11,6 +11,8 @@ export const site = {
   jobTitle: "Growth & AI Consultant",
   /** Google Analytics 4 Measurement ID ("G-…"). Empty = no analytics loaded. */
   gaId: "G-BTZPNQDB82" as string,
+  /** Interest form → email, via Web3Forms (free). Paste the access key from web3forms.com; empty = the form falls back to opening an email. */
+  form: { endpoint: "https://api.web3forms.com/submit", key: "" as string },
   links: {
     cal: "https://cal.com/khaih",
     substack: "https://khaigpt.substack.com",

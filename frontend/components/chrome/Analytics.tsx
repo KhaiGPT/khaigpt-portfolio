@@ -19,6 +19,8 @@ declare global {
  *   contact_email    { method: "mailto" | "copy" }
  *   newsletter_click { link }
  *   faq_open         { question }
+ *   interest_click   { cta }             (a “Not ready?” link)
+ *   generate_lead    { service, revenue } (sent by the interest form)
  *   section_view     { section }
  */
 export function Analytics() {
@@ -54,6 +56,7 @@ export function Analytics() {
       } else if (href.startsWith("mailto:")) gtag("event", "contact_email", { method: "mailto" })
       else if (tag === "copy-email-button") gtag("event", "contact_email", { method: "copy" })
       else if (href.startsWith(site.links.substack)) gtag("event", "newsletter_click", { link: tag })
+      else if (href === "#interest") gtag("event", "interest_click", { cta: tag })
     }
     // <details> toggle doesn't bubble, so listen in the capture phase
     const onToggle = (e: Event) => {

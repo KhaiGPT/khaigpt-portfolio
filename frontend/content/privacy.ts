@@ -11,6 +11,7 @@ export const privacy = {
       p: [
         "Analytics. I use Google Analytics 4 to see how people use the site: pages viewed, buttons clicked (for example “Book a free call”), how far you scroll, rough location (country/city), device and browser, and where you came from. Google Analytics sets first-party cookies (named _ga) to tell visits apart. I don’t see your name, email or exact IP address in it.",
         "Email. If you email me, I keep your message and address to reply and to follow up on the conversation.",
+        "Interest form. If you fill in the form, I receive your name, email, company or app name, the service you picked, your revenue range (if given) and any note. It’s delivered to my inbox through Web3Forms, a form-delivery service.",
         "Bookings. Calls are booked through Cal.com. What you enter there (name, email, notes) is handled by Cal.com under its own privacy policy and shared with me so I can run the call.",
         "Hosting. The site is served by Cloudflare, which processes basic request data (such as IP address) to deliver pages and stop abuse.",
       ],
