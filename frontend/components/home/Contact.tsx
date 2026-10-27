@@ -40,6 +40,9 @@ export function Contact() {
             <span>
               © {new Date().getFullYear()} Khai Huynh · {site.location}
             </span>
+            <a href="/privacy" data-testid="privacy-link">
+              Privacy
+            </a>
             <a href="#top" className="foot-top" data-testid="back-to-top">
               back to top <ArrowUp />
             </a>

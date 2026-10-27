@@ -9,6 +9,7 @@ import { Faq } from "@/components/home/Faq"
 import { Help } from "@/components/home/Help"
 import { Hero } from "@/components/home/Hero"
 import { How } from "@/components/home/How"
+import { Interest } from "@/components/home/Interest"
 import { Notes } from "@/components/home/Notes"
 import { Proof } from "@/components/home/Proof"
 import { jsonLd } from "@/lib/jsonld"
@@ -35,6 +36,7 @@ export default function Home() {
         <How />
         <About />
         <Notes />
+        <Interest />
         <Faq />
         <Contact />
       </main>

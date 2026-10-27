@@ -14,7 +14,8 @@ export function Hero() {
             {hero.eyebrow}
           </p>
           <h1 id="hero-title" className="hero-h1" data-testid="hero-title">
-            I help apps <em className="serif">grow.</em>
+            I help <br />
+            grow apps &amp; build with <em className="serif">AI.</em>
           </h1>
           <ul className="hero-sub">
             {hero.sub.map((l) => (

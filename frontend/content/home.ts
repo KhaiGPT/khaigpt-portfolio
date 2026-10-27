@@ -179,6 +179,25 @@ export const notes = {
   cta: "Subscribe",
 }
 
+/** The “not ready for a call” form. Submissions go to Khai’s inbox via Web3Forms (site.form). */
+export const interest = {
+  id: "interest",
+  kicker: "Not ready for a call?",
+  title: "Leave your details.",
+  body: "Tell me where I could deliver instant impact.",
+  services: [
+    { id: "sprint", label: "Growth Sprint" },
+    { id: "fractional", label: "Part-time Growth Lead" },
+    { id: "local", label: "AI Automation" },
+    { id: "workshops", label: "Practical AI Training" },
+    { id: "unsure", label: "Not sure yet" },
+  ],
+  revenue: ["Pre-launch / no revenue yet", "Below $250K", "$250K–$500K", "$500K–$1M", "$1M–$3M", "Over $3M"],
+  submit: "Send",
+  done: { title: "Got it, thanks.", body: "I’ll reply by email. If it’s urgent, book a free call instead." },
+  cardLink: "Or leave your details",
+}
+
 export type Faq = { id: string; q: string; a: string }
 
 export const faqs: Faq[] = [

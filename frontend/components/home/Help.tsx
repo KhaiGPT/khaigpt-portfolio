@@ -1,10 +1,11 @@
 import { ArrowUpRight } from "@/components/ui/Icons"
 import { InfoTip } from "@/components/ui/InfoTip"
 import { art } from "@/content/art"
-import { fractional, help, local, sprint, workshop, type Package } from "@/content/home"
+import { fractional, help, interest, local, sprint, workshop, type Package } from "@/content/home"
 import { site } from "@/content/site"
 import { cn } from "@/lib/utils"
 import type { ReactNode } from "react"
+import { PickLink } from "./PickLink"
 import { Playbooks } from "./Playbooks"
 import { StackFx } from "./StackFx"
 
@@ -72,6 +73,7 @@ function Card({ p, i, visual }: { p: Package; i: number; visual: ReactNode }) {
             <a href={site.links.cal} target="_blank" rel="noopener" className="pill pill-solid shine press" data-testid={`${p.id}-cta`}>
               {p.cta} <ArrowUpRight className="pill-arrow" />
             </a>
+            <PickLink service={p.id}>{interest.cardLink}</PickLink>
           </div>
         </div>
         <div className="pkg-visual">{visual}</div>
