@@ -51,7 +51,14 @@ export function RecordList({ roles }: { roles: Role[] }) {
               <strong>{r.company}</strong>
               <span>{r.role}</span>
             </span>
-            <span className="rec-result">{r.result}</span>
+            <span className="rec-result">
+              {r.result}
+              {r.link && (
+                <a href={r.link.href} target="_blank" rel="noopener" className="rec-link" data-testid="reptime-app-store">
+                  {r.link.label} ↗
+                </a>
+              )}
+            </span>
           </li>
         ))}
       </ol>

@@ -21,6 +21,7 @@ declare global {
  *   faq_open         { question }
  *   interest_click   { cta }             (an “Or leave your details” link)
  *   generate_lead    { service, revenue } (sent by the interest form)
+ *   app_store_click  { app, cta }
  *   section_view     { section }
  */
 export function Analytics() {
@@ -57,6 +58,7 @@ export function Analytics() {
       else if (tag === "copy-email-button") gtag("event", "contact_email", { method: "copy" })
       else if (href.startsWith(site.links.substack)) gtag("event", "newsletter_click", { link: tag })
       else if (href === "#interest") gtag("event", "interest_click", { cta: tag })
+      else if (href.startsWith(site.links.reptime)) gtag("event", "app_store_click", { app: "reptime", cta: tag })
     }
     // <details> toggle doesn't bubble, so listen in the capture phase
     const onToggle = (e: Event) => {
