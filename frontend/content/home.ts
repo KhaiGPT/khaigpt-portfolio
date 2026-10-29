@@ -4,6 +4,7 @@
  * No prices on the page: Khai quotes after the call.
  */
 import type { ArtKey } from "./art"
+import { site } from "./site"
 
 export const nav = [
   { id: "help", label: "How I help" },
@@ -154,7 +155,7 @@ export const steps = [
   { n: "3", title: "Start", body: "On a date you pick." },
 ]
 
-export type Role = { years: string; company: string; role: string; result: string; art: ArtKey }
+export type Role = { years: string; company: string; role: string; result: string; art: ArtKey; link?: { href: string; label: string } }
 
 export const about = {
   kicker: "About",
@@ -164,7 +165,14 @@ export const about = {
 
 export const record: Role[] = [
   { years: "2025 — now", company: "Promer AI · Firegroup", role: "Head of Growth Marketing", result: "$1.1M new revenue, −40% churn, +30% activation", art: "magnet" },
-  { years: "2025 — now", company: "Indie apps · RepTime", role: "Solo builder", result: "AI consumer apps to $100K ARR. Now building RepTime.", art: "reptime" },
+  {
+    years: "2025 — now",
+    company: "Indie apps · RepTime",
+    role: "Solo builder",
+    result: "AI consumer apps to $100K ARR. RepTime is now live.",
+    art: "reptime",
+    link: { href: site.links.reptime, label: "Get RepTime on the App Store" },
+  },
   { years: "2023 — now", company: "Independent", role: "Product & Growth Advisor", result: "The Scourge: $1M+ sales · Delysium: 47K concurrent users", art: "compass" },
   { years: "2024 — 2025", company: "Nakame", role: "Founder", result: "AI companion app, 20K users, 15M organic views", art: "dice" },
   { years: "2021 — 2023", company: "Sipher", role: "Head of Marketing", result: "~1M players, 2.1x ROAS on ~$150K/mo ads", art: "joystick" },

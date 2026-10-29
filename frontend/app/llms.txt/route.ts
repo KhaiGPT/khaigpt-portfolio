@@ -36,6 +36,7 @@ ${posts.map((p) => `- [${p.title}](${p.href})`).join("\n")}
 - Book a call: ${site.links.cal}
 - Email: ${site.email}
 - LinkedIn: ${site.links.linkedin}
+- RepTime (my app) on the App Store: ${site.links.reptime}
 - Newsletter: ${site.links.substack}
 `
   return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } })
