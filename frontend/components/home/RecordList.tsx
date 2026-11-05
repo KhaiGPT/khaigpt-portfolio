@@ -49,7 +49,7 @@ export function RecordList({ roles }: { roles: Role[] }) {
             <span className="rec-years">{r.years}</span>
             <span className="rec-who">
               <strong>{r.company}</strong>
-              <span>{r.role}</span>
+              {r.role && <span>{r.role}</span>}
             </span>
             <span className="rec-result">{r.result}</span>
           </li>

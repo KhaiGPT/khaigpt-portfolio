@@ -86,7 +86,7 @@ export const fractional = {
   id: "fractional",
   tone: "dark",
   kicker: "For mobile apps, pre-launch to scale",
-  title: "Part-time Growth Lead",
+  title: "Part-time Head of Growth/GTM",
   body: "I join your team a few hours a week to plan, launch and grow your app.",
   facts: ["5–10 hrs / week", "Monthly"],
   info: "Pre-launch: market research, positioning, growth model and launch plan. After launch: weekly tests, ads, onboarding and paywall work, lifecycle and reporting.",
@@ -154,7 +154,7 @@ export const steps = [
   { n: "3", title: "Start", body: "On a date you pick." },
 ]
 
-export type Role = { years: string; company: string; role: string; result: string; art: ArtKey }
+export type Role = { years: string; company: string; role?: string; result: string; art: ArtKey }
 
 export const about = {
   kicker: "About",
@@ -164,7 +164,7 @@ export const about = {
 
 export const record: Role[] = [
   { years: "2025 — now", company: "Promer AI · Firegroup", role: "Head of Growth Marketing", result: "$1.1M new revenue, −40% churn, +30% activation", art: "magnet" },
-  { years: "2025 — now", company: "Indie apps · RepTime", role: "Solo builder", result: "AI consumer apps to $100K ARR. Now building RepTime.", art: "reptime" },
+  { years: "2025 — now", company: "Indie hacker", result: "Built and scaled 2 consumer apps (beauty & fitness niches) to $80K ARR", art: "wings" },
   { years: "2023 — now", company: "Independent", role: "Product & Growth Advisor", result: "The Scourge: $1M+ sales · Delysium: 47K concurrent users", art: "compass" },
   { years: "2024 — 2025", company: "Nakame", role: "Founder", result: "AI companion app, 20K users, 15M organic views", art: "dice" },
   { years: "2021 — 2023", company: "Sipher", role: "Head of Marketing", result: "~1M players, 2.1x ROAS on ~$150K/mo ads", art: "joystick" },
@@ -187,7 +187,7 @@ export const interest = {
   body: "Tell me where I could deliver instant impact.",
   services: [
     { id: "sprint", label: "Growth Sprint" },
-    { id: "fractional", label: "Part-time Growth Lead" },
+    { id: "fractional", label: "Part-time Head of Growth/GTM" },
     { id: "local", label: "AI Automation" },
     { id: "workshops", label: "Practical AI Training" },
     { id: "unsure", label: "Not sure yet" },
