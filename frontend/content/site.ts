@@ -20,8 +20,6 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/khaidhuynh/",
     github: "https://github.com/KhaiGPT",
     superme: "https://www.superme.ai/khai",
-    // country-neutral App Store link: Apple opens each visitor's own store
-    reptime: "https://apps.apple.com/app/reptime-fitness-app-blocker/id6821094004",
   },
 } as const
 

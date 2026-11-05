@@ -40,9 +40,6 @@ export function Contact() {
             <span>
               © {new Date().getFullYear()} Khai Huynh · {site.location}
             </span>
-            <a href={site.links.reptime} target="_blank" rel="noopener" data-testid="footer-reptime">
-              RepTime on the App Store
-            </a>
             <a href="/privacy" data-testid="privacy-link">
               Privacy
             </a>
