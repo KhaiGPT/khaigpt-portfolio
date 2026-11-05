@@ -5,7 +5,7 @@ export const site = {
   title: "Khai Huynh — Growth & AI Consultant for Apps and Small Businesses",
   description:
     "Khai Huynh helps mobile apps grow from pre-launch to scale, builds AI automation for local service businesses, and runs practical AI training for marketers, ops and growth teams. Ex-McKinsey, 10+ years, 5M+ users grown.",
-  bio: "10+ years in growth and GTM across consumer apps and games: 5M+ users grown, $40M+ revenue. Ex-McKinsey and VC-backed founder, now solo building apps to $100K ARR and sharing what I learn.",
+  bio: "10+ years in growth and GTM across consumer apps and games: 5M+ users grown, $40M+ revenue. Ex-McKinsey and VC-backed founder, now solo building apps to $80K ARR and sharing what I learn.",
   email: "huynhduongkhai@gmail.com",
   location: "Ho Chi Minh City, Vietnam",
   jobTitle: "Growth & AI Consultant",

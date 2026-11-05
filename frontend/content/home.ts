@@ -31,7 +31,7 @@ export const proof = {
   stats: <Stat[]>[
     { value: 5, suffix: "M+", what: "users grown" },
     { value: 40, prefix: "$", suffix: "M+", what: "revenue" },
-    { value: 100, prefix: "$", suffix: "K", what: "ARR, solo-built" },
+    { value: 80, prefix: "$", suffix: "K", what: "ARR, solo-built" },
   ],
   /** the fourth tile rolls through these */
   metrics: [

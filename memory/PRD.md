@@ -55,7 +55,7 @@ Rebuild Khai Huynh's personal portfolio: super clean, minimalist, design-forward
 
 - 2026-10 (session 5): moved to Cloudflare Workers static assets + khaihuynh.app; GA4 (G-BTZPNQDB82) with book_call_click / generate_lead etc.; /privacy page and /llms.txt (built from content). Hero H1 "I help / grow apps & build with AI." Interest form section (#interest, above FAQ): name, email, company/app, service (4 + not sure), revenue range (optional), note (optional); posts to Web3Forms (site.form.key), falls back to a pre-filled email when no key. Each package card has an "Or leave your details →" link that pre-picks its service.
 
-- 2026-11: hero "I Build Things / & Scale Products"; card 02 renamed "Part-time Head of Growth/GTM"; RepTime removed everywhere (art, App Store links); About row = "Indie hacker" — built and scaled 2 consumer apps (beauty & fitness) to $80K ARR (wings art on hover).
+- 2026-11: hero "I Build Things / & Scale Products"; card 02 renamed "Part-time Head of Growth/GTM"; RepTime removed everywhere (art, App Store links); About row = "Indie hacker" — built and scaled 2 consumer apps (beauty & fitness) to $80K ARR (wings art on hover). Proof stat and bio also $80K ARR.
 
 ## Waiting on the user
 
